@@ -1,0 +1,46 @@
+---
+//library import
+import { Image } from "@astrojs/image/components";
+
+// utils import
+import {formatDate, slugify} from "../scripts/utils.js";
+
+const { frontmatter, url, tagType } = Astro.props;
+
+const Tag = tagType;
+
+const {
+    title, description, date, category, author, image
+} = frontmatter;
+---
+
+<header>
+    <div>
+        <small>
+            <a href={`/category/${slugify(category)}`}>{category}</a>
+        </small>
+        <a href={url} aria-hidden="true" tabindex="-1">
+            <Image 
+                src={image.src} 
+                alt={image.alt}
+                width={400}
+                height={150}
+                format="avif" 
+                fit="cover"
+                quality={80}
+                aspectRatio="4:1"
+                class=""
+            />
+        </a>
+        <div class="content">
+            <div>
+                <Tag>
+                    <a href={url}>{title}</a>
+                </Tag>
+                <p>por <a href={`/author/${slugify(author)}`}>{author}</a> • {formatDate(date)}</p>
+            </div>
+            <p>{description}</p>
+            <a href={url}>Leer</a>
+        </div>
+    </div>
+</header>

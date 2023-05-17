@@ -1,0 +1,14 @@
+---
+const {title, description} = Astro.props;
+---
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="/favicon/favicon.svg" type="image/svg+xml" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+
+    <script defer src="https://kit.fontawesome.com/76c49369ed.js" crossorigin="anonymous"></script>
+</head>

@@ -1,5 +1,5 @@
 {
-  "name": "",
+  "name": "dreary-debris",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
@@ -10,6 +10,11 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^2.4.1"
+    "@astrojs/image": "^0.16.8",
+    "astro": "^2.4.3",
+    "sharp": "^0.32.1"
+  },
+  "devDependencies": {
+    "sass": "^1.62.1"
   }
 }

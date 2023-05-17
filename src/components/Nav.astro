@@ -1,0 +1,66 @@
+---
+
+---
+
+<nav aria-label="Primary">
+    <div class="container">
+        <div class="style">
+            <a href="/">
+                <i class="fa-solid fa-house"></i>
+            </a>
+            <ul>
+                <li>
+                    <a href="/about" data-link>Sobre mi</a>
+                </li>
+                <li>
+                    <a href="/blog" data-link>Blog</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<style lang="scss">
+    nav {
+        --current-font-size: 2rem;
+        width: 100%;
+        font-size: var(--current-font-size);
+    }
+
+    .container {
+
+        position: fixed;
+        bottom: 0;
+        left: 50%;
+        transform: translate(-50%, 0%);
+
+        width: var(--container-width);
+        max-width: var(--container-max-width);
+        margin-inline: auto;
+        padding-block: var(--rem-lg);
+    }
+
+    .style {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        width: 31rem;
+
+        margin-inline: auto;
+        /* padding: 1rem; */
+        background-image: hsl(var(--white));
+        border-radius: 999999999999999px;
+    }
+    
+    ul, li {
+        display: flex;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+</style>
+
+<script>
+    import '../scripts/nav.js';
+</script>

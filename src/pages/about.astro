@@ -1,0 +1,24 @@
+---
+//library import
+import { Image } from "@astrojs/image/components";
+
+// component imports
+import MainLayout from "../layouts/MainLayout.astro";
+
+---
+
+<MainLayout title="Sobre mi" description="Página sobre mi">
+    <section aria-label="About Me">
+        <Image
+            src="https://picsum.photos/id/237/600/400"
+            alt="Lorem perrito"
+            width={600}
+            height={400}
+            format="avif"
+        />
+        <div>
+            <h1></h1>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum molestias a exercitationem id quo cum hic qui adipisci explicabo iure. Unde, exercitationem ea illo doloremque pariatur id aliquid saepe atque.
+        </div>
+    </section>
+</MainLayout>

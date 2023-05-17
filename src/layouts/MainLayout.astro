@@ -1,0 +1,89 @@
+---
+import Footer from '../components/Footer.astro';
+import Nav from '../components/Nav.astro';
+import MainHead from './MainHead.astro';
+
+const {
+    title = "Astro Blog", 
+    description = "Reference links for this Blog"
+    } = Astro.props;
+---
+
+<html lang="es">
+    <MainHead {title} {description}/>
+    <body>
+        <Nav />
+        <main>
+            <slot />
+        </main>
+        <Footer />
+    </body>
+</html>
+
+<style is:global lang="scss">
+    @font-face {
+        font-family: "Atkinson Hyperlegible";
+        src: local('Atkinson Hyperlegible'),
+        url('/fonts/atkinson-hyperlegible/SVG/Atkinson-Hyperlegible-Regular-102.svg') format('svg'),
+        url('/fonts/atkinson-hyperlegible/TTF/Atkinson-Hyperlegible-Regular-102.ttf') format('ttf'),
+        url('/fonts/atkinson-hyperlegible/WOFF/Atkinson-Hyperlegible-Regular-102.woff') format('woff'),
+        url('/fonts/atkinson-hyperlegible/WOFF2/Atkinson-Hyperlegible-Regular-102.woff2') format('woff2');
+    }
+
+    :root {
+        --container-width: 900px;
+        --container-max-width: 100%;
+
+        --rem-xs: .25rem;
+        --rem-sm: .5rem;
+        --rem-md: .75rem;
+        --rem-lg: 1rem;
+        --rem-xl: 1.5rem;
+
+        --background: 0 0% 9%;
+        --font: 0 0% 91%;
+        --link: 220 70% 70%;
+    }
+
+    *, ::before, *::after {
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+        padding: 1rem;
+
+        background-color: hsl(var(--background));
+        color: hsl(var(--font));
+
+        font-family: 'Atkinson Hyperlegible';
+        font-size: 1rem;
+        font-weight: 400;
+    }
+
+    main {
+        width: var(--container-width);
+        max-width: var(--container-max-width);
+        min-height: 100svh;
+        
+        margin-inline: auto;
+        padding: 1rem;
+    }
+
+    a {
+        color: hsl(var(--link));
+        font-weight: 700;
+
+        &:is(:hover, :focus-visible) {
+            text-decoration: none;
+
+            &::after {
+                content: '\f08e';
+                font-family: 'Font Awesome 6 Free';
+                font-weight: 900;
+                font-size: calc(var(--current-font-size, .75rem) * .75);
+                margin-inline-start: .25rem;
+            }
+        }
+    }
+</style>
