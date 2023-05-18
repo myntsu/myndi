@@ -1,6 +1,6 @@
 # 🚀 Astro Blog
 > Both in 🇺🇸 English & 🇪🇸 Spanish
-> Tanto en 🇺🇸 Inglés y ![](https://em-content.zobj.net/thumbs/120/sony/336/flag-spain_1f1ea-1f1f8.png) Español
+> Tanto en 🇺🇸 Inglés y :us: Español
 
 ### ![English](https://img.shields.io/badge/English-100000?style=for-the-badge&logo=&logoColor=white&labelColor=black&color=F54645)
 
