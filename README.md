@@ -1,4 +1,5 @@
 # 🚀 Astro Blog
+> English & Español
 
 ```
 npm create astro@latest -- --template minimal
