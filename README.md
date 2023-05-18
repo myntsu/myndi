@@ -1,6 +1,7 @@
 # 🚀 Astro Blog
-> Both in 🇺🇸 English & 🇪🇸 Spanish
-> Tanto en 🇺🇸 Inglés y :us: Español
+> Both in :us: English & :es: Spanish
+
+> Tanto en :us: Inglés y :es: Español
 
 ### ![English](https://img.shields.io/badge/English-100000?style=for-the-badge&logo=&logoColor=white&labelColor=black&color=F54645)
 
