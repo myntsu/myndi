@@ -1,10 +1,48 @@
 ---
+//library import
+import { Image } from "@astrojs/image/components";
 
 // component imports
 import MainLayout from "../layouts/MainLayout.astro";
+import PostCard from "../components/PostCard.astro";
 
+// utils imports
+import { formatBlogPosts } from "../scripts/utils";
+
+const allPosts = await Astro.glob("./blog/*.md");
+const formattedPosts = formatBlogPosts(allPosts, {
+  limit: 2,
+});
 ---
 
-<MainLayout title="Home" description="Página principal">
-    Esto es el index
+<MainLayout
+  title="Home"
+  description="Página principal">
+  <section aria-label="About Me">
+    <Image
+        src="https://picsum.photos/id/237/600/400"
+        alt="Lorem perrito"
+        width={600}
+        height={400}
+        format="avif"
+    />
+    <div>
+        <h1></h1>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum molestias a exercitationem id quo cum hic qui adipisci explicabo iure. Unde, exercitationem ea illo doloremque pariatur id aliquid saepe atque.
+    </div>
+  </section>
+  <section aria-label="Nuevas publicaciones de blog">
+    <h2>Nuevas publicaciones de blog</h2>
+    <div>
+      {
+        formattedPosts.map((post) => (
+          <PostCard
+            frontmatter={post.frontmatter}
+            url={post.url}
+            tagType="h3"
+          />
+        ))
+      }
+    </div>
+  </section>
 </MainLayout>
