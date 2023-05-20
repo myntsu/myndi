@@ -14,22 +14,21 @@ const {
 } = frontmatter;
 ---
 
-<header>
-    <div>
-        <small>
+<article class="card">
+        <small class="tag">
             <a href={`/category/${slugify(category)}`}>{category}</a>
         </small>
         <a href={url} aria-hidden="true" tabindex="-1">
             <Image 
                 src={image.src} 
                 alt={image.alt}
-                width={400}
+                width={400}     
                 height={150}
                 format="avif" 
                 fit="cover"
                 quality={80}
                 aspectRatio="4:1"
-                class=""
+                class="link-image"
             />
         </a>
         <div class="content">
@@ -42,5 +41,59 @@ const {
             <p>{description}</p>
             <a href={url}>Leer</a>
         </div>
-    </div>
-</header>
+</article>
+
+<style lang="scss">
+    .card {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 1rem;
+
+
+        max-width: 16rem;
+
+        overflow: hidden;
+
+        border: .25rem solid hsl(var(--font) / .1);
+        border-radius: .25rem;
+
+        :first-child {
+            align-self: flex-start;
+        }
+
+        .content {
+            div {
+                p {
+                    font-size: .75rem;
+                }
+            }
+
+            a {
+                color: hsl(var(--font));
+                text-decoration: none;
+
+                &:is(:hover, :focus-visible) {
+                    color: hsl(var(--main-color));
+
+                    transition: color 300ms ease;
+                }
+            }
+
+            h1, h2, h3, h4, h5, h6 {
+                &:is(:first-child) {
+                    margin: 0;
+                }               
+            }
+        }
+    }
+
+    .link-image {
+        // max-width: 18rem;
+    }
+
+    :hover {
+        outline: 1px solid red;
+    }
+</style>

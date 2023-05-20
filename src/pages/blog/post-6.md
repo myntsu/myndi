@@ -2,14 +2,14 @@
 layout: "../../layouts/BlogPostLayout.astro"
 title: Un post sobre mi
 date: 08May2023
-author: Yo mismo
+author: Myndi
 image: {
     src: "https://picsum.photos/seed/picsum/200/300",
     alt: "Lorem picsum",
 }
 description: Una descripcion
 draft: false
-category: Referencia
+category: HTML
 ---
 
 # Esto es una publicación de blog

@@ -40,9 +40,12 @@ const {
         --rem-lg: 1rem;
         --rem-xl: 1.5rem;
 
+        --main-color: 240 80% 75%;
         --background: 0 0% 9%;
         --font: 0 0% 91%;
-        --link: 220 70% 70%;
+        --font-dark: 0 0% 9%;
+        --link: hsl(var(--main-color) / 0.9);
+        --tag: 230 100% 75%;
     }
 
     *, ::before, *::after {
@@ -59,6 +62,7 @@ const {
         font-family: 'Atkinson Hyperlegible';
         font-size: 1rem;
         font-weight: 400;
+        line-height: 1.5;
     }
 
     main {
@@ -70,7 +74,16 @@ const {
         padding: 1rem;
     }
 
-    a {
+    h1, h2, h3, h4, h5, h6, p {
+        margin: 0;
+        margin-block-end: 1rem;
+    }
+
+    img, video, picture {
+        display: block;
+    }
+
+    .link {
         color: hsl(var(--link));
         font-weight: 700;
 
@@ -85,5 +98,40 @@ const {
                 margin-inline-start: .25rem;
             }
         }
+    }
+
+    .link-within {
+
+    }
+
+    .tag {
+            display: flex;
+
+        a {
+            padding: .25rem .8rem;
+
+            background-color: hsl(var(--tag));
+            color: hsl(var(--font));
+            border-radius: .25rem;
+
+            text-decoration: none;
+            user-select: none;
+
+            &:is(:hover, :focus-visible) {
+                opacity: .95;
+                outline: 1px solid hsl(var(--font));
+                outline-offset: 2px;
+            }
+
+            &:is(:active) {
+                scale: .95;
+            }
+        }
+    }
+
+    .card-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr));
+        gap: 1rem;
     }
 </style>
