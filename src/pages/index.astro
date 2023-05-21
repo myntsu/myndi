@@ -25,6 +25,7 @@ const formattedPosts = formatBlogPosts(allPosts, {
         width={600}
         height={400}
         format="avif"
+        class="responsive-image"
     />
     <div>
         <h1></h1>
@@ -46,3 +47,10 @@ const formattedPosts = formatBlogPosts(allPosts, {
     </div>
   </section>
 </MainLayout>
+
+<style>
+  .responsive-image {
+    width: 100%;
+    height: auto;
+  }
+</style>

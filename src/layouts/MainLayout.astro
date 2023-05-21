@@ -12,11 +12,12 @@ const {
 <html lang="es">
     <MainHead {title} {description}/>
     <body>
-        <Nav />
-        <main>
-            <slot />
-        </main>
-        <Footer />
+        <div class="layout">
+            <Nav />
+            <main>
+                <slot />
+            </main>
+        </div>
     </body>
 </html>
 
@@ -30,9 +31,13 @@ const {
         url('/fonts/atkinson-hyperlegible/WOFF2/Atkinson-Hyperlegible-Regular-102.woff2') format('woff2');
     }
 
+    :hover {
+        // outline: 2px solid red;
+    }
+
     :root {
-        --container-width: 900px;
-        --container-max-width: 100%;
+        --container-width: 100%;
+        --container-max-width: 900px;
 
         --rem-xs: .25rem;
         --rem-sm: .5rem;
@@ -40,11 +45,12 @@ const {
         --rem-lg: 1rem;
         --rem-xl: 1.5rem;
 
-        --main-color: 240 80% 75%;
+        --main-color: 240 90% 80%;
         --background: 0 0% 9%;
+        --background-lighter: 0 0% 11%; 
         --font: 0 0% 91%;
         --font-dark: 0 0% 9%;
-        --link: hsl(var(--main-color) / 0.9);
+        --link: hsl(var(--main-color) / 0.2);
         --tag: 230 100% 75%;
     }
 
@@ -52,9 +58,13 @@ const {
         box-sizing: border-box;
     }
 
+    html, body {
+        min-height: 100svh;
+    }
+
     body {
+        width: 100dvw;
         margin: 0;
-        padding: 1rem;
 
         background-color: hsl(var(--background));
         color: hsl(var(--font));
@@ -63,35 +73,56 @@ const {
         font-size: 1rem;
         font-weight: 400;
         line-height: 1.5;
+
+        overflow-x: hidden;
     }
 
     main {
         width: var(--container-width);
         max-width: var(--container-max-width);
-        min-height: 100svh;
+
+        background-color: hsl(var(--background-lighter));
         
         margin-inline: auto;
-        padding: 1rem;
+        padding: var(--rem-lg);
     }
 
     h1, h2, h3, h4, h5, h6, p {
         margin: 0;
-        margin-block-end: 1rem;
+        margin-block-end: var(--rem-lg);
     }
 
     img, video, picture {
         display: block;
     }
 
+    .layout {
+        --navbar-width: 250px;
+        display: grid;
+        grid-template-columns: 1fr var(--container-max-width) 1fr;
+
+        @media only screen and (max-width: 1440px) {
+            grid-template-columns: var(--navbar-width) 1fr;
+        }
+
+        @media only screen and (max-width: 870px) {
+            grid-template-columns: 1fr 100svw;
+        }
+    }
+
     .link {
-        color: hsl(var(--link));
+        color: hsl(var(--main-color));
         font-weight: 700;
+        position: relative;
 
         &:is(:hover, :focus-visible) {
             text-decoration: none;
 
             &::after {
                 content: '\f08e';
+                top: 45%;
+                transform: translateY(-50%);
+                position: absolute;
                 font-family: 'Font Awesome 6 Free';
                 font-weight: 900;
                 font-size: calc(var(--current-font-size, .75rem) * .75);

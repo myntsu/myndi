@@ -1,28 +1,44 @@
 ---
-
 ---
 
 <footer>
-    <div>
-        <small>
-            Copyright &copy <span id="copyright"></span> | Todos los derechos reservados
-        </small>
-    </div>
+  <div>
+    <p>
+      Made by <a
+        href="https://github.com/Myntsu"
+        target="_blank"
+        class="link"
+        >Myndi</a>
+    </p>
+    <small>
+      Copyright &copy <span id="copyright"></span> | All rights reserved
+    </small>
+  </div>
 </footer>
 
 <style>
-    footer {
-        width: 100%;
-        text-align: center;
-    }
+  footer {
+    --current-font-size: var(--rem-lg);
+    padding: var(--rem-lg);
+    margin-block-start: auto;
+    text-align: center;
+    font-size: var(--rem-lg);
+  }
 
-    footer > div {
-        width: var(--container-width);
-        max-width: var(--container-max-width);
-        margin-inline: auto;
-    }
+  footer > div {
+    display: flex;
+    flex-direction: column;
+  }
+
+  p {
+    margin: 0 !important;
+  }
+
+  small {
+    font-size: var(--rem-md);
+  }
 </style>
 
 <script>
-    import '../scripts/copyright.js';
+  import "../scripts/copyright.js";
 </script>

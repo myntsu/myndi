@@ -1,66 +1,155 @@
 ---
+// component import
+import Footer from "../components/Footer.astro";
 
+//library import
+import { Image } from "@astrojs/image/components";
 ---
 
 <nav aria-label="Primary">
-    <div class="container">
-        <div class="style">
-            <a href="/">
-                <i class="fa-solid fa-house"></i>
-            </a>
-            <ul>
-                <li>
-                    <a href="/about" data-link>Sobre mi</a>
-                </li>
-                <li>
-                    <a href="/blog" data-link>Blog</a>
-                </li>
-            </ul>
-        </div>
+  <div class="container">
+    <div class="inner">
+      <a href="/">
+        <Image
+          src="../image/smytsu_headshot.jpg"
+          alt="Smytsu's headshot image"
+          width={150}
+          height={150}
+          format="avif"
+          fit="cover"
+          quality={20}
+          aspectRatio="1:1"
+          class="headshot-image"
+        />
+        Home
+      </a>
+      <ul>
+        <li>
+          <a
+            href="/about"
+            data-link>
+            About
+          </a>
+        </li>
+        <li>
+          <a
+            href="/blog"
+            data-link
+            >Posts</a
+          >
+        </li>
+      </ul>
     </div>
+    <Footer />
+  </div>
 </nav>
 
 <style lang="scss">
-    nav {
-        --current-font-size: 2rem;
-        width: 100%;
-        font-size: var(--current-font-size);
+  nav {
+    --current-font-size: 1.25rem;
+    position: sticky;
+    top: 0;
+    overflow-y: auto;
+    z-index: 9999;
+
+    max-width: var(--navbar-width);
+    height: 100svh;
+    background-color: hsl(var(--background-lighter));
+    font-size: var(--current-font-size);
+
+    transition: margin-inline-start 300ms ease;
+
+    @media only screen and (max-width: 870px) {
+        margin-inline-start: calc(-1 * var(--navbar-width));
     }
+  }
 
-    .container {
+  .container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
 
-        position: fixed;
-        bottom: 0;
-        left: 50%;
-        transform: translate(-50%, 0%);
+  .headshot-image {
+    border-radius: 50%;
+    margin-inline: auto;
+  }
 
-        width: var(--container-width);
-        max-width: var(--container-max-width);
-        margin-inline: auto;
+  .inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    width: 100%;
+
+    > a {
+        display: flex;
+        flex-direction: column;
+        gap: var(--rem-lg);
+
         padding-block: var(--rem-lg);
+
+      width: 100%;
+      aspect-ratio: 1/1;
+      color: hsl(var(--main-color));
+      text-align: center;
+      text-decoration: none;
+
+      &:is(:hover, :focus-visible) {
+        color: var(--white);
+      }
     }
 
-    .style {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+    ul {
+      width: 100%;
+      list-style: none;
+      margin: 0;
+      padding: 0;
 
-        width: 31rem;
+      li {
+        position: relative;
 
-        margin-inline: auto;
-        /* padding: 1rem; */
-        background-image: hsl(var(--white));
-        border-radius: 999999999999999px;
+        a {
+          display: flex;
+          padding-block: var(--rem-sm);
+          padding-inline-start: var(--rem-lg);
+          color: hsl(var(--main-color));
+          text-decoration: none;
+
+          transition: padding-inline-start 250ms ease;
+
+          &[aria-current="page"] {
+            padding-inline-start: var(--rem-xl);
+            color: hsl(var(--white));
+            background-color: hsl(var(--main-color) / 0.1);
+
+            &::before {
+              content: "";
+              position: absolute;
+              top: 0;
+              bottom: 0;
+              left: 0;
+              border-inline-start: var(--rem-xs) solid hsl(var(--main-color));
+            }
+          }
+        }
+
+        &:is(:hover, :focus-visible) {
+          background-color: hsl(var(--main-color) / 0.1);
+
+          a {
+            color: var(--white);
+            padding-inline-start: var(--rem-xl);
+          }
+        }
+      }
     }
-    
-    ul, li {
-        display: flex;
-        list-style: none;
-        margin: 0;
-        padding: 0;
-    }
+  }
+
+
 </style>
 
 <script>
-    import '../scripts/nav.js';
+  import "../scripts/nav.js";
 </script>
