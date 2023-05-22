@@ -11,7 +11,7 @@ import { Image } from "@astrojs/image/components";
     <div class="inner">
       <a href="/">
         <Image
-          src="image/smytsu_headshot.jpg"
+          src="/images/smytsu_headshot.jpg"
           alt="Smytsu's headshot image"
           width={150}
           height={150}
@@ -60,7 +60,7 @@ import { Image } from "@astrojs/image/components";
     transition: margin-inline-start 300ms ease;
 
     @media only screen and (max-width: 870px) {
-        margin-inline-start: calc(-1 * var(--navbar-width));
+      margin-inline-start: calc(-1 * var(--navbar-width));
     }
   }
 
@@ -84,11 +84,11 @@ import { Image } from "@astrojs/image/components";
     width: 100%;
 
     > a {
-        display: flex;
-        flex-direction: column;
-        gap: var(--rem-lg);
+      display: flex;
+      flex-direction: column;
+      gap: var(--rem-lg);
 
-        padding-block: var(--rem-lg);
+      padding-block: var(--rem-lg);
 
       width: 100%;
       aspect-ratio: 1/1;
@@ -109,20 +109,20 @@ import { Image } from "@astrojs/image/components";
 
       li {
         position: relative;
+        padding-inline-start: var(--rem-lg);
+
 
         a {
           display: flex;
           padding-block: var(--rem-sm);
-          padding-inline-start: var(--rem-lg);
           color: hsl(var(--main-color));
           text-decoration: none;
 
-          transition: padding-inline-start 250ms ease;
+          
 
           &[aria-current="page"] {
             padding-inline-start: var(--rem-xl);
             color: hsl(var(--white));
-            background-color: hsl(var(--main-color) / 0.1);
 
             &::before {
               content: "";
@@ -143,13 +143,19 @@ import { Image } from "@astrojs/image/components";
             padding-inline-start: var(--rem-xl);
           }
         }
+
+        &:has([aria-current="page"]) {
+          background-color: hsl(var(--main-color) / 0.1);
+        }
       }
     }
   }
 
-
+  a[data-link]:not(.loaded) {
+    transition: padding-inline-start 250ms ease;
+  }
 </style>
 
 <script>
-  import "../scripts/nav";
+  import "../scripts/nav.js";
 </script>

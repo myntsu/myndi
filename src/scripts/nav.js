@@ -1,4 +1,9 @@
-const navLinks = document.querySelectorAll("[data-link");
+document.addEventListener('DOMContentLoaded', () => {
+  const transition = document.querySelector('[data-link]');
+  transition.classList.add('loaded');
+});
+
+const navLinks = document.querySelectorAll("[data-link]");
 
 navLinks.forEach((link) => {
   if (link.getAttribute("href") === window.location.pathname) {
