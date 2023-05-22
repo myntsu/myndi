@@ -38,6 +38,28 @@ import { Image } from "@astrojs/image/components";
             >Blog</a
           >
         </li>
+        <li>
+          <a
+          href="/dummy1"
+          data-link
+          >Dummy 1</a
+        >
+      </li>
+        <li>
+        <a
+        href="/dummy2"
+        data-link
+        >Dummy 2</a
+      >
+    </li>
+      <li>
+        <a
+        href="/dummy3"
+        data-link
+        >Dummy 3</a
+            >
+      
+        </li>
       </ul>
     </div>
     <Footer />
@@ -111,14 +133,17 @@ import { Image } from "@astrojs/image/components";
         position: relative;
         padding-inline-start: var(--rem-lg);
 
-
         a {
           display: flex;
           padding-block: var(--rem-sm);
           color: hsl(var(--main-color));
           text-decoration: none;
 
-          
+          &[data-link] {
+            &:is(.loaded) {
+              transition: all 250ms ease;
+            }
+          }
 
           &[aria-current="page"] {
             padding-inline-start: var(--rem-xl);
@@ -149,10 +174,6 @@ import { Image } from "@astrojs/image/components";
         }
       }
     }
-  }
-
-  a[data-link]:not(.loaded) {
-    transition: padding-inline-start 250ms ease;
   }
 </style>
 

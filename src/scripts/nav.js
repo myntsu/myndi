@@ -1,12 +1,17 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const transition = document.querySelector('[data-link]');
-  transition.classList.add('loaded');
+  const transition = document.querySelectorAll('[data-link]');
+  transition.forEach((element) => {
+    element.classList.add('loaded');
+  });
 });
 
 const navLinks = document.querySelectorAll("[data-link]");
 
 navLinks.forEach((link) => {
-  if (link.getAttribute("href") === window.location.pathname) {
+  const href = link.getAttribute("href").replace(/\/$/, "");
+  const pathname = window.location.pathname.replace(/\/$/, "");
+
+  if (href === pathname) {
     link.setAttribute("aria-current", "page");
   }
 });
