@@ -6,6 +6,7 @@ import Footer from "../components/Footer.astro";
 import { Image } from "@astrojs/image/components";
 ---
 
+<div class="hamburger"><i class="fa-solid fa-bars"></i></div>
 <nav aria-label="Primary">
   <div class="container">
     <div class="inner">
@@ -83,6 +84,24 @@ import { Image } from "@astrojs/image/components";
 
     @media only screen and (max-width: 870px) {
       margin-inline-start: calc(-1 * var(--navbar-width));
+
+      &:is(.open) {
+        margin-inline-start: auto;
+        transition: margin-inline-start 300ms ease;
+      }
+    }
+  }
+
+  .hamburger {
+    display: none;
+    position: fixed;
+    top: var(--rem-xl);
+    right: var(--rem-xl);
+    font-size: 3rem;
+    z-index: 9999;
+
+    @media only screen and (max-width: 870px) {
+      display: block;
     }
   }
 

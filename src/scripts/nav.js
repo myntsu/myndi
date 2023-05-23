@@ -15,3 +15,10 @@ navLinks.forEach((link) => {
     link.setAttribute("aria-current", "page");
   }
 });
+
+const hamburger = document.querySelector('.hamburger');
+const navPrimary = document.querySelector('[aria-label="Primary"]');
+
+hamburger.addEventListener('click', () => {
+  navPrimary.classList.toggle('open');
+});
