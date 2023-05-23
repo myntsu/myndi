@@ -7,8 +7,8 @@ import MainLayout from "../layouts/MainLayout.astro";
 
 <MainLayout title="Página no encontrada">
     <div>
-        <h1>Lo siento, creo que entraste en la página equivocada</h1>
-        <a href="/">Volvamos al inicio</a>
+        <h1>I'm sorry, you might have landed in the wrong page.</h1>
+        <a href="/" class="button">Return</a>
         <img src="https://shiramiller.com/wp-content/uploads/2020/12/3-Signs-You-are-on-the-Wrong-Path-in-Life.jpg" alt="Camino equivocado">
     </div>
 </MainLayout>
@@ -16,8 +16,9 @@ import MainLayout from "../layouts/MainLayout.astro";
 <style>
     img {
         width: 100%;
+        max-width: 400px;
         border-radius: 50%;
         aspect-ratio: 1;
-        object-fit: none;
+        object-fit: cover;
     }
 </style>

@@ -17,7 +17,7 @@ const formattedPosts = formatBlogPosts(allPosts, {
 
 <MainLayout
   title="Home"
-  description="Página principal">
+  description="Blog landing page">
   <section aria-label="About Me">
     <Image
         src="https://picsum.photos/id/237/600/400"
@@ -32,8 +32,8 @@ const formattedPosts = formatBlogPosts(allPosts, {
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum molestias a exercitationem id quo cum hic qui adipisci explicabo iure. Unde, exercitationem ea illo doloremque pariatur id aliquid saepe atque.
     </div>
   </section>
-  <section aria-label="Nuevas publicaciones de blog">
-    <h2>Nuevas publicaciones de blog</h2>
+  <section aria-label="Newest blog posts">
+    <h2>Newest blog posts</h2>
     <div>
       {
         formattedPosts.map((post) => (
