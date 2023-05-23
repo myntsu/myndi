@@ -1,0 +1,44 @@
+---
+const { prevUrl, nextUrl } = Astro.props;
+---
+
+<nav aria-label="Blog pages">
+  {
+    prevUrl && (
+      <span class="button">
+        <a href={prevUrl} class="previous">Previous</a>
+      </span>
+    )
+  }
+  {
+    nextUrl && (
+      <span class="button">
+        <a href={nextUrl} class="next">Next</a>
+      </span>
+    )
+  }
+</nav>
+
+<style>
+    nav {
+        align-self: flex-end;
+        display: flex;
+        gap: var(--rem-sm);
+    }
+
+    .previous::before {
+        content: '\f060';
+        padding-inline-end: var(--rem-sm);
+    }
+
+    .next::after {
+        content: '\f061';
+        padding-inline-start: var(--rem-sm);
+    }
+
+    .previous::before, .next::after {
+        font-family: 'Font Awesome 6 Free';
+        font-weight: 900;
+        font-size: var(--icon-font-size);
+    }
+</style>

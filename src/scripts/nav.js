@@ -11,7 +11,7 @@ navLinks.forEach((link) => {
   const href = link.getAttribute("href").replace(/\/$/, "");
   const pathname = window.location.pathname.replace(/\/$/, "");
 
-  if (href === pathname) {
+  if (pathname.startsWith(href)) {
     link.setAttribute("aria-current", "page");
   }
 });

@@ -1,22 +1,18 @@
 ---
 layout: "../../layouts/BlogPostLayout.astro"
-title: Un post sobre mi
+title: How to get a girlfriend with CSS
 date: 08May2023
 author: Myndi
 image: {
-    src: "https://www.freecodecamp.org/news/content/images/2021/02/css-hacks.jpg",
+    src: "https://picsum.photos/id/47/400/150",
     alt: "Lorem picsum",
 }
-description: Una descripcion
+description: There's only one way, and that's with display flex.
 draft: false
 category: CSS
 ---
 
-# Esto es una publicación de blog
-
-Si quieres volver al [Inicio](/), no lo dudes.
-
----
+# This is a blog post
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur arcu enim, pulvinar nec nibh eu, suscipit consectetur mauris. Maecenas sagittis elit vel tortor viverra dignissim. Sed sagittis urna sem, nec dapibus tellus tincidunt at. Donec rutrum tristique ipsum, pellentesque consequat urna sollicitudin auctor. Sed congue purus in pretium tristique. Donec id nisl nec metus laoreet vestibulum quis id eros. Vivamus tempor sagittis facilisis.
 

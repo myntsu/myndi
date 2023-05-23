@@ -1,22 +1,19 @@
 ---
 layout: "../../layouts/BlogPostLayout.astro"
-title: Un post sobre mi
+title: Is JS the bane of humanity?
 date: 08May2023
 author: Myndi
 image: {
-    src: "https://picsum.photos/seed/picsum/200/300",
+    src: "https://picsum.photos/id/21/400/150",
     alt: "Lorem picsum",
 }
-description: Una descripcion
+description: Clearly JS has more than two tricks under its sleeve, but the frameworks are the issue.
 draft: false
 category: JS
 ---
 
-# Esto es una publicación de blog
+# This is a blog post
 
-Si quieres volver al [Inicio](/), no lo dudes.
-
----
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur arcu enim, pulvinar nec nibh eu, suscipit consectetur mauris. Maecenas sagittis elit vel tortor viverra dignissim. Sed sagittis urna sem, nec dapibus tellus tincidunt at. Donec rutrum tristique ipsum, pellentesque consequat urna sollicitudin auctor. Sed congue purus in pretium tristique. Donec id nisl nec metus laoreet vestibulum quis id eros. Vivamus tempor sagittis facilisis.
 

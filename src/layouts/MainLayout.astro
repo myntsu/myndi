@@ -38,6 +38,8 @@ const {
     :root {
         --container-width: 100%;
         --container-max-width: 900px;
+        --current-font-size: 1rem;
+        --icon-font-size: calc(var(--current-font-size, .75rem) * .75);
 
         --rem-xs: .25rem;
         --rem-sm: .5rem;
@@ -51,7 +53,8 @@ const {
         --font: 0 0% 91%;
         --font-dark: 0 0% 9%;
         --link: hsl(var(--main-color) / 0.2);
-        --tag: 230 100% 75%;
+        --button: 240 100% 65%;
+        --tag: 0 80% 65%;
     }
 
     *, ::before, *::after {
@@ -70,7 +73,7 @@ const {
         color: hsl(var(--font));
 
         font-family: 'Atkinson Hyperlegible';
-        font-size: 1rem;
+        font-size: var(--current-font-size);
         font-weight: 400;
         line-height: 1.5;
 
@@ -125,24 +128,20 @@ const {
                 position: absolute;
                 font-family: 'Font Awesome 6 Free';
                 font-weight: 900;
-                font-size: calc(var(--current-font-size, .75rem) * .75);
+                font-size: var(--icon-font-size);
                 margin-inline-start: .25rem;
             }
         }
     }
 
-    .link-within {
-
-    }
-
-    .tag {
+    .button {
             display: flex;
 
         a {
             padding: .25rem .8rem;
 
-            background-color: hsl(var(--tag));
-            color: hsl(var(--font));
+            background-color: hsl(var(--button));
+            color: hsl(var(--white));
             border-radius: .25rem;
 
             text-decoration: none;
@@ -152,6 +151,33 @@ const {
                 opacity: .95;
                 outline: 1px solid hsl(var(--font));
                 outline-offset: 2px;
+            }
+
+            &:is(:active) {
+                scale: .95;
+            }
+        }
+    }
+
+    .tag {
+        display: flex;
+        align-items: center;
+        font-size: 1rem;
+        font-family: monospace;
+
+        a {
+            padding: 0 .5rem;
+
+            background-color: hsl(var(--tag));
+            color: hsl(var(--white));
+            border-radius: .2rem;
+            font-weight: 700;
+
+            text-decoration: none;
+            user-select: none;
+
+            &:is(:hover, :focus-visible) {
+                opacity: .9;
             }
 
             &:is(:active) {

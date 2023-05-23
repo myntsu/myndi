@@ -1,20 +1,18 @@
 ---
 layout: "../../layouts/BlogPostLayout.astro"
-title: Un post sobre mi
+title: What are you doing with your life? Learn CSS
 date: 08May2023
 author: Myndi
 image: {
-    src: "https://www.freecodecamp.org/news/content/images/2021/02/css-hacks.jpg",
+    src: "https://picsum.photos/id/12/400/150",
     alt: "Lorem picsum",
 }
-description: Una descripcion
+description: Truly CSS it the only way to go about life.
 draft: false
 category: CSS
 ---
 
-# Esto es una publicación de blog
-
-Si quieres volver al [Inicio](/), no lo dudes.
+# This is a blog post
 
 ---
 

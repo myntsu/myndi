@@ -1,0 +1,75 @@
+---
+// component imports
+import MainLayout from "../../layouts/MainLayout.astro";
+import PostCard from "../../components/PostCard.astro";
+import Pagination from "../../components/Pagination.astro";
+
+// utils imports
+import { formatBlogPosts } from "../../scripts/utils";
+
+export async function getStaticPaths({ paginate }) {
+  const allPosts = await Astro.glob("./*.md");
+  const formattedPosts = formatBlogPosts(allPosts, {
+    limit: true,
+  });
+
+  return paginate(formattedPosts, {
+    pageSize: 3,
+  });
+}
+
+const { page } = Astro.props;
+---
+
+<MainLayout
+  title="Blog"
+  description="Main blog posts">
+  <section aria-label="New blog posts">
+    <h1>New blog posts</h1>
+    <Pagination
+      prevUrl={page.url.prev}
+      nextUrl={page.url.next}
+    />
+    <div>
+      {
+        page.data.map((post) => (
+          <PostCard
+            frontmatter={post.frontmatter}
+            url={post.url}
+            tagType="h2"
+          />
+        ))
+      }
+    </div>
+    <Pagination
+      prevUrl={page.url.prev}
+      nextUrl={page.url.next}
+    />
+  </section>
+</MainLayout>
+
+<style lang="scss">
+  section {
+    --current-font-size: 3rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    margin-block: var(--rem-xl);
+
+    & > div {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(min(225px, 100%), 1fr));
+      justify-items: center;
+      gap: var(--rem-lg);
+      width: 100%;
+      padding: var(--rem-lg);
+    }
+
+    h1 {
+      font-size: var(--current-font-size);
+    }
+  }
+</style>

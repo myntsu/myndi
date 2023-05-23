@@ -1,22 +1,18 @@
 ---
 layout: "../../layouts/BlogPostLayout.astro"
-title: Un post sobre mi
+title: This is how you master SEO with HTML and WordPress
 date: 08May2023
 author: Myndi
 image: {
-    src: "https://picsum.photos/seed/picsum/200/300",
+    src: "https://picsum.photos/id/29/400/150",
     alt: "Lorem picsum",
 }
-description: Una descripcion
+description: The journey of using ChatGPT to increase your website views in the long run.
 draft: false
 category: HTML
 ---
 
-# Esto es una publicación de blog
-
-Si quieres volver al [Inicio](/), no lo dudes.
-
----
+# This is a blog post
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur arcu enim, pulvinar nec nibh eu, suscipit consectetur mauris. Maecenas sagittis elit vel tortor viverra dignissim. Sed sagittis urna sem, nec dapibus tellus tincidunt at. Donec rutrum tristique ipsum, pellentesque consequat urna sollicitudin auctor. Sed congue purus in pretium tristique. Donec id nisl nec metus laoreet vestibulum quis id eros. Vivamus tempor sagittis facilisis.
 
