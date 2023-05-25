@@ -1,4 +1,5 @@
 
+// adding titles to headers and description
 const h2Elements = document.querySelectorAll('h2');
 h2Elements.forEach((h2Element) => {
   const h2Text = h2Element.innerText;
