@@ -1,54 +1,6 @@
 ---
 import Nav from "../components/Nav.astro";
 import MainHead from "./MainHead.astro";
-import "../globals.scss";
-
-const { title = "Astro Blog", description = "Reference links for this Blog" } =
-    Astro.props;
----
-
-<html lang="es">
-    <MainHead {title} {description} />
-    <body>
-        <div id="layout" class="layout">
-            <Nav />
-            <main>
-                <slot />
-            </main>
-        </div>
-    </body>
-</html>
-
-<style is:global lang="scss">
-    .layout {
-        --navbar-width: 250px;
-        display: grid;
-        grid-template-columns: 1fr var(--container-max-width) 1fr;
-        transition: margin-inline-start 300ms ease;
-    }
-
-    @media (max-width: 1440px) {
-        .layout {
-            grid-template-columns: var(--navbar-width) 1fr;
-        }
-    }
-
-    @media (max-width: 870px) {
-        .layout {
-            grid-template-columns: var(--navbar-width) 100vw;
-
-            &:not(.open) {
-                margin-inline-start: calc(-1 * var(--navbar-width));
-            }
-
-            &.open .hamburger {
-                background-color: hsl(var(--main-color));
-
-                &::before {
-                    content: "\f00d";
-                }
-            }
-=======
 
 const { title = "Astro Blog", description = "Reference links for this Blog" } =
   Astro.props;
@@ -269,12 +221,6 @@ const { title = "Astro Blog", description = "Reference links for this Blog" } =
       }
     }
 
-    main {
-        width: 100%;
-        max-width: var(--container-max-width);
-        background-color: hsl(var(--background-lighter));
-        margin: 0 auto;
-        padding: var(--rem-lg);
     .card-container {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr));
