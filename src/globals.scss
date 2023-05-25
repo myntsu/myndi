@@ -1,0 +1,145 @@
+@font-face {
+    font-family: "Atkinson Hyperlegible";
+    src: local("Atkinson Hyperlegible"),
+        url("/fonts/atkinson-hyperlegible/SVG/Atkinson-Hyperlegible-Regular-102.svg") format("svg"),
+        url("/fonts/atkinson-hyperlegible/TTF/Atkinson-Hyperlegible-Regular-102.ttf") format("ttf"),
+        url("/fonts/atkinson-hyperlegible/WOFF/Atkinson-Hyperlegible-Regular-102.woff") format("woff"),
+        url("/fonts/atkinson-hyperlegible/WOFF2/Atkinson-Hyperlegible-Regular-102.woff2") format("woff2");
+}
+
+:hover {
+    // outline: 2px solid red;
+}
+
+:root {
+    --container-width: 100%;
+    --container-max-width: 900px;
+    --current-font-size: 1rem;
+    --icon-font-size: calc(var(--current-font-size, 0.75rem) * 0.75);
+
+    --rem-xs: 0.25rem;
+    --rem-sm: 0.5rem;
+    --rem-md: 0.75rem;
+    --rem-lg: 1rem;
+    --rem-xl: 1.5rem;
+
+    --main-color: 240 90% 80%;
+    --background: 0 0% 9%;
+    --background-lighter: 0 0% 11%;
+    --font: 0 0% 91%;
+    --font-dark: 0 0% 9%;
+    --link: hsl(var(--main-color) / 0.2);
+    --button: 240 100% 65%;
+    --tag: 0 80% 65%;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: hsl(var(--background));
+    color: hsl(var(--font));
+    font-family: "Atkinson Hyperlegible";
+    font-size: var(--current-font-size);
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
+    margin-block-end: var(--rem-lg);
+}
+
+img,
+video,
+picture {
+    display: block;
+}
+
+.link {
+    color: hsl(var(--main-color));
+    font-weight: 700;
+    position: relative;
+
+    &:is(:hover, :focus-visible) {
+        text-decoration: none;
+
+        &::after {
+            content: "\f08e";
+            top: 45%;
+            transform: translateY(-50%);
+            position: absolute;
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            font-size: var(--icon-font-size);
+            margin-inline-start: 0.25rem;
+        }
+    }
+}
+
+.button {
+    display: flex;
+
+    a {
+        padding: 0.25rem 0.8rem;
+
+        background-color: hsl(var(--button));
+        color: hsl(var(--white));
+        border-radius: 0.25rem;
+
+        text-decoration: none;
+        user-select: none;
+
+        &:is(:hover, :focus-visible) {
+            opacity: 0.95;
+            outline: 1px solid hsl(var(--font));
+            outline-offset: 2px;
+        }
+
+        &:is(:active) {
+            scale: 0.95;
+        }
+    }
+}
+
+.tag {
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    font-family: monospace;
+
+    a {
+        padding: 0 0.5rem;
+
+        background-color: hsl(var(--tag));
+        color: hsl(var(--white));
+        border-radius: 0.2rem;
+        font-weight: 700;
+
+        text-decoration: none;
+        user-select: none;
+
+        &:is(:hover, :focus-visible) {
+            opacity: 0.9;
+        }
+
+        &:is(:active) {
+            scale: 0.95;
+        }
+    }
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,
+            minmax(min(200px, 100%), 1fr));
+    gap: 1rem;
+}

@@ -26,40 +26,19 @@ import { Image } from "@astrojs/image/components";
       </a>
       <ul>
         <li>
-          <a
-            href="/about"
-            data-link>
-            About
-          </a>
+          <a href="/about" data-link> About</a>
         </li>
         <li>
-          <a
-            href="/blog"
-            data-link
-            >Blog</a
-          >
+          <a href="/blog" data-link>Blog</a>
         </li>
         <li>
-          <a
-          href="/dummy1"
-          data-link
-          >Dummy 1</a
-        >
-      </li>
+          <a href="/dummy1" data-link>Dummy 1</a>
+        </li>
         <li>
-        <a
-        href="/dummy2"
-        data-link
-        >Dummy 2</a
-      >
-    </li>
-      <li>
-        <a
-        href="/dummy3"
-        data-link
-        >Dummy 3</a
-            >
-      
+          <a href="/dummy2" data-link>Dummy 2</a>
+        </li>
+        <li>
+          <a href="/dummy3" data-link>Dummy 3</a>
         </li>
       </ul>
     </div>
@@ -75,9 +54,6 @@ import { Image } from "@astrojs/image/components";
     overflow-y: auto;
     height: 100vh;
     z-index: 9999;
-
-    width: 100%;
-    max-width: var(--navbar-width);
     background-color: hsl(var(--background-lighter));
     font-size: var(--current-font-size);
   }
@@ -93,16 +69,18 @@ import { Image } from "@astrojs/image/components";
     transition: background-color 200ms linear;
 
     &::before {
-      content: '\f0c9';
-      font-family: 'Font Awesome 6 Free';
+      content: "\f0c9";
+      font-family: "Font Awesome 6 Free";
       font-weight: 900;
     }
-    
-    @media only screen and (max-width: 870px) {
+  }
+
+  @media only screen and (max-width: 870px) {
+    .hamburger {
       display: flex;
       background-color: hsl(var(--background-lighter));
       padding: var(--rem-xs) var(--rem-lg);
-      border: 1px solid hsl(var(--font) / .3);
+      border: 1px solid hsl(var(--font) / 0.3);
       border-radius: var(--rem-sm);
     }
   }
