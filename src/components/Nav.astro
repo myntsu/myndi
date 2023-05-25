@@ -6,7 +6,7 @@ import Footer from "../components/Footer.astro";
 import { Image } from "@astrojs/image/components";
 ---
 
-<div class="hamburger"><i class="fa-solid fa-bars"></i></div>
+<div class="hamburger"></div>
 <nav aria-label="Primary">
   <div class="container">
     <div class="inner">
@@ -79,17 +79,6 @@ import { Image } from "@astrojs/image/components";
     height: 100svh;
     background-color: hsl(var(--background-lighter));
     font-size: var(--current-font-size);
-
-    transition: margin-inline-start 300ms ease;
-
-    @media only screen and (max-width: 870px) {
-      margin-inline-start: calc(-1 * var(--navbar-width));
-
-      &:is(.open) {
-        margin-inline-start: auto;
-        transition: margin-inline-start 300ms ease;
-      }
-    }
   }
 
   .hamburger {
@@ -97,11 +86,23 @@ import { Image } from "@astrojs/image/components";
     position: fixed;
     top: var(--rem-xl);
     right: var(--rem-xl);
-    font-size: 3rem;
+    font-size: 2rem;
     z-index: 9999;
 
+    transition: background-color 200ms linear;
+
+    &::before {
+      content: '\f0c9';
+      font-family: 'Font Awesome 6 Free';
+      font-weight: 900;
+    }
+    
     @media only screen and (max-width: 870px) {
-      display: block;
+      display: flex;
+      background-color: hsl(var(--background-lighter));
+      padding: var(--rem-xs) var(--rem-lg);
+      border: 1px solid hsl(var(--font) / .3);
+      border-radius: var(--rem-sm);
     }
   }
 

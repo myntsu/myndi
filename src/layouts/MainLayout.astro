@@ -11,7 +11,7 @@ const {
 <html lang="es">
     <MainHead {title} {description}/>
     <body>
-        <div class="layout">
+        <div id="layout" class="layout">
             <Nav />
             <main>
                 <slot />
@@ -103,12 +103,28 @@ const {
         display: grid;
         grid-template-columns: 1fr var(--container-max-width) 1fr;
 
+        transition: margin-inline-start 300ms ease;
+
         @media only screen and (max-width: 1440px) {
             grid-template-columns: var(--navbar-width) 1fr;
         }
 
         @media only screen and (max-width: 870px) {
-            grid-template-columns: 1fr 100svw;
+            grid-template-columns: var(--navbar-width) 100dvw;
+
+            &:is(.open) {
+                .hamburger {
+                    background-color: hsl(var(--main-color));
+
+                    &::before {
+                        content: '\f00d';
+                    }
+                }
+            }
+
+            &:not(.open) {
+                margin-inline-start: calc(-1 * var(--navbar-width));
+            }
         }
     }
 
