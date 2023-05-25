@@ -23,4 +23,3 @@ const navPrimary = document.querySelector('#layout');
 hamburger.addEventListener('click', () => {
   navPrimary.classList.toggle('open');
 });
-
