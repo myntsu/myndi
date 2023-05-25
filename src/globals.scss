@@ -37,6 +37,12 @@
     box-sizing: border-box;
 }
 
+html, body {
+    overflow-x: hidden;
+    overflow-x: -moz-hidden-unscrollable;
+    overflow-x: clip;
+}
+
 body {
     margin: 0;
     background-color: hsl(var(--background));
