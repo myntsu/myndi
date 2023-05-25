@@ -61,11 +61,10 @@ const {
     }
 
     html, body {
-        min-height: 100svh;
+        min-height: 100vh;
     }
 
     body {
-        width: 100dvw;
         margin: 0;
 
         background-color: hsl(var(--background));
@@ -100,6 +99,7 @@ const {
         --navbar-width: 250px;
         display: grid;
         grid-template-columns: 1fr var(--container-max-width) 1fr;
+        overflow-x: hidden;
 
         transition: margin-inline-start 300ms ease;
 
@@ -108,7 +108,7 @@ const {
         }
 
         @media only screen and (max-width: 870px) {
-            grid-template-columns: var(--navbar-width) 1fr;
+            grid-template-columns: min(var(--navbar-width), 100%) 100vw;
 
             &:is(.open) {
                 .hamburger {

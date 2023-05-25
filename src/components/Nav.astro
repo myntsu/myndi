@@ -73,10 +73,11 @@ import { Image } from "@astrojs/image/components";
     position: sticky;
     top: 0;
     overflow-y: auto;
+    height: 100vh;
     z-index: 9999;
 
+    width: 100%;
     max-width: var(--navbar-width);
-    height: 100svh;
     background-color: hsl(var(--background-lighter));
     font-size: var(--current-font-size);
   }
@@ -87,7 +88,7 @@ import { Image } from "@astrojs/image/components";
     top: var(--rem-xl);
     right: var(--rem-xl);
     font-size: 2rem;
-    z-index: 9999;
+    z-index: 10000;
 
     transition: background-color 200ms linear;
 
