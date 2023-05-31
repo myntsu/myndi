@@ -3,6 +3,7 @@
 import MainLayout from "../../layouts/MainLayout.astro";
 import PostCard from "../../components/PostCard.astro";
 import Pagination from "../../components/Pagination.astro";
+import CategoryCloud from "../../components/CategoryCloud.astro";
 
 // utils imports
 import { formatBlogPosts } from "../../scripts/utils";
@@ -30,7 +31,7 @@ const { page } = Astro.props;
       prevUrl={page.url.prev}
       nextUrl={page.url.next}
     />
-    <div>
+    <div class="card-container">
       {
         page.data.map((post) => (
           <PostCard
@@ -46,6 +47,10 @@ const { page } = Astro.props;
       nextUrl={page.url.next}
     />
   </section>
+  <aside aria-label="Blog Categories">
+    <h2>Blog Categories</h2>
+    <CategoryCloud showCount={true} />
+  </aside>
 </MainLayout>
 
 <style lang="scss">
@@ -59,7 +64,7 @@ const { page } = Astro.props;
 
     gap: var(--rem-xl);
 
-    & > div {
+    .card-container {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(min(225px, 100%), 1fr));
       justify-items: center;

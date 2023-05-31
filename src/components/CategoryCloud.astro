@@ -1,0 +1,36 @@
+---
+// util imports
+import { formatBlogPosts, slugify } from "../scripts/utils";
+
+  const allPosts = await Astro.glob("../pages/blog/*.md");
+  const formattedPosts = formatBlogPosts(allPosts, {
+    limit: true,
+  });
+  const allCategories = formattedPosts.map((cat) => cat.frontmatter.category.toLowerCase()).flat();
+  const processedCats = allCategories.reduce((acc, category) => {
+    // check if the category exists in the acc
+    const value = acc[category] || 0;
+
+    return {
+        ...acc,
+        [category]: value + 1
+    }
+  }, {})
+
+  const { showCount } = Astro.props;
+  ---
+
+
+  <ul class="">
+    {
+        Object.entries(processedCats).map(([key, val]) => (
+            <li class="">
+                <div class="button">
+                    <a class="" href={`/category/${slugify(key)}/`}>
+                        {key} {showCount && `(${val})`}
+                    </a>
+                </div>   
+            </li>
+        ))
+    }
+    </ul>
