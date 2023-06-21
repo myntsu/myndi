@@ -53,4 +53,3 @@ export function formatBlogPosts(
   }
   return filteredPosts;
 }
-

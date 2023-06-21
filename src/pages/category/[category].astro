@@ -35,13 +35,15 @@ const formattedPosts = formatBlogPosts(allPosts, {
   limit: true,
 });
 const categoryPosts = formattedPosts.filter((post) => slugify(post.frontmatter.category) === category);
-
 ---
 
 <MainLayout
   title={name}>
   <section aria-label={`Publicaciones de ${name}`}>
-    <h1><span class="important">{name}</span> posts</h1>
+    <h1><b class="important">{name}</b> posts</h1>
+    <div class="button">
+      <a href="/">Return</a>
+    </div>
     <div class="card-container">
       {
         categoryPosts.map((post) => (
@@ -57,8 +59,9 @@ const categoryPosts = formattedPosts.filter((post) => slugify(post.frontmatter.c
 </MainLayout>
 
 <style>
-  .important {
-    color: hsl(var(--main-color));
-    font-weight: 900;
+  h1 {
+    --current-font-size: 2rem;
+    font-size: var(--current-font-size);
+    text-align: center;
   }
 </style>
