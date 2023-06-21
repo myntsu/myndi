@@ -1,24 +1,59 @@
 ---
+//library import
+import { Image } from "@astrojs/image/components";
 
 // component imports
 import MainLayout from "../layouts/MainLayout.astro";
-
 ---
 
-<MainLayout title="Página no encontrada">
-    <div>
-        <h1>I'm sorry, you might have landed in the wrong page.</h1>
-        <a href="/" class="button">Return</a>
-        <img src="https://shiramiller.com/wp-content/uploads/2020/12/3-Signs-You-are-on-the-Wrong-Path-in-Life.jpg" alt="Camino equivocado">
+<MainLayout title="Page not found">
+    <div class="error-page">
+        <h1>Error 404</h1>
+        <h2>I'm sorry, you might have landed in the <b>wrong page</b>, let's go back...</h2>
+        <div class="button">
+            <a
+                href="/"
+                class="button"
+                >Return</a
+            >
+        </div>
+        <Image
+            width={400}
+            height={300}
+            format="webp"
+            src="https://shiramiller.com/wp-content/uploads/2020/12/3-Signs-You-are-on-the-Wrong-Path-in-Life.jpg"
+            alt="Wrong path image"
+            class=""
+        />
     </div>
 </MainLayout>
 
 <style>
+    .error-page {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: var(--rem-lg);
+
+        max-width: 400px;
+
+        margin-inline: auto;
+        padding: var(--rem-lg);
+    }
+
+    .error-page > * {
+        margin-block-end: 0;
+    }
+
+    h1, h2 {
+        text-align: center;
+        text-wrap: balance;
+    }
+
     img {
         width: 100%;
-        max-width: 400px;
-        border-radius: 50%;
-        aspect-ratio: 1;
+        border-radius: 1rem;
         object-fit: cover;
     }
 </style>
