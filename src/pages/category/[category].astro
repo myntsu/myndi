@@ -41,7 +41,7 @@ const categoryPosts = formattedPosts.filter((post) => slugify(post.frontmatter.c
 <MainLayout
   title={name}>
   <section aria-label={`Publicaciones de ${name}`}>
-    <h1>Publicaciones de {name}</h1>
+    <h1><span class="important">{name}</span> posts</h1>
     <div class="card-container">
       {
         categoryPosts.map((post) => (
@@ -55,3 +55,10 @@ const categoryPosts = formattedPosts.filter((post) => slugify(post.frontmatter.c
     </div>
   </section>
 </MainLayout>
+
+<style>
+  .important {
+    color: hsl(var(--main-color));
+    font-weight: 900;
+  }
+</style>
