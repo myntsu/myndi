@@ -11,7 +11,7 @@ import { formatBlogPosts } from "../scripts/utils";
 
 const allPosts = await Astro.glob("./blog/*.md");
 const formattedPosts = formatBlogPosts(allPosts, {
-  limit: 2,
+  limit: 3,
 });
 ---
 
@@ -52,5 +52,13 @@ const formattedPosts = formatBlogPosts(allPosts, {
   .responsive-image {
     width: 100%;
     height: auto;
+  }
+
+  .card-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(min(225px, 100%), 1fr));
+      justify-items: center;
+      gap: var(--rem-lg);
+      width: 100%;
   }
 </style>
