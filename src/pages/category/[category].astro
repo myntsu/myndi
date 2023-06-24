@@ -39,11 +39,8 @@ const categoryPosts = formattedPosts.filter((post) => slugify(post.frontmatter.c
 
 <MainLayout
   title={name}>
-  <section aria-label={`Publicaciones de ${name}`}>
-    <h1><b class="important">{name}</b> posts</h1>
-    <div class="button">
-      <a href="/">Return</a>
-    </div>
+  <section aria-label={`All ${name} posts`}>
+    <h1>All {name} posts</h1>
     <div class="card-container">
       {
         categoryPosts.map((post) => (
@@ -59,9 +56,21 @@ const categoryPosts = formattedPosts.filter((post) => slugify(post.frontmatter.c
 </MainLayout>
 
 <style>
+  .card-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(min(225px, 100%), 1fr));
+      justify-items: center;
+      gap: var(--rem-lg);
+      width: 100%;
+  }
+
   h1 {
-    --current-font-size: 2rem;
-    font-size: var(--current-font-size);
+    font-size: 3rem;
     text-align: center;
+  }
+
+  .button {
+    margin-block-end: 1.5rem;
+    margin-inline: auto;
   }
 </style>

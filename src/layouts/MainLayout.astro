@@ -97,7 +97,7 @@ const { title = "Astro Blog", description = "Reference links for this Blog" } =
     background-color: hsl(var(--background-lighter));
 
     margin-inline: auto;
-    padding-block: var(--rem-lg);
+    padding: var(--rem-lg);
     overflow-x: auto;
 
     section {
@@ -177,6 +177,16 @@ const { title = "Astro Blog", description = "Reference links for this Blog" } =
     }
   }
 
+  .link-within {
+      color: hsl(var(--main-color));
+      font-weight: 700;
+      position: relative;
+
+      &:is(:hover, :focus-visible) {
+      text-decoration: none;
+    }
+  }
+
   .button {
     display: flex;
 
@@ -227,11 +237,5 @@ const { title = "Astro Blog", description = "Reference links for this Blog" } =
         scale: 0.95;
       }
     }
-  }
-
-  .card-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr));
-    gap: 1rem;
   }
 </style>
