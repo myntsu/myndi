@@ -20,13 +20,34 @@ const {
         {author}
         {image}
     />
-    <section>
-        <div>
-            <slot />
-        </div>
-    </section>
-    <aside aria-label="Blog Categories">
-        <h2>Blog Categories</h2>
-        <CategoryCloud />
-    </aside>
+    <div class="blog-post">
+        <section>
+            <div>
+                <slot />
+            </div>
+        </section>
+        <aside aria-label="Blog Categories">
+            <h2>Blog Categories</h2>
+            <CategoryCloud />
+        </aside>
+    </div>
 </MainLayout>
+
+<style lang="scss">
+    .blog-post {
+        display: flex;
+        flex-wrap: wrap;
+
+        & > section {
+            flex: 1 0 min(450px, 100%);
+        }
+
+        & > aside {
+            flex: 1 0 0;
+        }
+    }
+
+    aside {
+        padding: var(--rem-lg);
+    }
+</style>

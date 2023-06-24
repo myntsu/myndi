@@ -11,22 +11,56 @@ const {
 ---
 
 <header>
-    <div>
-        <small>
+    <div class="container">
+        <h1>{title}</h1>
+        <p>by <a class="link-within" href={`/author/${slugify(author)}`}>{author}</a> • {formatDate(date)}</p>
+        <small class="button">
             <a href={`/category/${slugify(category)}`}>{category}</a>
         </small>
-        <h1>{title}</h1>
-        <p>by <a href={`/author/${slugify(author)}`}>{author}</a> • {formatDate(date)}</p>
     </div>
     <Image 
         src={image.src} 
         alt={image.alt}
         width={600}
-        height={600}
-        format="avif" 
-        fit="cover"
-        quality={20}
-        aspectRatio="5:2"
-        class=""
+        height={300}
+        format="webp" 
+        quality={100}
+        class="post-img"
     />
 </header>
+
+<style lang="scss">
+    header {
+        padding: var(--rem-lg);
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: baseline;
+            vertical-align: text-bottom;
+            
+            h1 {
+                flex: 1 0 100%;
+                margin-block-end: 0;
+            }
+
+            p {
+                margin-block-end: 0;
+            }
+
+            small {
+                align-self: flex-end;
+                font-size: .75rem;
+                margin-inline-start: auto;
+                margin-block-end: 1rem;
+            }
+        }
+    }
+
+    .post-img {
+        width: 100%;
+        border-radius: .25rem;
+        object-fit: cover;
+    }
+
+</style>

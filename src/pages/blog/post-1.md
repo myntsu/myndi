@@ -4,7 +4,7 @@ title: How to get a girlfriend with CSS
 date: 08May2023
 author: Myndi
 image: {
-    src: "https://picsum.photos/id/47/400/150",
+    src: "https://picsum.photos/id/47/600/300",
     alt: "Lorem picsum",
 }
 description: There's only one way, and that's with display flex.

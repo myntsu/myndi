@@ -22,13 +22,12 @@ const processedCats = allCategories.reduce((acc, category) => {
 const { showCount } = Astro.props;
 ---
 
-<ul class="">
+<ul>
   {
     Object.entries(processedCats).map(([key, val]) => (
-      <li class="">
+      <li>
         <div class="button">
           <a
-            class=""
             href={`/category/${slugify(key)}/`}>
             {key} {showCount && `(${val})`}
           </a>
@@ -42,6 +41,7 @@ const { showCount } = Astro.props;
   ul {
     list-style: none;
     display: flex;
+    flex-wrap: wrap;
     gap: var(--rem-sm);
 
     margin: 0;
