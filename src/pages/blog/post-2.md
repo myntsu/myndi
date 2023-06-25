@@ -4,7 +4,7 @@ title: What are you doing with your life? Learn CSS
 date: 08May2023
 author: Myndi
 image: {
-    src: "https://picsum.photos/id/12/400/150",
+    src: "https://picsum.photos/id/12/600/300",
     alt: "Lorem picsum",
 }
 description: Truly CSS it the only way to go about life.

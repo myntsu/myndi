@@ -4,7 +4,7 @@ title: You clearly don't know JS, and here is why
 date: 08May2023
 author: Myndi
 image: {
-    src: "https://picsum.photos/id/101/400/150",
+    src: "https://picsum.photos/id/101/600/300",
     alt: "Lorem picsum",
 }
 description: Clearly you don't know JS if you haven't touched Reach in your life, components are everything.
