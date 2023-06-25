@@ -4,7 +4,7 @@ title: Is JS the bane of humanity?
 date: 08May2023
 author: Myndi
 image: {
-    src: "https://picsum.photos/id/21/400/150",
+    src: "https://picsum.photos/id/21/600/300",
     alt: "Lorem picsum",
 }
 description: Clearly JS has more than two tricks under its sleeve, but the frameworks are the issue.

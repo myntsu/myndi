@@ -4,7 +4,7 @@ title: HTML is the real programming language
 date: 20May2023
 author: Myndi
 image: {
-    src: "https://picsum.photos/id/200/400/150",
+    src: "https://picsum.photos/id/200/600/300",
     alt: "Lorem picsum",
 }
 description: Starting with a div and ending with an onclick, what a journey.

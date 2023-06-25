@@ -4,7 +4,7 @@ title: This is how you master SEO with HTML and WordPress
 date: 08May2023
 author: Myndi
 image: {
-    src: "https://picsum.photos/id/29/400/150",
+    src: "https://picsum.photos/id/29/600/300",
     alt: "Lorem picsum",
 }
 description: The journey of using ChatGPT to increase your website views in the long run.

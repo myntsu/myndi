@@ -4,7 +4,7 @@ title: Astro is for beginners
 date: 23May2023
 author: Myndi
 image: {
-    src: "https://picsum.photos/id/100/400/150",
+    src: "https://picsum.photos/id/100/600/300",
     alt: "Lorem picsum",
 }
 description: Astro ships faster than Elon's Twitter account, and here is why.
