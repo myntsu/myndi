@@ -24,12 +24,12 @@ const { title, description, date, category, author, image } = frontmatter;
     <Image
       src={image.src}
       alt={image.alt}
-      width={400}
-      height={150}
+      width={600}
+      height={300}
+      aspectRatio={2/1}
       format="webp"
       fit="cover"
       quality={100}
-      aspectRatio="4:1"
       class="link-image"
     />
   </a>
@@ -51,7 +51,7 @@ const { title, description, date, category, author, image } = frontmatter;
       </p>
     </div>
     <p class="description">{description}</p>
-    <div class="button read-more"><a href={url}>Read more</a></div>
+    <div class="button read-more"><a href={url} aria-labelledby=`Read more about ${title}`>Read more</a></div>
   </div>
 </article>
 
@@ -144,6 +144,7 @@ const { title, description, date, category, author, image } = frontmatter;
 
   .link-image {
     width: 100%;
+    max-height: 150px;
   }
 
   .tag {
