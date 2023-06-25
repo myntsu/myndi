@@ -14,7 +14,7 @@ const {
     <div class="container">
         <h1>{title}</h1>
         <p>by <a class="link-within" href={`/author/${slugify(author)}`}>{author}</a> • {formatDate(date)}</p>
-        <small class="button">
+        <small class="tag">
             <a href={`/category/${slugify(category)}`}>{category}</a>
         </small>
     </div>
@@ -50,7 +50,6 @@ const {
 
             small {
                 align-self: flex-end;
-                font-size: .75rem;
                 margin-inline-start: auto;
                 margin-block-end: 1rem;
             }
