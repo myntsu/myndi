@@ -4,6 +4,8 @@ import Footer from "../components/Footer.astro";
 
 //library import
 import { Image } from "@astrojs/image/components";
+
+let showDiv = Astro.request.url.includes("/about");
 ---
 
 <div class="hamburger"></div>
@@ -32,6 +34,15 @@ import { Image } from "@astrojs/image/components";
             About
           </a>
         </li>
+        {
+          showDiv && 
+          <ul class="about-me-details">
+            <li><a href="#About-Me">About me</a></li>
+            <li><a href="#Current-Projects">Current projects</a></li>
+            <li><a href="#Technologies">Technologies</a></li>
+            <li><a href="#Hobbies">Hobbies</a></li>
+          </ul>
+        }
         <li>
           <a
             href="/blog"
@@ -41,25 +52,24 @@ import { Image } from "@astrojs/image/components";
         </li>
         <li>
           <a
-          href="/dummy1"
-          data-link
-          >Dummy 1</a
-        >
-      </li>
+            href="/dummy1"
+            data-link
+            >Dummy 1</a
+          >
+        </li>
         <li>
-        <a
-        href="/dummy2"
-        data-link
-        >Dummy 2</a
-      >
-    </li>
-      <li>
-        <a
-        href="/dummy3"
-        data-link
-        >Dummy 3</a
-            >
-      
+          <a
+            href="/dummy2"
+            data-link
+            >Dummy 2</a
+          >
+        </li>
+        <li>
+          <a
+            href="/dummy3"
+            data-link
+            >Dummy 3</a
+          >
         </li>
       </ul>
     </div>
@@ -93,16 +103,16 @@ import { Image } from "@astrojs/image/components";
     transition: background-color 200ms linear;
 
     &::before {
-      content: '\f0c9';
-      font-family: 'Font Awesome 6 Free';
+      content: "\f0c9";
+      font-family: "Font Awesome 6 Free";
       font-weight: 900;
     }
-    
+
     @media only screen and (max-width: 870px) {
       display: flex;
       background-color: hsl(var(--background-lighter));
       padding: var(--rem-xs) var(--rem-lg);
-      border: 1px solid hsl(var(--font) / .3);
+      border: 1px solid hsl(var(--font) / 0.3);
       border-radius: var(--rem-sm);
     }
   }
@@ -197,8 +207,33 @@ import { Image } from "@astrojs/image/components";
       }
     }
   }
+
+  .about-me-details {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      background-color: hsl(var(--main-color) / 0.1);
+
+      &:has(a.active) {
+        background-color: hsl(var(--main-color) / 0.5);
+
+        a {
+          color: hsl(var(--mwhite));
+        }
+      }
+
+      a {
+        font-size: 1rem;
+        width: 100%; 
+        transition: padding-inline-start 250ms ease;
+      }
+    }
+  }
 </style>
 
 <script>
   import "../scripts/nav.js";
+  import "../scripts/scrollspy.js";
 </script>
