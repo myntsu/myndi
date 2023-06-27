@@ -1,5 +1,4 @@
 User-agent: *
 Disallow: /404
-Disallow: /blog
 Disallow: /author
-Disallow: /categories
+Disallow: /category
