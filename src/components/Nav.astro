@@ -35,13 +35,14 @@ let showDiv = Astro.request.url.includes("/about");
           </a>
         </li>
         {
-          showDiv && 
-          <ul class="about-me-details">
+          showDiv 
+          ? ( <ul class="about-me-details">
             <li><a href="#About-Me">About me</a></li>
             <li><a href="#Current-Projects">Current projects</a></li>
             <li><a href="#Technologies">Technologies</a></li>
             <li><a href="#Hobbies">Hobbies</a></li>
-          </ul>
+          </ul> )
+          : null
         }
         <li>
           <a
