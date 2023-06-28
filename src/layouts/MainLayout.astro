@@ -63,6 +63,23 @@ const { title = "Astro Blog", description = "Reference links for this Blog" } =
     --tag: 0 100% 67%;
   }
 
+  ::-webkit-scrollbar {
+    width: 1em;
+    background-color: hsl(var(--background-lighter));
+  }
+
+  ::-webkit-scrollbar-track {
+    border-left: 1px solid hsl(var(--font), 10%);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: hsl(var(--font), 70%);
+  }
+
+  ::-webkit-scrollbar-thumb:is(:hover, :focus) {
+    filter: brightness(150%);
+  }
+
   *,
   ::before,
   *::after {
@@ -219,6 +236,8 @@ const { title = "Astro Blog", description = "Reference links for this Blog" } =
     font-family: monospace;
 
     a {
+      padding-inline: .5rem;
+
       background-color: hsl(var(--tag));
       color: hsl(var(--font));
       border-radius: 0.2rem;
@@ -229,6 +248,10 @@ const { title = "Astro Blog", description = "Reference links for this Blog" } =
       user-select: none;
 
       overflow: hidden;
+
+      &:has(.split-tag) {
+        padding: 0;
+      }
 
       .split-tag {
         width: 100%;
@@ -266,5 +289,9 @@ const { title = "Astro Blog", description = "Reference links for this Blog" } =
         scale: 0.95;
       }
     }
+  }
+
+  .kaomoji {
+    display: inline-block;
   }
 </style>
