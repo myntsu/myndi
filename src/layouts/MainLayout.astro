@@ -69,15 +69,15 @@ const { title = "Astro Blog", description = "Reference links for this Blog" } =
   }
 
   ::-webkit-scrollbar-track {
-    border-left: 1px solid hsl(var(--font), 10%);
+    border-left: 1px solid hsl(var(--font) / .1);
   }
 
   ::-webkit-scrollbar-thumb {
-    background-color: hsl(var(--font), 70%);
+    background-color: hsl(var(--font) / .7);
   }
 
-  ::-webkit-scrollbar-thumb:is(:hover, :focus) {
-    filter: brightness(150%);
+  ::-webkit-scrollbar-thumb:is(:hover, :focus, :active) {
+    background-color: hsl(var(--font));
   }
 
   *,
