@@ -26,10 +26,12 @@ const { showCount } = Astro.props;
   {
     Object.entries(processedCats).map(([key, val]) => (
       <li>
-        <div class="button">
+        <div class="tag">
           <a
             href={`/category/${slugify(key)}/`}>
-            {key} {showCount && `(${val})`}
+            <div class="split-tag">
+              <span class="title">{key}</span> <span class="number">{showCount && `${val}`}</span>
+            </div>
           </a>
         </div>
       </li>
@@ -46,9 +48,5 @@ const { showCount } = Astro.props;
 
     margin: 0;
     padding: 0;
-
-    & .button a {
-        text-transform: capitalize;
-    }
   }
 </style>
