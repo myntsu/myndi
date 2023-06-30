@@ -1,0 +1,21 @@
+---
+---
+
+<div class="cards-container">
+  <slot />
+</div>
+
+<style>
+  .cards-container {
+    /* resets */
+    width: 100%;
+
+    /* default styles */
+    display: grid;
+    justify-items: stretch;
+
+    /* moodified styles */
+    grid-template-columns: repeat(auto-fill, minmax(min(225px, 100%), 1fr));
+    gap: var(--rem-lg);
+  }
+</style>

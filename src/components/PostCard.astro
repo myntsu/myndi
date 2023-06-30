@@ -26,7 +26,7 @@ const { title, description, date, category, author, image } = frontmatter;
       alt={image.alt}
       width={600}
       height={300}
-      aspectRatio={2/1}
+      aspectRatio={2 / 1}
       format="webp"
       fit="cover"
       quality={100}
@@ -51,7 +51,12 @@ const { title, description, date, category, author, image } = frontmatter;
       </p>
     </div>
     <p class="description">{description}</p>
-    <div class="button read-more"><a href={url} aria-labelledby=`Read more about ${title}`>Read more</a></div>
+    <div class="button read-more">
+      <a
+        href={url}
+        aria-labelledby=`Read more about ${title}`
+        >Read more</a>
+    </div>
   </div>
 </article>
 
@@ -108,7 +113,7 @@ const { title, description, date, category, author, image } = frontmatter;
           outline: transparent;
 
           transition: color 300ms ease;
-          
+
           &:focus-visible {
             background-color: hsl(var(--font));
             color: hsl(var(--background));
@@ -134,6 +139,7 @@ const { title, description, date, category, author, image } = frontmatter;
         overflow: hidden;
         margin-block-start: auto;
         height: 3rem;
+        color: hsl(var(--font) / 0.8);
       }
 
       .button {
@@ -153,5 +159,5 @@ const { title, description, date, category, author, image } = frontmatter;
 </style>
 
 <script>
-    import '../scripts/postcard.js';
+  import "../scripts/postcard.js";
 </script>

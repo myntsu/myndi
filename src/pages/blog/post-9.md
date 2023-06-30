@@ -2,7 +2,7 @@
 layout: "../../layouts/BlogPostLayout.astro"
 title: Это статья
 date: 06June2023
-author: Милке
+author: Milka
 image: {
     src: "https://picsum.photos/id/12/600/300",
     alt: "Lorem picsum",

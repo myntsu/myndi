@@ -3,6 +3,8 @@
 import MainLayout from "../../layouts/MainLayout.astro";
 import PostCard from "../../components/PostCard.astro";
 
+import CardsContainer from "../../components/simple/CardsContainer.astro";
+
 // utils imports
 import { slugify, formatBlogPosts } from "../../scripts/utils"
 
@@ -41,7 +43,7 @@ const categoryPosts = formattedPosts.filter((post) => slugify(post.frontmatter.c
   title={name}>
   <section aria-label={`All ${name} posts`}>
     <h1>All {name} posts</h1>
-    <div class="card-container">
+    <CardsContainer>
       {
         categoryPosts.map((post) => (
           <PostCard
@@ -51,21 +53,12 @@ const categoryPosts = formattedPosts.filter((post) => slugify(post.frontmatter.c
           />
         ))
       }
-    </div>
+    </CardsContainer>
   </section>
 </MainLayout>
 
 <style>
-  .card-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(min(225px, 100%), 1fr));
-      justify-items: center;
-      gap: var(--rem-lg);
-      width: 100%;
-  }
-
   h1 {
-    font-size: 3rem;
     text-align: center;
   }
 
