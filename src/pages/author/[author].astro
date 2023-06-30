@@ -3,6 +3,8 @@
 import MainLayout from "../../layouts/MainLayout.astro";
 import PostCard from "../../components/PostCard.astro";
 
+import CardsContainer from "../../components/simple/CardsContainer.astro";
+
 // utils imports
 import { slugify, formatBlogPosts } from "../../scripts/utils";
 
@@ -38,7 +40,7 @@ const { posts, authorName } = Astro.props;
 <MainLayout title={authorName}>
   <section aria-label={`${authorName}'s posts'`}>
     <h1>{authorName}'s posts</h1>
-    <div class="card-container">
+    <CardsContainer>
       {
         posts.map((post) => (
           <PostCard
@@ -48,7 +50,7 @@ const { posts, authorName } = Astro.props;
           />
         ))
       }
-    </div>
+    </CardsContainer>
   </section>
 </MainLayout>
 

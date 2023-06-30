@@ -1,0 +1,29 @@
+---
+const {
+  classes,
+  isfilled,
+  type = "typeroni",
+  size = "",
+  ...rest
+} = Astro.props;
+---
+
+<div class:list={[classes, {filler: isfilled}]} {type} data-size={size}>
+    <slot />
+</div>
+
+<style define:vars="
+{},
+{}
+">
+  .cards-container {
+    /* default styles */
+    display: grid;
+    justify-items: stretch;
+    width: 100%;
+
+    /* moodified styles */
+    grid-template-columns: repeat(auto-fill, minmax(min(225px, 100%), 1fr));
+    gap: var(--rem-lg);
+  }
+</style>

@@ -5,6 +5,8 @@ import PostCard from "../../components/PostCard.astro";
 import Pagination from "../../components/Pagination.astro";
 import CategoryCloud from "../../components/CategoryCloud.astro";
 
+import CardsContainer from "../../components/simple/CardsContainer.astro";
+
 // utils imports
 import { formatBlogPosts } from "../../scripts/utils";
 
@@ -15,7 +17,7 @@ export async function getStaticPaths({ paginate }) {
   });
 
   return paginate(formattedPosts, {
-    pageSize: 3,
+    pageSize: 6,
   });
 }
 
@@ -31,7 +33,7 @@ const { page } = Astro.props;
       prevUrl={page.url.prev}
       nextUrl={page.url.next}
     />
-    <div class="card-container">
+    <CardsContainer>
       {
         page.data.map((post) => (
           <PostCard
@@ -41,7 +43,7 @@ const { page } = Astro.props;
           />
         ))
       }
-    </div>
+    </CardsContainer>
     <Pagination
       prevUrl={page.url.prev}
       nextUrl={page.url.next}
@@ -55,26 +57,12 @@ const { page } = Astro.props;
 
 <style lang="scss">
   section {
-    --current-font-size: 3rem;
-
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 
     gap: var(--rem-xl);
-
-    .card-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(min(225px, 100%), 1fr));
-      justify-items: center;
-      gap: var(--rem-lg);
-      width: 100%;
-    }
-
-    h1 {
-      font-size: var(--current-font-size);
-    }
   }
 
   aside {
