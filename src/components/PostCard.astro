@@ -13,66 +13,121 @@ const { title, description, date, category, author, image } = frontmatter;
 ---
 
 <article class="card">
-  <small class="tag">
-    <a href={`/category/${slugify(category)}`}>{category}</a>
-  </small>
-  <a
-    href={url}
-    aria-hidden="true"
-    tabindex="-1"
-    class="card-link">
-    <Image
-      src={image.src}
-      alt={image.alt}
-      width={600}
-      height={300}
-      aspectRatio={2 / 1}
-      format="webp"
-      fit="cover"
-      quality={100}
-      class="link-image"
-    />
-  </a>
-  <div class="content">
-    <div class="author">
-      <Tag>
+  <div class="wrapper-effect">
+    <small class="tag">
+      <a href={`/category/${slugify(category)}`}>{category}</a>
+    </small>
+    <a
+      href={url}
+      aria-hidden="true"
+      tabindex="-1"
+      class="card-link">
+      <Image
+        src={image.src}
+        alt={image.alt}
+        width={600}
+        height={300}
+        aspectRatio={2 / 1}
+        format="webp"
+        fit="cover"
+        quality={100}
+        class="link-image"
+      />
+    </a>
+    <div class="content">
+      <div class="author">
+        <Tag>
+          <a
+            href={url}
+            class="card-link"
+            >{title}</a
+          >
+        </Tag>
+        <p class="author-link">
+          by <a
+            href={`/author/${slugify(author)}`}
+            class="card-link"
+            >{author}</a
+          > 
+          <i class="fa-solid fa-calendar-days"></i>
+          {formatDate(date)}
+        </p>
+      </div>
+      <p class="description">{description}</p>
+      <div class="button read-more">
         <a
           href={url}
-          class="card-link"
-          >{title}</a
+          aria-labelledby=`Read more about ${title}`
+          >Read more</a
         >
-      </Tag>
-      <p>
-        by <a
-          href={`/author/${slugify(author)}`}
-          class="card-link"
-          >{author}</a
-        > • {formatDate(date)}
-      </p>
-    </div>
-    <p class="description">{description}</p>
-    <div class="button read-more">
-      <a
-        href={url}
-        aria-labelledby=`Read more about ${title}`
-        >Read more</a>
+      </div>
     </div>
   </div>
 </article>
 
 <style lang="scss">
+    #cards-container:hover > .card::after {
+    opacity: 1;
+}
+
   .card {
+    --bg-color: rgb(20, 20, 20);
+    --card-color: rgb(23, 23, 23);
     --background-lighter: 0 0% 14%;
     display: flex;
     flex-direction: column;
+    min-height: 360px;
+
     background-color: hsl(var(--background-lighter));
-    border-radius: 0.25rem;
-
+    border-radius: .25rem;
     position: relative;
-    overflow: hidden;
 
-    :first-child {
-      align-self: flex-start;
+    &:hover::before {
+      opacity: 1;
+    }
+
+    &::before,
+    ::after {
+      position: absolute;
+      content: "";
+      border-radius: inherit;
+      width: 100%;
+      height: 100%;
+      top: 0px;
+      left: 0px;
+      opacity: 0;
+      transition: opacity 500ms;
+      pointer-events: none;
+    }
+
+    &::before {
+      background: radial-gradient(
+        800px circle at var(--mouse-x) var(--mouse-y),
+        rgba(255, 255, 255, 0.06),
+        transparent 40%
+      );
+      z-index: 3;
+    }
+
+    &::after {
+      background: radial-gradient(
+        600px circle at var(--mouse-x) var(--mouse-y),
+        rgba(255, 255, 255, 0.4),
+        transparent 40%
+      );
+      z-index: 1;
+      opacity: 1;
+    }
+
+    .wrapper-effect {
+      background-color: var(--card-color);
+      border-radius: inherit;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      inset: 1px;
+      position: absolute;
+      z-index: 2;
     }
 
     small {
@@ -91,7 +146,7 @@ const { title, description, date, category, author, image } = frontmatter;
       padding: var(--rem-lg);
 
       .author {
-        h2 {
+        &:first-child {
           display: -webkit-box;
           -webkit-line-clamp: 2;
           -webkit-box-orient: vertical;
@@ -100,7 +155,16 @@ const { title, description, date, category, author, image } = frontmatter;
         }
 
         p {
+          display: flex;
+          align-items: baseline;
+          gap: .25rem;
+
+          margin: 0;
           font-size: 0.75rem;
+        }
+
+        .author-link {
+          color: hsl(var(--font) / 0.7);
         }
       }
 
@@ -144,6 +208,7 @@ const { title, description, date, category, author, image } = frontmatter;
 
       .button {
         align-self: flex-end;
+        z-index: 5;
       }
     }
   }
@@ -151,6 +216,7 @@ const { title, description, date, category, author, image } = frontmatter;
   .link-image {
     width: 100%;
     max-height: 150px;
+    border-radius: .25rem .25rem 0 0;
   }
 
   .tag {

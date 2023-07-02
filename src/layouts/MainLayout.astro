@@ -80,6 +80,11 @@ const { title = "Astro Blog", description = "Reference links for this Blog" } =
     background-color: hsl(var(--font));
   }
 
+  ::selection {
+    background-color: hsl(var(--font));
+    color: hsl(var(--background));
+  }
+
   *,
   ::before,
   *::after {
@@ -299,3 +304,7 @@ const { title = "Astro Blog", description = "Reference links for this Blog" } =
     display: inline-block;
   }
 </style>
+
+<script>
+  import '../scripts/main.js';
+</script>
