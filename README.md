@@ -5,41 +5,81 @@
 
 This blog is a work in progress.
 
-### Dependencies
+### 🔒 Dependencies
 
-[Astro Image](https://docs.astro.build/en/guides/integrations-guide/image/)
+* [Astro Image](https://docs.astro.build/en/guides/integrations-guide/image/)
+* [Sharp](https://docs.astro.build/en/guides/integrations-guide/image/#installing-sharp-optional)
+* [Astro Sitemap](https://docs.astro.build/en/guides/integrations-guide/sitemap/)
+* [Astro Icon](https://github.com/natemoo-re/astro-icon#readme)
 
-Install:
+#### Astro Image & Sharp quick setup
+*Please refer to the documentation for a more in depth explanation*
+
+**Install**
 ```
 npm install @astrojs/image
-```
 
-Add to your astro.config.*
-```
-import image from '@astrojs/image';
+and
 
-integrations: [image()],
-```
-
-Then install:
-```
 npm install sharp
 ```
 
-Update your astro.config.*
+**Update astro.config.***
 ```
-image({
-    serviceEntryPoint: '@astrojs/image/sharp',
-}),
+import image from '@astrojs/image';
 ```
 
-Update your env.d.ts
+**Add to astro.config.***
 ```
-<reference types="@astrojs/image/client" />
+export default defineConfig({
+  integrations: [
+    image({
+      serviceEntryPoint: '@astrojs/image/sharp',
+    }),
+  ],
+});
 ```
 
-[Astro Sitemap](https://docs.astro.build/en/guides/integrations-guide/sitemap/)
-[Astro Icon](https://github.com/natemoo-re/astro-icon#readme)
+#### Astro Sitemap quick setup
+*Please refer to the documentation for a more in depth explanation*
+
+**Install**
+```
+npm install @astrojs/sitemap
+```
+
+**Add to astro.config.***
+```
+import sitemap from '@astrojs/sitemap';
+```
+
+**Update astro.config.***
+```
+export default defineConfig({
+  site: "https://<YOUR SITE>",
+ 
+  integrations: [
+    sitemap(),
+    image({
+      serviceEntryPoint: "@astrojs/image/sharp",
+    }),
+  ],
+
+});
+```
+
+**Add to <head>**
+```
+<link rel="sitemap" href="/sitemap-index.xml" />
+```
+
+**Add to robots.txt**
+```
+    Sitemap: https://<YOUR SITE>/sitemap-index.xml
+```
+
+#### Astro Icon quick setup
+*Please refer to the documentation for a more in depth explanation*
 
 ### 👑 Credits 
 
