@@ -10,6 +10,7 @@ let showDiv = Astro.request.url.includes("/about");
 ---
 
 <div class="hamburger"></div>
+<button class="arrow-swipe"></button>
 <nav aria-label="Primary">
   <div class="container">
     <div class="inner">
@@ -79,7 +80,7 @@ let showDiv = Astro.request.url.includes("/about");
   </div>
   <SocialMedia 
   socials={[
-    { platform: "facebook", link: "https://www.facebook.com/", handle: "facebook" },
+    { platform: "facebook", link: "https://www.facebook.com/", handle: "/kilty" },
     { platform: "instagram", link: "https://www.instagram.com/", handle: "@instagram" },
     { platform: "youtube", link: "https://www.youtube.com/", handle: "/youtube" },
     { platform: "github", link: "https://github.com/", handle: "github" },
@@ -125,6 +126,29 @@ let showDiv = Astro.request.url.includes("/about");
       padding: var(--rem-xs) var(--rem-lg);
       border: 1px solid hsl(var(--font) / 0.3);
       border-radius: var(--rem-sm);
+    }
+  }
+
+  .arrow-swipe {
+    position: fixed;
+    left: 0;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    width: 30px;
+    aspect-ratio: 1/2;
+    padding: .25rem;
+    background-color: hsl(var(--font));
+    border: none;
+    border-radius: .5rem;
+  
+    &::after {
+      content: '>';
+      color: hsl(var(--background));
     }
   }
 

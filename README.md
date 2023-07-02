@@ -3,7 +3,7 @@
 
 ### Work in Progress
 
-This blog is a work in progress.
+This website is a work in progress.
 
 ### 🔒 Dependencies
 
@@ -12,25 +12,29 @@ This blog is a work in progress.
 * [Astro Sitemap](https://docs.astro.build/en/guides/integrations-guide/sitemap/)
 * [Astro Icon](https://github.com/natemoo-re/astro-icon#readme)
 
+### 🛠 Installations
+
+🛑 You're only required to install if you cloned/forked this repository 🛑
+
 #### Astro Image & Sharp quick setup
 *Please refer to the documentation for a more in depth explanation*
 
 **Install**
-```
+```ts
 npm install @astrojs/image
+```
 
-and
-
+```ts
 npm install sharp
 ```
 
 **Update astro.config.***
-```
+```ts
 import image from '@astrojs/image';
 ```
 
 **Add to astro.config.***
-```
+```ts
 export default defineConfig({
   integrations: [
     image({
@@ -44,17 +48,17 @@ export default defineConfig({
 *Please refer to the documentation for a more in depth explanation*
 
 **Install**
-```
+```ts
 npm install @astrojs/sitemap
 ```
 
 **Add to astro.config.***
-```
+```ts
 import sitemap from '@astrojs/sitemap';
 ```
 
 **Update astro.config.***
-```
+```ts
 export default defineConfig({
   site: "https://<YOUR SITE>",
  
@@ -68,14 +72,14 @@ export default defineConfig({
 });
 ```
 
-**Add to <head>**
-```
+**Add to \<head\>**
+```ts
 <link rel="sitemap" href="/sitemap-index.xml" />
 ```
 
 **Add to robots.txt**
-```
-    Sitemap: https://<YOUR SITE>/sitemap-index.xml
+```ts
+Sitemap: https://<YOUR SITE>/sitemap-index.xml
 ```
 
 #### Astro Icon quick setup
