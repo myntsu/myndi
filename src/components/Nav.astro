@@ -4,6 +4,7 @@ import Footer from "../components/Footer.astro";
 
 //library import
 import { Image } from "@astrojs/image/components";
+import SocialMedia from "./simple/SocialMedia.astro";
 
 let showDiv = Astro.request.url.includes("/about");
 ---
@@ -76,14 +77,23 @@ let showDiv = Astro.request.url.includes("/about");
     </div>
     <Footer />
   </div>
+  <SocialMedia 
+  socials={[
+    { platform: "facebook", link: "https://www.facebook.com/", handle: "facebook" },
+    { platform: "instagram", link: "https://www.instagram.com/", handle: "@instagram" },
+    { platform: "youtube", link: "https://www.youtube.com/", handle: "/youtube" },
+    { platform: "github", link: "https://github.com/", handle: "github" },
+  ]}
+  />
 </nav>
 
 <style lang="scss">
   nav {
+    --footer-distance: 1rem;
     --current-font-size: 1.25rem;
     position: sticky;
     top: 0;
-    overflow-y: auto;
+    overflow-y: scroll;
     height: 100vh;
     z-index: 9999;
 

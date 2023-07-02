@@ -1,0 +1,70 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+interface Socials {
+  platform?: string;
+  link?: string;
+  handle?: string;
+}
+
+interface Props extends HTMLAttributes<"aside"> {
+  socials?: Socials[];
+}
+
+const { socials } = Astro.props;
+---
+
+<aside class="social-media">
+  <div>
+    {
+      socials?.map(({ platform, link, handle }) => (
+        <a
+          href={link}
+          target="_blank">
+          <i class={`fa-brands fa-square-${platform}`} />
+          <span>{handle}</span>
+        </a>
+      ))
+    }
+  </div>
+</aside>
+
+<style lang="scss">
+  .social-media {
+    position: sticky;
+    inset: 0;
+    background-color: hsl(var(--background-lighter));
+
+    > div {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(50px, 100%), 1fr));
+      gap: .25rem;
+
+      padding-inline: .5rem;
+      padding-block: var(--footer-distance);
+      
+      a {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+  
+        color: hsl(var(--font));
+        font-size: 2rem;
+        text-decoration: none;
+
+        span {
+            font-size: .6rem;
+        }
+
+        &:is(:hover, :focus-visible) > * {
+            color: hsl(var(--button));
+            rotate: 10deg;
+            
+            transition: color 150ms linear;
+        }
+      }
+    }
+
+  }
+</style>
