@@ -9,8 +9,7 @@ import SocialMedia from "./simple/SocialMedia.astro";
 let showDiv = Astro.request.url.includes("/about");
 ---
 
-<div class="hamburger"></div>
-<button class="arrow-swipe"></button>
+<button type="button" class="hamburger" aria-label="Open navigation bar"></button>
 <nav aria-label="Primary">
   <div class="container">
     <div class="inner">
@@ -118,12 +117,13 @@ let showDiv = Astro.request.url.includes("/about");
       content: "\f0c9";
       font-family: "Font Awesome 6 Free";
       font-weight: 900;
+      color: hsl(var(--font));
+      padding: .5rem;
     }
 
     @media only screen and (max-width: 870px) {
       display: flex;
       background-color: hsl(var(--background-lighter));
-      padding: var(--rem-xs) var(--rem-lg);
       border: 1px solid hsl(var(--font) / 0.3);
       border-radius: var(--rem-sm);
     }
