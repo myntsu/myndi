@@ -211,7 +211,7 @@ let showDiv = Astro.request.url.includes("/about");
               transition: padding-inline-start 250ms ease;
             }
           }
-
+          
           &[aria-current="page"] {
             padding-inline-start: var(--rem-xl);
             color: hsl(var(--white));
@@ -270,5 +270,4 @@ let showDiv = Astro.request.url.includes("/about");
 
 <script>
   import "../scripts/nav.js";
-  import "../scripts/scrollspy.js";
 </script>

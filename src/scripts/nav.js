@@ -1,3 +1,6 @@
+// class add to navbar to avoid layout shift
+const navLinks = document.querySelectorAll("[data-link]");
+
 document.addEventListener('DOMContentLoaded', () => {
   const transition = document.querySelectorAll('[data-link]');
   transition.forEach((element) => {
@@ -5,8 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-const navLinks = document.querySelectorAll("[data-link]");
-
+// set aria-current page
 navLinks.forEach((link) => {
   const href = link.getAttribute("href").replace(/\/$/, "");
   const pathname = window.location.pathname.replace(/\/$/, "");
