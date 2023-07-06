@@ -14,7 +14,7 @@ This website is a work in progress.
 
 ### 🛠 Installations
 
-🛑 You're only required to install if you cloned/forked this repository 🛑
+🛑 Warning: Do only the installations and skip the rest if you forked/cloned this repository 🛑
 
 #### Astro Image & Sharp quick setup
 *Please refer to the documentation for a more in depth explanation*
@@ -43,6 +43,8 @@ export default defineConfig({
   ],
 });
 ```
+
+---
 
 #### Astro Sitemap quick setup
 *Please refer to the documentation for a more in depth explanation*
@@ -81,6 +83,8 @@ export default defineConfig({
 ```ts
 Sitemap: https://<YOUR SITE>/sitemap-index.xml
 ```
+
+---
 
 #### Astro Icon quick setup
 *Please refer to the documentation for a more in depth explanation*
