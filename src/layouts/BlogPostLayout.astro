@@ -3,51 +3,78 @@
 import MainLayout from "../layouts/MainLayout.astro";
 import PostHeader from "../components/PostHeader.astro";
 import CategoryCloud from "../components/CategoryCloud.astro";
+import RelatedPosts from "../components/RelatedPosts.astro";
+
+// utils imports
+import { formatBlogPosts } from "../scripts/utils";
 
 const { frontmatter } = Astro.props;
+const { title, description, date, category, author, image } = frontmatter;
 
-const {
-    title, description, date, category, author, image
-} = frontmatter;
+const allPosts = await Astro.glob("../pages/blog/*.md");
+const formattedPosts = formatBlogPosts(allPosts, {
+  sortByDate: false,
+});
+
+const relatedPosts = formattedPosts
+  .filter(
+    (post) =>
+      post.frontmatter.category.toLowerCase() === category.toLowerCase() &&
+      post.frontmatter.title !== title
+  )
+  .slice(0, 3);
 ---
 
-<MainLayout {title} {description}>
-    <PostHeader 
-        {title}
-        {description}
-        {date}
-        {category}
-        {author}
-        {image}
-    />
-    <div class="blog-post">
-        <section>
-            <div>
-                <slot />
-            </div>
-        </section>
+<MainLayout
+  {title}
+  {description}>
+  <PostHeader
+    {title}
+    {description}
+    {date}
+    {category}
+    {author}
+    {image}
+  />
+  <div class="blog-post">
+    <section>
+      <div>
+        <slot />
+      </div>
+    </section>
+    <div class="aside-group">
         <aside aria-label="Blog Categories">
-            <h2>Blog Categories</h2>
-            <CategoryCloud />
+          <h2>Blog Categories</h2>
+          <CategoryCloud />
         </aside>
+        {
+          relatedPosts.length > 0 && (
+            <aside aria-label="Related posts">
+              <h2>Related posts</h2>
+              <RelatedPosts {relatedPosts} />
+            </aside>
+          )
+        }
     </div>
+  </div>
 </MainLayout>
 
 <style lang="scss">
-    .blog-post {
-        display: flex;
-        flex-wrap: wrap;
+  .blog-post {
+    display: flex;
+    flex-wrap: wrap;
+    line-height: 1.6;
 
-        & > section {
-            flex: 1 0 min(450px, 100%);
-        }
-
-        & > aside {
-            flex: 1 0 0;
-        }
+    & > section {
+      flex: 3 0 min(450px, 100%);
     }
 
-    aside {
-        padding: var(--rem-lg);
+    & > .aside-group {
+      flex: 1 0 200px;
     }
+  }
+
+  aside {
+    padding: var(--rem-lg);
+  }
 </style>

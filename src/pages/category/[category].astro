@@ -23,6 +23,10 @@ export async function getStaticPaths() {
             props: { name: "JS" },
         },
         {
+            params: { category: slugify("Very Long Category") },
+            props: { name: "Very Long Category" },
+        },
+        {
             params: { category: slugify("Astro") },
             props: { name: "Astro" },
         }

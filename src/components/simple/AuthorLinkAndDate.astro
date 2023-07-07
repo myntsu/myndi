@@ -1,0 +1,23 @@
+---
+// libraries import
+import { Icon } from 'astro-icon';
+
+// utils import
+import { slugify, formatDate } from "../../scripts/utils";
+
+---
+
+<small>
+    <p class="author-information">
+      <div>
+        <i class="fa-solid fa-at"></i>
+        <a
+          href={`/author/${slugify(post.frontmatter.author)}`}
+          class="card-link">
+          {post.frontmatter.author}
+        </a>
+      </div>
+      <Icon name="ic:baseline-calendar-month"/>
+      {formatDate(post.frontmatter.date)}
+    </p>
+</small>

@@ -3,12 +3,12 @@
 import { formatBlogPosts, slugify } from "../scripts/utils";
 
 const allPosts = await Astro.glob("../pages/blog/*.md");
-const formattedPosts = formatBlogPosts(allPosts, {
-  limit: true,
-});
+const formattedPosts = formatBlogPosts(allPosts);
+
 const allCategories = formattedPosts
   .map((cat) => cat.frontmatter.category.toLowerCase())
   .flat();
+
 const processedCats = allCategories.reduce((acc, category) => {
   // check if the category exists in the acc
   const value = acc[category] || 0;
