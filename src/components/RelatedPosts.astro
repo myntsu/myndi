@@ -1,0 +1,144 @@
+---
+// libraries import
+import { Icon } from "astro-icon";
+
+// utils import
+import { slugify, formatDate } from "../scripts/utils";
+
+const { relatedPosts } = Astro.props;
+---
+
+<div class="related-posts">
+  {
+    relatedPosts.map((post) => (
+      <div class="post">
+        <a
+          href={post.url}
+          class="expanded-link"
+          tabindex="-1"
+          aria-hidden="true"
+        />
+        <h3 class="related-title">
+          <a
+            href={post.url}
+            class="card-link">
+            {post.frontmatter.title}
+          </a>
+        </h3>
+        <small>
+          <div class="author-date">
+            <div>
+              <Icon
+                class="icon"
+                name="ic:baseline-account-box"
+              />
+              <a
+                href={`/author/${slugify(post.frontmatter.author)}`}
+                class="card-link">
+                {post.frontmatter.author}
+              </a>
+            </div>
+            <div>
+              <Icon
+                class="icon"
+                name="ic:baseline-calendar-month"
+              />
+              {formatDate(post.frontmatter.date)}
+            </div>
+          </div>
+        </small>
+      </div>
+    ))
+  }
+</div>
+
+<style lang="scss">
+  .related-posts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+  }
+
+  .post {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    isolation: isolate;
+
+    background-image: linear-gradient(
+      145deg,
+      transparent,
+      hsl(var(--main-color) / 0.05) 70%,
+      hsl(var(--main-color) / 0.4)
+    );
+    background-size: 400%;
+    background-position: 60% 60%;
+
+    border: .1rem solid hsl(var(--font) / 0.05);
+    border-radius: 0.25rem;
+    padding: 0.5rem;
+
+    &:is(:hover, :focus-visible) {
+        border: .1rem solid hsl(var(--font) / 0.5);
+
+        h3 a {
+            color: hsl(var(--main-color));
+            transition: color 150ms linear;
+        }
+    }
+
+    .related-title {
+        --font-size: 1rem;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      font-size: var(--font-size);
+      max-height: calc(var(--font-size) * 3);
+
+      z-index: 2;
+
+      a {
+        display: block;
+      }
+    }
+
+    small {
+      margin-block-start: auto;
+    }
+
+    .author-date {
+      display: grid;
+      gap: 0.25rem;
+      color: hsl(var(--font) / 0.7);
+
+      a {
+        display: block;
+        z-index: 2;
+      }
+
+      & > div {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.5rem;
+
+        & > * {
+          max-height: 16px;
+        }
+      }
+    }
+  }
+
+  .icon {
+    max-width: 16px;
+  }
+</style>
+
+<script>
+  const h2Elements = document.querySelectorAll(".related-title");
+  h2Elements.forEach((h2Element) => {
+    const h2Text = h2Element.innerText;
+    h2Element.setAttribute("title", h2Text);
+  });
+</script>

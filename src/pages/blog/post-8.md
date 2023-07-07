@@ -1,15 +1,15 @@
 ---
 layout: "../../layouts/BlogPostLayout.astro"
-title: What are you doing with your life? Learn CSS
-date: 08May2023
-author: Myndi
+title: You're not the only one that has a very long title for unknown reasons that you will never know
+date: 06June2023
+author: Erick
 image: {
-    src: "https://picsum.photos/id/12/600/300",
+    src: "https://picsum.photos/id/1/600/300",
     alt: "Lorem picsum",
 }
 description: Truly CSS it the only way to go about life.
 draft: false
-category: CSS
+category: Very Long Category
 ---
 
 # This is a blog post

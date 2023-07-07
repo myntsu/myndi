@@ -10,9 +10,13 @@ export function slugify(text) {
 }
 
 export function formatDate(date) {
-  return new Date(date).toLocaleDateString("es-EN", {
-    timeZone: "UTC",
-  });
+  const options = {
+    day: "2-digit",
+    month: "long",
+    year: "numeric",
+  };
+
+  return new Date(date).toLocaleDateString("en-GB", options);
 }
 
 export function formatBlogPosts(
@@ -21,7 +25,7 @@ export function formatBlogPosts(
     filterOutDrafts = true,
     filterOutFuturePosts = true,
     sortByDate = true,
-    limit = number,
+    limit = undefined,
   } = {}
 ) {
   const filteredPosts = post.reduce((acc, post) => {
