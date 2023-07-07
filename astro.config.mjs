@@ -7,14 +7,13 @@ import image from "@astrojs/image";
 export default defineConfig({
   // sitemap
   site: "https://astro-blog-custom.netlify.app/",
- 
+
   integrations: [
-    // sitemap js
+    // sitemap
     sitemap(),
-    // images js
+    // image
     image({
       serviceEntryPoint: "@astrojs/image/sharp",
     }),
   ],
-
 });
