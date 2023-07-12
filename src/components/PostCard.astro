@@ -65,27 +65,19 @@ const { title, description, date, category, author, image } = frontmatter;
 
 <style lang="scss">
   .card {
-    --background-lighter: 0 0% 13%;
-    // display: flex;
-    // flex-direction: column;
-
-    background: hsl(var(--background-lighter));
+    background: hsl(0 0% 13%);
     border-radius: 0.25rem;
     position: relative;
     transition: background 0.1s;
 
-    &:hover {
-      --active: 1;
-    }
-
-    &:after {
+    &::after {
       content: "";
       position: absolute;
       inset: 0;
       background: radial-gradient(
         circle at calc(var(--x) * 1px) calc(var(--y) * 1px),
         hsl(0 0% 100% / 0.01),
-        transparent 15vmin
+        transparent 12vmin
       );
       background-attachment: fixed;
       opacity: var(--active, 0);
@@ -93,14 +85,14 @@ const { title, description, date, category, author, image } = frontmatter;
       pointer-events: none;
     }
 
-    &:before {
+    &::before {
       content: "";
       position: absolute;
       inset: 0;
       background: radial-gradient(
           circle at calc(var(--x) * 1px) calc(var(--y) * 1px),
-          hsl(0 0% 100% / 0.1),
-          transparent 15vmin
+          hsl(0 0% 100% / 0.05),
+          transparent 12vmin
         ),
         transparent;
       background-attachment: fixed;
@@ -126,6 +118,8 @@ const { title, description, date, category, author, image } = frontmatter;
       padding: var(--rem-lg);
 
       .author {
+        margin-block-end: var(--rem-lg);
+
         & > :first-child {
           display: -webkit-box;
           -webkit-line-clamp: 2;
@@ -160,7 +154,7 @@ const { title, description, date, category, author, image } = frontmatter;
           transition: color 300ms ease;
 
           &:focus-visible {
-            background-color: hsl(var(-   -font));
+            background-color: hsl(var(--font));
             color: hsl(var(--background));
           }
         }
@@ -193,6 +187,10 @@ const { title, description, date, category, author, image } = frontmatter;
     }
   }
 
+  .card:hover {
+    --active: 1;
+  }
+
   .link-image {
     width: 100%;
     max-height: 150px;
@@ -206,11 +204,4 @@ const { title, description, date, category, author, image } = frontmatter;
 
 <script>
   import "../scripts/postcard.js";
-
-  const updateCursor = ({ x, y }) => {
-    document.documentElement.style.setProperty("--x", x);
-    document.documentElement.style.setProperty("--y", y);
-  };
-
-  document.body.addEventListener("pointermove", updateCursor);
 </script>
