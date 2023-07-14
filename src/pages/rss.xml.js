@@ -1,18 +1,22 @@
 import rss from '@astrojs/rss';
 
-export function get(context) {
-  return rss({
-    // `<title>` field in output xml
-    title: 'Buzz’s Blog',
-    // `<description>` field in output xml
-    description: 'A humble Astronaut’s guide to the stars',
-    // Pull in your project "site" from the endpoint context
-    // https://docs.astro.build/en/reference/api-reference/#contextsite
-    site: context.site,
-    // Array of `<item>`s in output xml
-    // See "Generating items" section for examples using content collections and glob imports
-    items: [],
-    // (optional) inject custom xml
-    customData: `<language>en-us</language>`,
-  });
-}
+import { formatBlogPosts } from "../scripts/utils"
+
+const postImportResult = import.meta.glob('./blog/**/*.md', { eager: true });
+const posts = formatBlogPosts(Object.values(postImportResult));
+
+export const get = () => rss({
+//   stylesheet: '/rss/styles.xsl',
+  title: 'My Astro Blog',
+  description: 'A humble Astronaut’s guide to the stars',
+  site: import.meta.env.SITE,
+  items: posts.map((post) => ({
+    link: post.url,
+    title: post.frontmatter.title,
+    pubDate: post.frontmatter.date,
+    description: post.frontmatter.description,
+    customData: `
+      <author>${post.frontmatter.author}</author>
+    `
+  }))
+});
