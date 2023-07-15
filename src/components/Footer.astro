@@ -5,7 +5,16 @@ import { Icon } from "astro-icon";
 
 <footer>
   <div class="rss-feed">
-    <Icon />
+    <a
+      href="/rss.xml"
+      class="link-within">
+      Subscribe to my RSS
+      <Icon
+        name="ic:baseline-rss-feed"
+        width="22"
+        height="22"
+      />
+    </a>
   </div>
   <div class="copyright">
     <p>
@@ -13,7 +22,8 @@ import { Icon } from "astro-icon";
         href="https://github.com/Myntsu"
         target="_blank"
         class="link"
-        >Myndi</a>
+        >Myndi</a
+      >
     </p>
     <small>
       Copyright &copy <span id="copyright"></span> | All rights reserved
@@ -24,10 +34,23 @@ import { Icon } from "astro-icon";
 <style lang="scss">
   footer {
     --current-font-size: var(--rem-lg);
-    padding-block: var(--footer-distance);
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+
     margin-block-start: auto;
+    margin-block-end: var(--rem-lg);
     text-align: center;
     font-size: var(--rem-lg);
+
+    .rss-feed {
+      text-align: center;
+      a {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+      }
+    }
 
     .copyright {
       display: flex;
