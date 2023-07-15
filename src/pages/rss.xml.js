@@ -6,7 +6,7 @@ const postImportResult = import.meta.glob('./blog/**/*.md', { eager: true });
 const posts = formatBlogPosts(Object.values(postImportResult));
 
 export const get = () => rss({
-//   stylesheet: '/rss/styles.xsl',
+  stylesheet: '/rss/styles.xsl',
   title: 'My Astro Blog',
   description: 'A humble Astronaut’s guide to the stars',
   site: import.meta.env.SITE,

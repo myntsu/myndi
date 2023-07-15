@@ -5,6 +5,56 @@
 
 This website is a work in progress.
 
+### 📚 Project Structure
+```
+/
+├── public/
+│   ├── fonts/
+|   |   └── atkinson-hyperlegible
+│   ├── images/
+│   ├── rss/
+|   |   └── styles.xsl
+│   ├── favicon.svg
+│   └── robots.txt
+├── src/
+│   ├── components/
+|   |   ├── simple/
+|   |   |   ├── AuthorLinkAndDate.astro
+|   |   |   ├── CardsContainer.astro
+|   |   |   └── SocialMedia.astro
+|   |   ├── Footer.astro
+|   |   ├── Nav.astro
+|   |   ├── Pagination.astro
+|   |   ├── PostCard.astro
+|   |   ├── PostHeader.astro
+|   |   └── RelatedPosts.astro
+│   ├── layouts/
+|   |   ├── BlogPostLayout.astro
+|   |   ├── MainHead.astro
+|   |   └── MainLayout.astro
+│   ├── pages/
+|   |   ├── author/
+|   |   ├── blog/
+|   |   ├── category/
+|   |   ├── 404.astro
+|   |   ├── about.astro
+|   |   ├── index.astro
+|   |   └── rss.xml.js
+│   ├── scripts/
+|   |   ├── copyright.js
+|   |   ├── nava.js
+|   |   ├── postcard.js
+|   |   ├── scrollspy.js
+|   |   └── utils.js
+│   ├── env.d.ts
+│   ├── .gitignore
+│   ├── astro.config.mjs
+│   ├── package-lock.json
+│   ├── package.json
+│   └── READ.ME
+└── ts.config.json
+```
+
 ### 🔒 Dependencies
 
 * [Astro Image](https://docs.astro.build/en/guides/integrations-guide/image/)
@@ -87,6 +137,23 @@ Sitemap: https://<YOUR SITE>/sitemap-index.xml
 #### Astro Icon quick setup
 ---
 
+**Install**
+```bash
+npm i astro-icon
+```
+
+**Import & use**
+```astro
+---
+import { Icon } from 'astro-icon'
+---
+
+<!-- Automatically fetches and inlines Material Design Icon's "account" SVG -->
+<Icon pack="mdi" name="account" />
+
+<!-- Equivalent shorthand -->
+<Icon name="mdi:account" />
+```
 
 ### Astro RSS quick steup
 ---
@@ -125,6 +192,12 @@ export const get = () => rss({
     `
   }))
 });
+```
+
+**Create a styles.xsl files at /public/rss**
+```css
+/* Here you add your XSL styles */
+/* If you don't have any, grab the ones from this repository */
 ```
 
 ### 👑 Credits 
