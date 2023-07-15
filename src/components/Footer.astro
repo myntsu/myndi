@@ -1,8 +1,13 @@
 ---
+// libraries import
+import { Icon } from "astro-icon";
 ---
 
 <footer>
-  <div>
+  <div class="rss-feed">
+    <Icon />
+  </div>
+  <div class="copyright">
     <p>
       Made by <a
         href="https://github.com/Myntsu"
@@ -16,18 +21,18 @@
   </div>
 </footer>
 
-<style>
+<style lang="scss">
   footer {
     --current-font-size: var(--rem-lg);
     padding-block: var(--footer-distance);
     margin-block-start: auto;
     text-align: center;
     font-size: var(--rem-lg);
-  }
 
-  footer > div {
-    display: flex;
-    flex-direction: column;
+    .copyright {
+      display: flex;
+      flex-direction: column;
+    }
   }
 
   p {

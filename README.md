@@ -6,6 +6,7 @@
 This website is a work in progress.
 
 ### 📚 Project Structure
+
 ```
 /
 ├── public/
@@ -57,6 +58,7 @@ This website is a work in progress.
 
 ### 🔒 Dependencies
 
+* [SaSS and SCSS](https://docs.astro.build/en/guides/styling/#sass-and-scss)
 * [Astro Image](https://docs.astro.build/en/guides/integrations-guide/image/)
 * [Sharp](https://docs.astro.build/en/guides/integrations-guide/image/#installing-sharp-optional)
 * [Astro Sitemap](https://docs.astro.build/en/guides/integrations-guide/sitemap/)
@@ -67,6 +69,19 @@ This website is a work in progress.
 
 🛑 Warning: Do only the installations and skip the rest if you forked/cloned this repository 🛑
 *Please refer to the documentation for a more in depth explanation*
+
+#### SaSS and SCSS quick setup
+---
+
+**Install**
+```bash
+npm install sass
+```
+
+**Usage**
+```astro
+<style lang="scss">
+```
 
 #### Astro Image & Sharp quick setup
 ---
@@ -142,7 +157,7 @@ Sitemap: https://<YOUR SITE>/sitemap-index.xml
 npm i astro-icon
 ```
 
-**Import & use**
+**Usage**
 ```astro
 ---
 import { Icon } from 'astro-icon'
@@ -154,6 +169,8 @@ import { Icon } from 'astro-icon'
 <!-- Equivalent shorthand -->
 <Icon name="mdi:account" />
 ```
+
+*Note: to obtain the icons visit [Icônes](https://icones.js.org/)*
 
 ### Astro RSS quick steup
 ---
