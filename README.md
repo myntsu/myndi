@@ -67,7 +67,7 @@ This website is a work in progress.
 
 ### 🛠 Installations
 
-🛑 Warning: Do only the installations and skip the rest if you forked/cloned this repository 🛑
+🛑 Warning: Do only the installations and skip the rest if you forked/cloned this repository 🛑  
 *Please refer to the documentation for a more in depth explanation*
 
 #### SaSS and SCSS quick setup
@@ -82,6 +82,7 @@ npm install sass
 ```astro
 <style lang="scss">
 ```
+  
 
 #### Astro Image & Sharp quick setup
 ---
@@ -110,6 +111,7 @@ export default defineConfig({
   ],
 });
 ```
+  
 
 #### Astro Sitemap quick setup
 ---
@@ -148,6 +150,7 @@ export default defineConfig({
 ```ts
 Sitemap: https://<YOUR SITE>/sitemap-index.xml
 ```
+  
 
 #### Astro Icon quick setup
 ---
@@ -172,6 +175,7 @@ import { Icon } from 'astro-icon'
 
 *Note: to obtain the icons visit [Icônes](https://icones.js.org/)*
 
+  
 ### Astro RSS quick steup
 ---
 
@@ -216,6 +220,7 @@ export const get = () => rss({
 /* Here you add your XSL styles */
 /* If you don't have any, grab the ones from this repository */
 ```
+  
 
 ### 👑 Credits 
 
