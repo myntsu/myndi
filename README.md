@@ -1,9 +1,24 @@
 # 🚀 Astro Blog
-> Utility sites, personal thoughts, and visions
+> Portfolio & blog built to be used personally, and to share it with everyone else
 
 ### Work in Progress
 
 This website is a work in progress.
+
+
+### 🏆 Features
+
+✅ Vanguardist layout
+✅ Simple colors, intuitive design
+✅ Responsive
+✅ Mobile Friendly
+✅ Accessible
+✅ Type-safe Markdown
+✅ Super fast loading
+✅ Draft posts, pagination, related posts, categories, author
+✅ Sitemap & RSS
+✅ Mostly best practices
+✅ Customizable
 
 ### 📚 Project Structure
 
