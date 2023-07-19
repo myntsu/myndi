@@ -8,17 +8,18 @@ This website is a work in progress.
 
 ### 🏆 Features
 
-✅ Vanguardist layout
-✅ Simple colors, intuitive design
-✅ Responsive
-✅ Mobile Friendly
-✅ Accessible
-✅ Type-safe Markdown
-✅ Super fast loading
-✅ Draft posts, pagination, related posts, categories, author
-✅ Sitemap & RSS
-✅ Mostly best practices
-✅ Customizable
+✅ Vanguardist layout  
+✅ Simple colors, intuitive design  
+✅ Responsive  
+✅ Mobile Friendly  
+✅ Accessible, hyperlegible font  
+✅ Type-safe Markdown  
+✅ Super fast loading  
+✅ Draft posts, pagination, related posts, categories, author  
+✅ Sitemap & RSS  
+✅ Mostly best practices  
+✅ Customizable  
+❌ Fuzzy search  
 
 ### 📚 Project Structure
 
