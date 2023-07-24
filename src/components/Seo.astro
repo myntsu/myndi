@@ -5,7 +5,7 @@ import jsonLDGenerator from "../scripts/jsonLD";
 const {
   title,
   description,
-  url = Astro.url,
+  url = Astro.url.pathname,
   image,
   frontmatter,
   robots,
