@@ -6,7 +6,7 @@ import image from "@astrojs/image";
 // https://astro.build/config
 export default defineConfig({
   // sitemap
-  site: "https://astro-blog-custom.netlify.app/",
+  site: "https://myndi.dev",
 
   integrations: [
     // sitemap
