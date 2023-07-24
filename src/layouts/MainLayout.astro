@@ -5,6 +5,9 @@ import MainHead from "./MainHead.astro";
 const {
   title = "Astro Portfolio/Blog",
   description = "Reference links for this Blog",
+  image,
+  frontmatter,
+  robots
 } = Astro.props;
 ---
 
@@ -12,6 +15,9 @@ const {
   <MainHead
     {title}
     {description}
+    {image}
+    {frontmatter}
+    {robots}
   />
   <body>
     <div

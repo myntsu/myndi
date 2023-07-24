@@ -1,6 +1,5 @@
 User-agent: *
 Disallow: /404
-Disallow: /author
 Disallow: /category
 
 Sitemap: https://astro-blog-custom.netlify.app/sitemap-index.xml
