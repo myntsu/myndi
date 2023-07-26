@@ -28,9 +28,8 @@ hamburger.addEventListener('click', () => {
 });
 
 // logic for the touchscreen navbar popup
-// threshold: the higher the more pixels it needs to go through when swiping to activate
-// leftedgehtreshold: the higher, from left to right, how many pixels should the function trigger from
-function phoneSwipe(element, callback, threshold = 30, leftEdgeThreshold = 50) {
+// threshold: the higher the more pixels it needs to go through to active, when swiping
+function phoneSwipe(element, callback, threshold = 20) {
   let touchStartX;
   let touchEndX;
   let touchStartY;
@@ -39,20 +38,21 @@ function phoneSwipe(element, callback, threshold = 30, leftEdgeThreshold = 50) {
   element.addEventListener('touchstart', (event) => {
     touchStartX = event.changedTouches[0].clientX;
     touchStartY = event.changedTouches[0].clientY;
-  });
+  }, {passive: true});
 
   element.addEventListener('touchend', (event) => {
     touchEndX = event.changedTouches[0].clientX;
     touchEndY = event.changedTouches[0].clientY;
     if (Math.abs(touchEndX - touchStartX) > threshold && Math.abs(touchEndY - touchStartY) < threshold) {
-      if (touchEndX > touchStartX && touchStartX < leftEdgeThreshold) {
+      if (touchEndX > touchStartX) {
         callback('right');
       } else if (touchEndX < touchStartX) {
         callback('left');
       }
     }
-  });
+  }, {passive: true});
 }
+
 
 // navbar popup for phone users
 phoneSwipe(navPrimary, (direction) => {
