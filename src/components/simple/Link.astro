@@ -1,0 +1,46 @@
+---
+// libraries import
+import { Icon } from "astro-icon";
+
+import type { HTMLAttributes } from "astro/types";
+
+interface Props extends HTMLAttributes<"a"> {
+  href: string;
+  target?: "default" | "blank";
+  external?: boolean;
+}
+
+const { href, target, external } = Astro.props as Props;
+const targetAttribute = target === "blank" ? { target: "_blank" } : {};
+---
+
+<a href={href} {...targetAttribute} class="link">
+    <slot />
+    {external && <Icon name="ic:twotone-launch" width="18" />}
+</a>
+
+<style lang="scss">
+  .link {
+    display: inline-flex;
+
+    color: hsl(var(--main-color));
+    font-weight: 700;
+    position: relative;
+
+    & svg {
+        display: none;
+        background-color: hsl(var(--background) / .9);
+        border-radius: .25rem;
+    }
+
+    &:is(:hover, :focus-visible) {
+      text-decoration: none;
+      & svg {
+        position: absolute;
+        right: -1.25rem;
+        bottom: .3rem;
+        display: inline;
+      }
+    }
+  }
+</style>

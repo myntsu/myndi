@@ -190,54 +190,6 @@ const {
         }
       }
 
-      .link {
-        color: hsl(var(--main-color));
-        font-weight: 700;
-        position: relative;
-
-        &:is(:hover, :focus-visible) {
-          text-decoration: none;
-
-          &::after {
-            content: "\f08e";
-            top: 45%;
-            transform: translateY(-50%);
-            position: absolute;
-            font-family: "Font Awesome 6 Free";
-            font-weight: 900;
-            font-size: var(--icon-font-size);
-            margin-inline-start: 0.25rem;
-          }
-        }
-      }
-
-      .link-within {
-        color: hsl(var(--main-color));
-        font-weight: 700;
-        position: relative;
-
-        &:is(:hover, :focus-visible) {
-          text-decoration: none;
-        }
-      }
-
-      .card-link {
-        color: hsl(var(--font));
-        text-decoration: none;
-
-        &:is(:hover, :focus-visible) {
-          color: hsl(var(--main-color));
-          outline: transparent;
-
-          transition: color 300ms ease;
-
-          &:focus-visible {
-            background-color: hsl(var(--font));
-            color: hsl(var(--background));
-          }
-        }
-      }
-
       .button {
         display: flex;
 
@@ -259,6 +211,23 @@ const {
 
           &:is(:active) {
             scale: 0.95;
+          }
+        }
+      }
+
+      .card-link {
+        color: hsl(var(--font));
+        text-decoration: none;
+
+        &:is(:hover, :focus-visible) {
+          color: hsl(var(--main-color));
+          outline: transparent;
+
+          transition: color 300ms ease;
+
+          &:focus-visible {
+            background-color: hsl(var(--font));
+            color: hsl(var(--background));
           }
         }
       }
