@@ -9,7 +9,7 @@ image: {
 }
 description: Truly CSS it the only way to go about life.
 draft: false
-category: Very Long Category
+category: HTML
 ---
 
 # This is a blog post
