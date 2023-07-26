@@ -1,4 +1,7 @@
 ---
+// libraries import
+import { Icon } from "astro-icon";
+
 import type { HTMLAttributes } from "astro/types";
 
 interface Socials {
@@ -21,7 +24,7 @@ const { socials } = Astro.props;
         <a
           href={link}
           target="_blank">
-          <i class={`fa-brands fa-square-${platform}`} />
+          <Icon class="icon" pack="fa-brands" name={`${platform}-square`} width="32" height="32"/>
           <span>{handle}</span>
         </a>
       ))
