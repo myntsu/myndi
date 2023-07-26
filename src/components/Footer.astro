@@ -1,30 +1,31 @@
 ---
 // libraries import
 import { Icon } from "astro-icon";
+
+// components import
+import Link from "../components/simple/Link.astro";
 ---
 
 <footer>
   <div class="rss-feed">
-    <a
-      href="/rss.xml"
-      class="link-within">
+    <Link
+      href="/rss.xml">
       Subscribe to my RSS
       <Icon
         name="ic:baseline-rss-feed"
-        width="22"
-        height="22"
+        width="20"
+        height="20"
       />
-    </a>
+    </Link>
   </div>
   <div class="copyright">
     <p>
-      Made by <a
-        href="https://github.com/Myntsu"
-        target="_blank"
-        class="link"
-        >Myndi</a
-      >
+      Made by
+      <Link href="https://github.com/Myntsu" target="blank" external >
+        Myndi
+      </Link>
     </p>
+    <a href="" target=""></a>
     <small>
       Copyright &copy <span id="copyright"></span> | All rights reserved
     </small>
