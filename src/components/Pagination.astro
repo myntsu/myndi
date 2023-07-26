@@ -1,4 +1,7 @@
 ---
+// libraries import
+import { Icon } from "astro-icon";
+
 const { prevUrl, nextUrl } = Astro.props;
 ---
 
@@ -6,39 +9,70 @@ const { prevUrl, nextUrl } = Astro.props;
   {
     prevUrl && (
       <span class="button">
-        <a href={prevUrl} class="previous">Previous</a>
+        <a
+          href={prevUrl}
+          aria-label="Previous page">
+          <span class="icon">
+            <Icon
+              name="mdi:arrow-left-bold"
+            />
+          </span>
+          Previous
+        </a>
       </span>
     )
   }
   {
     nextUrl && (
       <span class="button">
-        <a href={nextUrl} class="next">Next</a>
+        <a
+          href={nextUrl}
+          aria-label="Next page">
+          Next
+          <span class="icon">
+            <Icon
+              name="mdi:arrow-right-bold"
+            />
+          </span>
+        </a>
       </span>
     )
   }
 </nav>
 
 <style>
-    nav {
-        align-self: flex-end;
-        display: flex;
-        gap: var(--rem-sm);
-    }
+  nav {
+    align-self: flex-end;
+    display: flex;
+    gap: var(--rem-sm);
+  }
 
-    .previous::before {
-        content: '\f060';
-        padding-inline-end: var(--rem-sm);
-    }
+  .button a {
+    display: flex;
+    align-items: center;
+  }
 
-    .next::after {
-        content: '\f061';
-        padding-inline-start: var(--rem-sm);
-    }
+  [aria-label="Previous page"] .icon {
+    padding-inline-end: var(--rem-xs);
+  }
 
-    .previous::before, .next::after {
-        font-family: 'Font Awesome 6 Free';
-        font-weight: 900;
-        font-size: var(--icon-font-size);
-    }
+  [aria-label="Next page"] .icon {
+    padding-inline-start: var(--rem-xs);
+  }
+
+  .icon {
+    display: flex;
+    align-items: center;
+
+    position: relative;
+    top: 35%;
+    /* left: 0; */
+    transform: translate(0%, -50%);
+  }
+
+  .icon svg {
+    --size: 18px;
+    width: var(--size);
+    height: var(--size);
+  }
 </style>
