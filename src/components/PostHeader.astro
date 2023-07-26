@@ -4,6 +4,7 @@ import { Image } from "@astrojs/image/components";
 
 // utils import
 import {formatDate, slugify} from "../scripts/utils.js";
+import Link from "./simple/Link.astro";
 
 const {
     title, description, date, category, author, image
@@ -13,7 +14,7 @@ const {
 <header>
     <div class="container">
         <h1>{title}</h1>
-        <p>by <a class="link-within" href={`/author/${slugify(author)}`}>{author}</a> • {formatDate(date)}</p>
+        <p>by <Link href={`/author/${slugify(author)}`}>{author}</Link> • {formatDate(date)}</p>
         <small class="tag">
             <a href={`/category/${slugify(category)}`}>{category}</a>
         </small>
