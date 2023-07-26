@@ -19,18 +19,18 @@ const processedCats = allCategories.reduce((acc, category) => {
   };
 }, {});
 
-const { showCount } = Astro.props;
+const { showCount, classes } = Astro.props;
 ---
 
 <ul>
   {
     Object.entries(processedCats).map(([key, val]) => (
       <li>
-        <div class="tag">
+        <div class:list={[classes]}>
           <a
             href={`/category/${slugify(key)}/`}>
             <div class="split-tag">
-              <span class="title">{key}</span> <span class="number">{showCount && `${val}`}</span>
+              <span class="title">{key}</span> {showCount && <span class="number">{showCount && `${val}`}</span>}
             </div>
           </a>
         </div>

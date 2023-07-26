@@ -238,6 +238,26 @@ const {
         font-size: 1rem;
         font-family: monospace;
 
+        &:is(.tag-button) {
+          a {
+            color: hsl(var(--button-font));
+            background-color: hsl(var(--button));
+
+            &:is(:hover, :focus-visible) {
+              color: hsl(var(--button));
+              background-color: hsl(var(--button-font));
+              outline: 1px solid hsl(var(--button));
+            }
+
+            .split-tag {
+              .number {
+                color: hsl(var(--button));
+                background-color: hsl(var(--button-font));
+              }
+            }
+          }
+        }
+
         a {
           padding-inline: 0.5rem;
 
@@ -274,14 +294,14 @@ const {
             .number {
               margin-inline-end: auto;
 
-              background-color: hsl(var(--tag-font));
               color: hsl(var(--tag));
+              background-color: hsl(var(--tag-font));
             }
           }
 
           &:is(:hover, :focus-visible) {
-            background-color: hsl(var(--tag-font));
             color: hsl(var(--tag));
+            background-color: hsl(var(--tag-font));
 
             opacity: 0.9;
             outline: 1px solid hsl(var(--tag));
