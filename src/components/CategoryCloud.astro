@@ -6,7 +6,8 @@ const allPosts = await Astro.glob("../pages/blog/*.md");
 const formattedPosts = formatBlogPosts(allPosts);
 
 const allCategories = formattedPosts
-  .map((cat) => cat.frontmatter.category.toLowerCase())
+  // you can add .toLowerCase() in case you want to keep it all lowercase
+  .map((cat) => cat.frontmatter.category)
   .flat();
 
 const processedCats = allCategories.reduce((acc, category) => {
@@ -19,23 +20,27 @@ const processedCats = allCategories.reduce((acc, category) => {
   };
 }, {});
 
-const { showCount, classes } = Astro.props;
+const { showCount, classes, categoryClasses } = Astro.props;
 ---
 
-<ul>
+<ul class:list={[categoryClasses]}>
   {
-    Object.entries(processedCats).map(([key, val]) => (
-      <li>
-        <div class:list={[classes]}>
-          <a
-            href={`/category/${slugify(key)}/`}>
-            <div class="split-tag">
-              <span class="title">{key}</span> {showCount && <span class="number">{showCount && `${val}`}</span>}
-            </div>
-          </a>
-        </div>
-      </li>
-    ))
+    Object.entries(processedCats)
+      .sort((a, b) => a[0].length - b[0].length)
+      .map(([key, val]) => (
+        <li>
+          <div class:list={[classes]}>
+            <a href={`/category/${slugify(key)}/`}>
+              <div class="split-tag">
+                <span class="title">{key}</span>{" "}
+                {showCount && (
+                  <span class="number">{showCount && `${val}`}</span>
+                )}
+              </div>
+            </a>
+          </div>
+        </li>
+      ))
   }
 </ul>
 
@@ -49,4 +54,20 @@ const { showCount, classes } = Astro.props;
     margin: 0;
     padding: 0;
   }
+
+  .flex-list {
+    li {
+      flex: 1 0 0;
+
+      a {
+        width: 100%;
+
+        span {
+          display: block !important;
+        }
+      }
+    }
+  }
 </style>
+
+<script></script>

@@ -18,13 +18,35 @@ navLinks.forEach((link) => {
   }
 });
 
-
+// hamburger menu open/close + aria attr
 const hamburger = document.querySelector('.hamburger');
-const navPrimary = document.querySelector('#layout');
+const layout = document.querySelector('#layout');
+const navbar = document.querySelector('#navbar');
 
-// hamburger menu popup
+// making objects not tabable on tablet/mobile
+function navbarAccessibility(isOpen) {
+  hamburger.setAttribute('aria-expanded', isOpen);
+  navbar.setAttribute('aria-hidden', !isOpen);
+
+  if (window.matchMedia('(max-width: 870px)').matches) {
+    const navbarAnchors = navbar.querySelectorAll('a');
+    navbarAnchors.forEach(element => {
+      if (!isOpen) {
+        element.setAttribute('tabindex', '-1');
+      } else {
+        element.removeAttribute('tabindex');
+      }
+    });
+  }
+}
+
+// making it active on load by default
+navbarAccessibility(false);
+
+// hamburger menu toggle + a11y
 hamburger.addEventListener('click', () => {
-  navPrimary.classList.toggle('open');
+  const isOpen = layout.classList.toggle('open');
+  navbarAccessibility(isOpen);
 });
 
 // logic for the touchscreen navbar popup
@@ -55,10 +77,10 @@ function phoneSwipe(element, callback, threshold = 20) {
 
 
 // navbar popup for phone users
-phoneSwipe(navPrimary, (direction) => {
+phoneSwipe(layout, (direction) => {
   if (direction === 'right') {
-    navPrimary.classList.add('open');
+    layout.classList.add('open');
   } else {
-    navPrimary.classList.remove('open');
+    layout.classList.remove('open');
   }
 }, 30, 100);
