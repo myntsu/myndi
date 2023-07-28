@@ -6,7 +6,8 @@ const allPosts = await Astro.glob("../pages/blog/*.md");
 const formattedPosts = formatBlogPosts(allPosts);
 
 const allCategories = formattedPosts
-  .map((cat) => cat.frontmatter.category.toLowerCase())
+  // you can add .toLowerCase() in case you want to keep it all lowercase
+  .map((cat) => cat.frontmatter.category)
   .flat();
 
 const processedCats = allCategories.reduce((acc, category) => {
@@ -19,17 +20,17 @@ const processedCats = allCategories.reduce((acc, category) => {
   };
 }, {});
 
-const { showCount, classes } = Astro.props;
+const { showCount, classes, categoryClasses } = Astro.props;
 ---
 
-<ul>
+<ul class:list={[categoryClasses]}>
   {
     Object.entries(processedCats).map(([key, val]) => (
       <li>
         <div class:list={[classes]}>
           <a
             href={`/category/${slugify(key)}/`}>
-            <div class="split-tag">
+            <div>
               <span class="title">{key}</span> {showCount && <span class="number">{showCount && `${val}`}</span>}
             </div>
           </a>
@@ -49,4 +50,34 @@ const { showCount, classes } = Astro.props;
     margin: 0;
     padding: 0;
   }
+
+  .grid-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
+
+      a {
+        width: 100%;
+        
+        div {
+          span {
+            &.grid-row-2 {
+              grid-row: 2;
+            }
+          }
+        }
+      }
+  }
 </style>
+
+<script>
+const spanElements = document.querySelectorAll('.grid-list span');
+
+spanElements.forEach((span) => {
+  if (span.scrollWidth > span.clientWidth) {
+    // Text overflows
+    span.classList.add('grid-row-2'); // Add a class to apply the grid-row: 2 property
+    // Alternatively, you can directly set the style property:
+    // span.style.gridRow = '2';
+  }
+});
+</script>

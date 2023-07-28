@@ -10,11 +10,11 @@ import { Icon } from "astro-icon";
 let showDiv = Astro.request.url.includes("/about");
 ---
 
-<button type="button" class="hamburger" aria-label="Open navigation bar">
+<button type="button" class="hamburger" aria-label="Open navigation bar" aria-controls="navbar" aria-expanded="false">
   <Icon class="hamburger-icon arrow" name="jam:arrow-square-right-f" />
   <Icon class="hamburger-icon cross" name="jam:close-rectangle-f" />
 </button>
-<nav aria-label="Primary">
+<nav id="navbar" aria-label="Primary">
   <div class="container">
     <div class="inner">
       <a href="/">
@@ -113,6 +113,14 @@ let showDiv = Astro.request.url.includes("/about");
     top: 1.25rem;
     right: 1.25rem;
     z-index: 9999;
+
+    &:is(:active) {
+      scale: 0.97;
+    }
+
+    &:is(:hover) {
+      opacity: 0.9;
+    }
 
     .hamburger-icon {
       color: hsl(var(--font));

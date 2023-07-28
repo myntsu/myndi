@@ -18,13 +18,15 @@ navLinks.forEach((link) => {
   }
 });
 
-
+// hamburger menu open/close + aria attr
 const hamburger = document.querySelector('.hamburger');
 const navPrimary = document.querySelector('#layout');
+const navbar = document.querySelector('#navbar');
 
-// hamburger menu popup
 hamburger.addEventListener('click', () => {
-  navPrimary.classList.toggle('open');
+  const isOpen = navPrimary.classList.toggle('open');
+  hamburger.setAttribute('aria-expanded', isOpen);
+  navbar.setAttribute('aria-hidden', !isOpen);
 });
 
 // logic for the touchscreen navbar popup
