@@ -1,9 +1,13 @@
 ---
 //library import
 import { Image } from "@astrojs/image/components";
+import { Icon } from "astro-icon";
 
 // utils import
 import { formatDate, slugify } from "../scripts/utils.js";
+
+// components import
+import Link from "../components/simple/Link.astro";
 
 const { frontmatter, url, tagType } = Astro.props;
 
@@ -41,21 +45,33 @@ const { title, description, date, category, author, image } = frontmatter;
           >{title}</a
         >
       </Tag>
-      <p class="author-link">
-        by <a
-          href={`/author/${slugify(author)}`}
-          class="card-link"
-          >{author}</a
-        >
-        <i class="fa-solid fa-calendar-days"></i>
-        {formatDate(date)}
-      </p>
+      <small>
+        <div class="author-date">
+          <div>
+            <Icon
+              class="icon"
+              name="ic:baseline-account-box"
+            />
+            <Link
+              href={`/author/${slugify(author)}`}
+              class="card-link"
+              >{author}</Link
+            >
+          </div>
+          <div>
+            <Icon
+              class="icon"
+              name="ic:baseline-calendar-month"
+            />
+            {formatDate(date)}
+          </div>
+        </div>
+      </small>
     </div>
     <p class="description">{description}</p>
     <div class="button read-more">
       <a
         href={url}
-        aria-label=`Read more about ${title}`
         aria-labelledby=`Read more about ${title}`
         >Read post</a
       >
@@ -68,7 +84,21 @@ const { title, description, date, category, author, image } = frontmatter;
     background: hsl(0 0% 13%);
     border-radius: 0.25rem;
     position: relative;
+
+    background-image: linear-gradient(
+      145deg,
+      transparent,
+      hsl(var(--font) / 0.01) 70%,
+      hsl(var(--font) / 0.1)
+    );
+    background-size: 400%;
+    background-position: 60% 60%;
+
     transition: background 0.1s;
+
+    &:is(:hover) {
+      outline: 1px solid hsl(var(--font) / .3);
+    }
 
     &::after {
       content: "";
@@ -104,12 +134,14 @@ const { title, description, date, category, author, image } = frontmatter;
     }
 
     small {
-      display: flex;
-      align-items: center;
+      &.tag {
+        display: flex;
+        align-items: center;
 
-      position: absolute;
-      top: 0.25rem;
-      left: 0.25rem;
+        position: absolute;
+        top: 0.25rem;
+        left: 0.25rem;
+      }
     }
 
     .content {
@@ -138,8 +170,25 @@ const { title, description, date, category, author, image } = frontmatter;
           font-size: 0.75rem;
         }
 
-        .author-link {
+        .author-date {
+          display: grid;
+          gap: 0.25rem;
           color: hsl(var(--font) / 0.7);
+
+          a {
+            display: block;
+            z-index: 2;
+          }
+
+          & > div {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+
+            & > * {
+              max-height: 16px;
+            }
+          }
         }
       }
 
@@ -160,17 +209,6 @@ const { title, description, date, category, author, image } = frontmatter;
             background-color: hsl(var(--font));
             color: hsl(var(--background));
           }
-        }
-      }
-
-      h1,
-      h2,
-      h3,
-      h4,
-      h5,
-      h6 {
-        &:is(:first-child) {
-          margin: 0;
         }
       }
 
@@ -203,6 +241,10 @@ const { title, description, date, category, author, image } = frontmatter;
 
   .tag {
     filter: drop-shadow(2px 2px 2px hsl(var(--background) / 0.3));
+  }
+
+  .icon {
+    max-width: 16px;
   }
 </style>
 
