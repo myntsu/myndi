@@ -25,18 +25,22 @@ const { showCount, classes, categoryClasses } = Astro.props;
 
 <ul class:list={[categoryClasses]}>
   {
-    Object.entries(processedCats).map(([key, val]) => (
-      <li>
-        <div class:list={[classes]}>
-          <a
-            href={`/category/${slugify(key)}/`}>
-            <div>
-              <span class="title">{key}</span> {showCount && <span class="number">{showCount && `${val}`}</span>}
-            </div>
-          </a>
-        </div>
-      </li>
-    ))
+    Object.entries(processedCats)
+      .sort((a, b) => a[0].length - b[0].length)
+      .map(([key, val]) => (
+        <li>
+          <div class:list={[classes]}>
+            <a href={`/category/${slugify(key)}/`}>
+              <div class="split-tag">
+                <span class="title">{key}</span>{" "}
+                {showCount && (
+                  <span class="number">{showCount && `${val}`}</span>
+                )}
+              </div>
+            </a>
+          </div>
+        </li>
+      ))
   }
 </ul>
 
@@ -51,33 +55,19 @@ const { showCount, classes, categoryClasses } = Astro.props;
     padding: 0;
   }
 
-  .grid-list {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
+  .flex-list {
+    li {
+      flex: 1 0 0;
 
       a {
         width: 100%;
-        
-        div {
-          span {
-            &.grid-row-2 {
-              grid-row: 2;
-            }
-          }
+
+        span {
+          display: block !important;
         }
       }
+    }
   }
 </style>
 
-<script>
-const spanElements = document.querySelectorAll('.grid-list span');
-
-spanElements.forEach((span) => {
-  if (span.scrollWidth > span.clientWidth) {
-    // Text overflows
-    span.classList.add('grid-row-2'); // Add a class to apply the grid-row: 2 property
-    // Alternatively, you can directly set the style property:
-    // span.style.gridRow = '2';
-  }
-});
-</script>
+<script></script>
