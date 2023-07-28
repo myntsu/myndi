@@ -25,7 +25,7 @@ const { socials } = Astro.props;
           href={link}
           target="_blank">
           <Icon pack="fa-brands" name={`${platform}-square`} width="32" height="32"/>
-          <span>{handle}</span>
+          <span data-handle>{handle}</span>
         </a>
       ))
     }
@@ -59,6 +59,11 @@ const { socials } = Astro.props;
         text-decoration: none;
 
         span {
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            word-break: break-all;
             font-size: .6rem;
         }
 
@@ -73,3 +78,11 @@ const { socials } = Astro.props;
 
   }
 </style>
+
+<script>
+  const handles = document.querySelectorAll('[data-handle]');
+  handles.forEach((handle) => {
+    const handleText = handle.innerText;
+    handle.setAttribute('title', handleText);
+  });
+</script>
