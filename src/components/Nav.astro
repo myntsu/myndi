@@ -1,15 +1,19 @@
 ---
 // component import
 import Footer from "../components/Footer.astro";
+import SocialMedia from "./simple/SocialMedia.astro";
 
 //library import
 import { Image } from "@astrojs/image/components";
-import SocialMedia from "./simple/SocialMedia.astro";
+import { Icon } from "astro-icon";
 
 let showDiv = Astro.request.url.includes("/about");
 ---
 
-<button type="button" class="hamburger" aria-label="Open navigation bar"></button>
+<button type="button" class="hamburger" aria-label="Open navigation bar">
+  <Icon class="hamburger-icon arrow" name="jam:arrow-square-right-f" />
+  <Icon class="hamburger-icon cross" name="jam:close-rectangle-f" />
+</button>
 <nav aria-label="Primary">
   <div class="container">
     <div class="inner">
@@ -106,49 +110,22 @@ let showDiv = Astro.request.url.includes("/about");
   .hamburger {
     display: none;
     position: fixed;
-    top: var(--rem-xl);
-    right: var(--rem-xl);
-    font-size: 2rem;
-    z-index: 10000;
+    top: 1.25rem;
+    right: 1.25rem;
+    z-index: 9999;
 
-    transition: background-color 200ms linear;
-
-    &::before {
-      content: "\f0c9";
-      font-family: "Font Awesome 6 Free";
-      font-weight: 900;
+    .hamburger-icon {
       color: hsl(var(--font));
-      padding: .5rem;
+      height: 60px;
+      width: 60px;
+
+      transition: color 200ms linear;
     }
 
     @media only screen and (max-width: 870px) {
       display: flex;
-      background-color: hsl(var(--background-lighter));
-      border: 1px solid hsl(var(--font) / 0.3);
-      border-radius: var(--rem-sm);
-    }
-  }
-
-  .arrow-swipe {
-    position: fixed;
-    left: 0;
-    top: 50%;
-    transform: translate(-50%, -50%);
-
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-
-    width: 30px;
-    aspect-ratio: 1/2;
-    padding: .25rem;
-    background-color: hsl(var(--font));
-    border: none;
-    border-radius: .5rem;
-  
-    &::after {
-      content: '>';
-      color: hsl(var(--background));
+      background-color: unset;
+      border: none;
     }
   }
 
