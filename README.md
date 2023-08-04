@@ -1,16 +1,16 @@
 # 🚀 Astro Portfolio & Blog
 > Portfolio & blog template, feel free to get your copy (～￣▽￣)～
 
-## 🚩 Guide
+## 🚩 Getting started
 
-**Follow this simple guide line to know where to start**
+**Are you lost or don't know where to start? Take a look at this simple guide!**
 
 | Landmarks                                 | Explanation                                                 |
 | :-----------------------------------------| :---------------------------------------------------------- |
-| [Features](#-features)                    | Shows the lists of all the features included in the project |
-| [Project Structure](#-project-structure)  | Showscases the folder structure within the project          |
-| [Setup](#-setup)                          | Explanation on how to get started with this template        |
-| [Credits](#-credits)                      | A special thanks to the people that made this possible      |
+| [Features](#-features)                    | All the features available in this project                  |
+| [Project Structure](#-project-structure)  | List of folder within the project                           |
+| [Setup](#-setup)                          | How to get started with if you want to use this repository  |
+| [Credits](#-credits)                      | A special thanks to the people who made this possible       |
 
 ## 🏆 Features
 
@@ -27,6 +27,11 @@
 ✅ Customizable  
 ❌ Fuzzy search  
 ❌ Boring portfolio/blog
+
+## 🗼 Ligthouse
+
+![Lighthouse](https://pagespeed.web.dev/analysis/https-myndi-dev/q7q4is0aqm?form_factor=mobile)
+https://pagespeed.web.dev/analysis/https-myndi-dev/q7q4is0aqm?form_factor=mobile
 
 ## 📚 Project Structure
 
@@ -79,9 +84,7 @@
 └── ts.config.json
 ```
 
-## 💻 Setup
-
-To start this project you have **3 options**, you either use a template, clone/fork it or do it on your own from scratch using the same dependencies.
+## 💻 How to get started?
 
 1. **Astro template**
 
