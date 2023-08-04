@@ -1,6 +1,7 @@
 @font-face {
   font-family: "Atkinson Hyperlegible";
-  src: url("/fonts/atkinson-hyperlegible/WOFF2/Atkinson-Hyperlegible-Regular-102a.woff2") format("woff2"),
+  src: 
+    url("/fonts/atkinson-hyperlegible/WOFF2/Atkinson-Hyperlegible-Regular-102a.woff2") format("woff2"),
     url("/fonts/atkinson-hyperlegible/WOFF/Atkinson-Hyperlegible-Regular-102.woff") format("woff"),
     url("/fonts/atkinson-hyperlegible/TTF/Atkinson-Hyperlegible-Regular-102.ttf") format("ttf"),
     url("/fonts/atkinson-hyperlegible/SVG/Atkinson-Hyperlegible-Regular-102.svg") format("svg");
@@ -295,4 +296,8 @@ picture {
   position: absolute;
   inset: 0;
   cursor: pointer;
+}
+
+.kaomoji {
+  display: inline-block;
 }
