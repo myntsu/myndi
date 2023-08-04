@@ -67,7 +67,7 @@
 }
 
 *,
-::before,
+*::before,
 *::after {
   box-sizing: border-box;
 }
@@ -299,8 +299,4 @@ picture {
   position: absolute;
   inset: 0;
   cursor: pointer;
-}
-
-.kaomoji {
-  display: inline-block;
 }
