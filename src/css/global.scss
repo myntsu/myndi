@@ -1,13 +1,9 @@
 @font-face {
   font-family: "Atkinson Hyperlegible";
-  src: url("/fonts/atkinson-hyperlegible/WOFF2/Atkinson-Hyperlegible-Regular-102.woff2")
-      format("woff2"),
-    url("/fonts/atkinson-hyperlegible/WOFF/Atkinson-Hyperlegible-Regular-102.woff")
-      format("woff"),
-    url("/fonts/atkinson-hyperlegible/TTF/Atkinson-Hyperlegible-Regular-102.ttf")
-      format("ttf"),
-    url("/fonts/atkinson-hyperlegible/SVG/Atkinson-Hyperlegible-Regular-102.svg")
-      format("svg");
+  src: url("/fonts/atkinson-hyperlegible/WOFF2/Atkinson-Hyperlegible-Regular-102a.woff2") format("woff2"),
+    url("/fonts/atkinson-hyperlegible/WOFF/Atkinson-Hyperlegible-Regular-102.woff") format("woff"),
+    url("/fonts/atkinson-hyperlegible/TTF/Atkinson-Hyperlegible-Regular-102.ttf") format("ttf"),
+    url("/fonts/atkinson-hyperlegible/SVG/Atkinson-Hyperlegible-Regular-102.svg") format("svg");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
