@@ -1,10 +1,16 @@
 # 🚀 Astro Portfolio & Blog
-> Portfolio & blog built to be used personally, and to share it with everyone else
+> Portfolio & blog template, feel free to get your copy (～￣▽￣)～
 
-## Work in Progress
+## 🚩 Guide
 
-This website is a work in progress.
+**Follow this simple guide line to know where to start**
 
+| Landmarks                                 | Explanation                                                 |
+| :-----------------------------------------| :---------------------------------------------------------- |
+| [Features](#-features)                    | Shows the lists of all the features included in the project |
+| [Project Structure](#-project-structure)  | Showscases the folder structure within the project          |
+| [Setup](#-setup)                          | Explanation on how to get started with this template        |
+| [Credits](#-credits)                      | A special thanks to the people that made this possible      |
 
 ## 🏆 Features
 
@@ -75,27 +81,39 @@ This website is a work in progress.
 
 ## 💻 Setup
 
-There's three options for each setup
+To start this project you have **3 options**, you either use a template, clone/fork it or do it on your own from scratch using the same dependencies.
 
-1. Template *(coming soon)*
+1. **Astro template**
 
 2. **Clone/fork the repository**
 
 3. **Do it yourself** - *simply start a new empty Astro project, and follow the steps below if you want to have the same integrations*
 
-## 1️⃣ Template *(coming soon)*
+## 1️⃣ Astro template
 
-*coming soon*
+**Run this command and let the magic happen**
+
+```bash
+npm create astro@latest -- --template Myntsu/astro-blog
+# or
+pnpm create astro@latest --template Myntsu/astro-blog
+```
 
 ## 2️⃣ Clone/fork the repository
+
+**Clone or fork the repository**
 
 ```bash
 git clone https://github.com/Myntsu/astro-blog
 ```
 
+**Change the directory**
+
 ```bash
 cd blog-astro
 ```
+
+**Install the dependencies**
 
 ```bash
 npm install
@@ -260,9 +278,10 @@ npm install
   
 ## 👑 Credits 
 
- - **CodingInPublic** [Youtube Channel] - For the amazing tutorial to create an Astro Blog
+ - **CodingInPublic** [Youtube Channel] - for the amazing tutorial to create an Astro Blog
  - **Kevin Powell** - for helping me realize it wasn't using the default responsive mode from browsers
  - **Zakum** - for helping me fixing the navbar layout not sticking properly
+ - **ChatGPT** - for the really good insights on parts of my code (it really helped me here and there)
 
 ## 📄 License
 

@@ -9,6 +9,8 @@
         format("woff"),
       url("/fonts/atkinson-hyperlegible/WOFF2/Atkinson-Hyperlegible-Regular-102.woff2")
         format("woff2");
+    font-weight: normal;
+    font-style: normal;
     font-display: swap;
   }
 
@@ -80,10 +82,10 @@
   body {
     margin: 0;
 
-    background-color: hsl(var(--background));
     color: hsl(var(--font));
+    background-color: hsl(var(--background));
 
-    font-family: "Atkinson Hyperlegible";
+    font-family: "Atkinson Hyperlegible", sans-serif;
     font-size: var(--current-font-size);
     font-weight: 400;
     line-height: 1.5;
