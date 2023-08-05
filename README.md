@@ -1,16 +1,27 @@
 # 🚀 Astro Portfolio & Blog
-> Portfolio & blog template, feel free to get your copy (～￣▽￣)～
+> Portfolio & blog template, sit down and order yours for free (～￣▽￣)～
+
+Hey there, my nickname is **Myndi**. I'm a front-end developer (or I pretend to be one). I'm passionate about designing, but most importantly, giving back to the community and those interested in learning and growing as a developer themselves.
+
+This project is a **highly costumizable** Portfolio & Blog (yes, 2 in 1)
 
 ## 🚩 Getting started
 
 **Are you lost or don't know where to start? Take a look at this simple guide!**
 
-| Landmarks                                 | Explanation                                                 |
-| :-----------------------------------------| :---------------------------------------------------------- |
-| [Features](#-features)                    | All the features available in this project                  |
-| [Project Structure](#-project-structure)  | List of folder within the project                           |
-| [Setup](#-setup)                          | How to get started with if you want to use this repository  |
-| [Credits](#-credits)                      | A special thanks to the people who made this possible       |
+1. [Setup](#-setup) your project.
+
+2. []() to update.
+
+3. Delte this `.md` and make your own if you wish 🙌
+
+| Landmarks                                 | Explanation                                       |
+| :-----------------------------------------| :------------------------------------------------ |
+| [Features](#-features)                    | What is our offer within this project             |
+| [Metrics](#-lighthouse)                   | Lighthouse statistics for most of the views       |
+| [Project Structure](#-project-structure)  | List of folders you will find here                |
+| [Setup](#-setup)                          | How to get started to get your own                |
+| [Credits](#-credits)                      | A special thanks to everyone who contributed      |
 
 ## 🏆 Features
 
@@ -28,12 +39,13 @@
 ❌ Fuzzy search  
 ❌ Boring portfolio/blog
 
-## 🗼 Ligthouse
+## 🌇 Ligthouse
 
-![Lighthouse](https://pagespeed.web.dev/analysis/https-myndi-dev/q7q4is0aqm?form_factor=mobile)
-https://pagespeed.web.dev/analysis/https-myndi-dev/q7q4is0aqm?form_factor=mobile
+![https://pagespeed.web.dev/analysis/https-myndi-dev/d9he6w1gkn?form_factor=mobile](https://raw.githubusercontent.com/brayandiazc/brayandiazc.com/main/AstroPaper-lighthouse-score.svg)
 
 ## 📚 Project Structure
+
+This project has the following folder structure:
 
 ```
 /
@@ -84,25 +96,39 @@ https://pagespeed.web.dev/analysis/https-myndi-dev/q7q4is0aqm?form_factor=mobile
 └── ts.config.json
 ```
 
+Astro renders `.astro`, `.md` or `.mdx` files inside `src/pages/` as a regular ``.html`` page.
+
+All the statics assets, like fonts, images, etc., must be placed inside `public/`.
+
 ## 💻 How to get started?
 
-1. **Astro template**
+Pick your poison 😎
 
-2. **Clone/fork the repository**
+1. **[Astro template](#-astro-template)**
 
-3. **Do it yourself** - *simply start a new empty Astro project, and follow the steps below if you want to have the same integrations*
+2. **[Clone or fork](#-clone-or-fork-the-repository) the repository** - *forks helps to boost my metrics in GitHub*
+
+3. **[Do it yourself](#-do-it-yourself)** - *simply start a new empty Astro project, and follow the steps below if you want to have the same integrations*
 
 ## 1️⃣ Astro template
 
-**Run this command and let the magic happen**
+**Run this command locally and let the magic happen**
 
 ```bash
+# npm 6.x
+npm create astro@latest --template Myntsu/astro-blog
+
+# npm 7+
 npm create astro@latest -- --template Myntsu/astro-blog
-# or
+
+#pnpm
 pnpm create astro@latest --template Myntsu/astro-blog
+
+# yarn
+yarn create astro --template Myntsu/astro-blog
 ```
 
-## 2️⃣ Clone/fork the repository
+## 2️⃣ Clone or fork the repository
 
 **Clone or fork the repository**
 
@@ -278,10 +304,20 @@ npm install
   /* Here you add your XSL styles */
   /* If you don't have any, grab the ones from this repository */
   ```
+
+##
+
+## 👀 Want to know more about Astro?
+
+Check these amazing people (or articles)!
+
+- [Astro Documentation](https://docs.astro.build/en/getting-started/) - the official **Astro** documentation, could become **hard to follow**, but promise that it is good in the long run 😊
+- [Coding in Public](https://www.youtube.com/@CodinginPublic) - advanced Astro development, user friendly, and very **easy to follow**
   
 ## 👑 Credits 
 
  - **CodingInPublic** [Youtube Channel] - for the amazing tutorial to create an Astro Blog
+ - **Brayan Diaz C** - for his help reviewing this READ.ME and for some of the templates
  - **Kevin Powell** - for helping me realize it wasn't using the default responsive mode from browsers
  - **Zakum** - for helping me fixing the navbar layout not sticking properly
  - **ChatGPT** - for the really good insights on parts of my code (it really helped me here and there)
