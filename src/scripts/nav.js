@@ -23,31 +23,28 @@ const hamburger = document.querySelector('.hamburger');
 const layout = document.querySelector('#layout');
 const navbar = document.querySelector('#navbar');
 
-// making objects not tabable on tablet/mobile
+// making objects not tabable on tablet/mobile when function is run
 function navbarAccessibility(isOpen) {
-  hamburger.setAttribute('aria-expanded', isOpen);
-  navbar.setAttribute('aria-hidden', !isOpen);
-
   if (window.matchMedia('(max-width: 870px)').matches) {
     const navbarAnchors = navbar.querySelectorAll('a');
     navbarAnchors.forEach(element => {
       if (!isOpen) {
-        element.setAttribute('tabindex', '-1');
+        element.setAttribute('aria-hidden', 'true');
       } else {
-        element.removeAttribute('tabindex');
+        element.removeAttribute('aria-hidden');
       }
     });
   }
 }
 
-// making it active on load by default
-navbarAccessibility(false);
-
-// hamburger menu toggle + a11y
+// hamburger menu toggle and aria hidden activation
 hamburger.addEventListener('click', () => {
   const isOpen = layout.classList.toggle('open');
   navbarAccessibility(isOpen);
 });
+
+// disable it on load by default
+navbarAccessibility(false);
 
 // logic for the touchscreen navbar popup
 // threshold: the higher the more pixels it needs to go through to active, when swiping

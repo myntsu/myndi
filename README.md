@@ -1,7 +1,8 @@
 # 🚀 Astro Portfolio & Blog
 > Portfolio & blog template, sit down and order yours for free (～￣▽￣)～
 
-Hey there, my nickname is **Myndi**. I'm a front-end developer (or I pretend to be one). I'm passionate about designing, but most importantly, giving back to the community and those interested in learning and growing as a developer themselves.
+Hey there, my nickname is **Myndi**. I'm a **front-end** developer.  
+Passionate about designing, but most importantly, giving back to the community and those interested in learning and growing as a developer themselves.
 
 This project is a **highly costumizable** Portfolio & Blog (yes, 2 in 1)
 
@@ -9,18 +10,20 @@ This project is a **highly costumizable** Portfolio & Blog (yes, 2 in 1)
 
 **Are you lost or don't know where to start? Take a look at this simple guide!**
 
-1. [Setup](#-setup) your project.
+1. [Deploy](#-setup) your project 😎
 
-2. []() to update.
+2. [Update](#-documentation) the website to your fit 😤
 
-3. Delte this `.md` and make your own if you wish 🙌
+3. Delete this `.md` and make your own to sail 🙌
 
 | Landmarks                                 | Explanation                                       |
 | :-----------------------------------------| :------------------------------------------------ |
 | [Features](#-features)                    | What is our offer within this project             |
 | [Metrics](#-lighthouse)                   | Lighthouse statistics for most of the views       |
-| [Project Structure](#-project-structure)  | List of folders you will find here                |
+| [Structure](#-project-structure)          | List of the folders you will find here            |
 | [Setup](#-setup)                          | How to get started to get your own                |
+| [Documentation](#-setup)                  | All the information you need to edit your website |
+| [Learn](#-setup)                          |                 |
 | [Credits](#-credits)                      | A special thanks to everyone who contributed      |
 
 ## 🏆 Features
@@ -305,14 +308,17 @@ npm install
   /* If you don't have any, grab the ones from this repository */
   ```
 
-##
+## 📖 Documentation
+
+
 
 ## 👀 Want to know more about Astro?
 
 Check these amazing people (or articles)!
 
-- [Astro Documentation](https://docs.astro.build/en/getting-started/) - the official **Astro** documentation, could become **hard to follow**, but promise that it is good in the long run 😊
-- [Coding in Public](https://www.youtube.com/@CodinginPublic) - advanced Astro development, user friendly, and very **easy to follow**
+- [Astro Documentation](https://docs.astro.build/en/getting-started/) - the official **Astro** documentation, user friendly, somewhat **hard to follow**
+- [Coding in Public](https://www.youtube.com/@CodinginPublic) - advanced Astro development, user friendly, very **easy to follow**
+- [Kevin Powell](https://www.youtube.com/@KevinPowell) - introductory Astro development, very user friendly, very **easy to follow**
   
 ## 👑 Credits 
 
