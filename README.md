@@ -2,9 +2,9 @@
 > Portfolio & blog template, sit down and order yours for free (～￣▽￣)～
 
 Hey there, my nickname is **Myndi**. I'm a **front-end** developer.  
-Passionate about designing, but most importantly, giving back to the community and those interested in learning and growing as a developer themselves.
+Passionate about designing, wanting to give back to people starting on this journey 🥰
 
-This project is a **highly costumizable** Portfolio & Blog (yes, 2 in 1)
+This project is a **highly costumizable** Portfolio & Blog.
 
 ## 🚩 Getting started
 
@@ -16,15 +16,15 @@ This project is a **highly costumizable** Portfolio & Blog (yes, 2 in 1)
 
 3. Delete this `.md` and make your own to sail 🙌
 
-| Landmarks                                 | Explanation                                       |
-| :-----------------------------------------| :------------------------------------------------ |
-| [Features](#-features)                    | What is our offer within this project             |
-| [Metrics](#-lighthouse)                   | Lighthouse statistics for most of the views       |
-| [Structure](#-project-structure)          | List of the folders you will find here            |
-| [Setup](#-setup)                          | How to get started to get your own                |
-| [Documentation](#-setup)                  | All the information you need to edit your website |
-| [Learn](#-setup)                          |                 |
-| [Credits](#-credits)                      | A special thanks to everyone who contributed      |
+| Landmarks                                 | Explanation                                         |
+| :-----------------------------------------| :-------------------------------------------------- |
+| [Features](#-features)                    | What the project has to offer                       |
+| [Metrics](#-lighthouse)                   | Lighthouse statistics for most of the views         |
+| [Structure](#-project-structure)          | List of the folders you will find here              |
+| [Setup](#-setup)                          | How to get started to get your own site             |
+| [Documentation](#-setup)                  | Where to look to start editing it                   |
+| [Learn](#-setup)                          | Want to know more? Check this curated list          |
+| [Credits](#-credits)                      | A special thanks to everyone who contributed        |
 
 ## 🏆 Features
 
@@ -40,6 +40,7 @@ This project is a **highly costumizable** Portfolio & Blog (yes, 2 in 1)
 ✅ Mostly best practices  
 ✅ Customizable  
 ❌ Fuzzy search  
+❌ Light/Dark mode  
 ❌ Boring portfolio/blog
 
 ## 🌇 Ligthouse
@@ -310,7 +311,12 @@ npm install
 
 ## 📖 Documentation
 
+The main files will be `astro.config.mjs` and `config.js` inside your `root` folder.
 
+**Inside `astro.config.mjs` you can edit your site**
+```js
+site: "https://yoursite.com",
+```
 
 ## 👀 Want to know more about Astro?
 
