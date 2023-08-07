@@ -311,12 +311,31 @@ npm install
 
 ## 📖 Documentation
 
-The main files will be `astro.config.mjs` and `config.js` inside your `root` folder.
+The main files will be `astro.config.mjs` and `config.js` inside your `root` folder, the rest would be inside your `/src/`.
 
-**Inside `astro.config.mjs` you can edit your site**
+**Inside `astro.config.mjs` you can edit your site.**
 ```js
 site: "https://yoursite.com",
 ```
+
+**Inside `/src/data/siteData.json` you can edit the default meta data.**
+```json
+{
+  "title": "My Astro Page",
+  "description": "My musings about the Astro framework",
+  "image": {
+    "src": "/images/image-default.jpg",
+    "alt": "My Astro Page"
+  }
+}
+```
+
+**Inside `/src/components/Seo.astro` you can edit the site's name of your social media embeds.**
+```html
+<meta property="og:site_name" content="My Astro Page" />
+```
+*Note: make sure you don't mess up with anything else in there.*
+
 
 ## 👀 Want to know more about Astro?
 

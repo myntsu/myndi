@@ -7,7 +7,7 @@ const posts = formatBlogPosts(Object.values(postImportResult));
 
 export const get = () => rss({
   stylesheet: '/rss/styles.xsl',
-  title: 'My Astro Blog',
+  title: 'My Astro Page',
   description: 'A humble Astronaut’s guide to the stars',
   site: import.meta.env.SITE,
   items: posts.map((post) => ({
