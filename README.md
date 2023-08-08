@@ -318,6 +318,43 @@ The main files will be `astro.config.mjs` and `config.js` inside your `root` fol
 site: "https://yoursite.com",
 ```
 
+🔵 **`config.mjs` to edit various details about the site.**
+```js
+// links
+{ label: "About me", href: "#About-Me" }
+
+// socials
+{ platform: "facebook", link: "www.facebook.com", handle: "User" }
+```
+
+🔵 **`/src/pages/blog/` to create a new blog post.**  
+*Note: each post should have the name of post-X.md*
+```js
+---
+layout: "../../layouts/BlogPostLayout.astro"
+title: A title
+date: 01January2023
+author: Author
+image: {
+    src: "https//your-image.com",
+    alt: "Your image",
+}
+description: Description.
+draft: true/false
+category: Category
+---
+
+Blog here.
+```
+
+🔵 **`/src/pages/category/[category].astro` to add a new category to your blog posts.**
+```js
+{
+    params: { category: slugify("Category") },
+    props: { name: "Category" },
+}
+```
+
 🔵 **`/src/data/siteData.json` to set the default's meta data for each post.**
 ```json
 {
