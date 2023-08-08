@@ -4,6 +4,7 @@ import { Image } from "@astrojs/image/components";
 
 // component imports
 import MainLayout from "../layouts/MainLayout.astro";
+import Technologies from "../components/simple/Technologies.astro";
 
 // config import
 import config from "/config.js";
@@ -16,6 +17,10 @@ const attr = config.links.map(link => ({
 <MainLayout title="About me" description="About me page">
     <section {...attr[0]}>
         <h2>{attr[0]["aria-label"]}</h2>
+        <p>Front-end developer</p>
+        <p>Main technologies: CSS, JS, Astro</p>
+        <p>I speak</p>
+        <p>I'm from</p>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, unde tempora sunt officiis reprehenderit sed quibusdam, totam animi magni accusantium deserunt iure impedit laudantium saepe minima cupiditate, debitis exercitationem! Facilis?</p>
       </section>
       <section {...attr[1]}>
@@ -24,13 +29,15 @@ const attr = config.links.map(link => ({
       </section>
       <section {...attr[2]}>
         <h2>{attr[2]["aria-label"]}</h2>
-        <p>Text here</p>
+        <h3>Front-end development</h3>
+        <Technologies 
+            stack={config.stack}
+        />
       </section>
       <section {...attr[3]}>
         <h2>{attr[3]["aria-label"]}</h2>
         <p>Text here</p>
       </section>
-      
 </MainLayout>
 
 <style>
