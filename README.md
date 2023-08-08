@@ -313,12 +313,12 @@ npm install
 
 The main files will be `astro.config.mjs` and `config.js` inside your `root` folder, the rest would be inside your `/src/`.
 
-**Inside `astro.config.mjs` you can edit your site.**
+🔵 **`astro.config.mjs` to edit your site's URL.**
 ```js
 site: "https://yoursite.com",
 ```
 
-**Inside `/src/data/siteData.json` you can edit the default meta data.**
+🔵 **`/src/data/siteData.json` to set the default's meta data for each post.**
 ```json
 {
   "title": "My Astro Page",
@@ -330,12 +330,102 @@ site: "https://yoursite.com",
 }
 ```
 
-**Inside `/src/components/Seo.astro` you can edit the site's name of your social media embeds.**
-```html
+🔵 **`/src/components/Seo.astro` and `/src/pages/rss.xml.js` to edit the social media embeds.**
+```jsx
+// /src/components/Seo.astro
 <meta property="og:site_name" content="My Astro Page" />
-```
-*Note: make sure you don't mess up with anything else in there.*
 
+// /src/pages/rss.xml.js
+title: 'My Astro Page',
+description: 'A humble Astronaut’s guide to the stars',
+```
+*Note: make sure you don't mess up with anything else in there since it's passed dynamically.*  
+
+🔵 **`/src/css/global.scss` to edit the global variables.**
+```scss
+:root {
+  // main tag
+  --container-width: 100%;
+  --container-max-width: 900px;
+  --current-font-size: 1rem;
+  --icon-font-size: calc(var(--current-font-size, 0.75rem) * 0.75);
+
+  // sizing
+  --rem-xs: 0.25rem;
+  --rem-sm: 0.5rem;
+  --rem-md: 0.75rem;
+  --rem-lg: 1rem;
+  --rem-xl: 1.5rem;
+
+  // colors
+  --main-color: 240 90% 80%;
+  --background: 0 0% 9%;
+  --background-lighter: 0 0% 11%;
+
+  // font and link styles
+  --font: 0 0% 91%;
+  --font-dark: 0 0% 9%;
+  --link: hsl(var(--main-color) / 0.2);
+
+  // button an tag styles
+  --button: 240 100% 65%;
+  --button-font: 0 0% 100%;
+  --tag: 0 60% 50%;
+  --tag-font: 0 0% 100%;
+}
+```
+
+🔵 **To use utility components do the following:**
+
+- **Links**
+  ```jsx
+  import Link from "/components/simple/Link.astro";
+
+  <Link href="www.site.com" target="blank" external>
+    Content here
+  </Link>
+  ```
+
+- **Cards container**
+  ```jsx
+  import CardsContainer from "/components/simple/CardsContainer.astro";
+
+  <CardsContainer>
+    Content here
+  </CardsContainer>
+  ```
+- **Images**
+  ```jsx
+  // width and height are required
+  import { Image } from "@astrojs/image/components";
+
+  <Image
+    src="/images/your-image.jpg"
+    alt="Image alt"
+    width={150}
+    height={150}
+    format="webp"
+    fit="cover"
+    quality={100}
+    aspectRatio="1:1"
+    class="your-class"
+  />
+  ```
+
+- **Icons**
+  ```jsx
+  // refer to for the icons in https://icones.js.org/
+  import { Icon } from "astro-icon";
+
+  <Icon class="your class" name="name:icon-name"/>
+  ```
+
+- **Social media links**
+  ```jsx
+  import SocialMedia from "/simple/SocialMedia.astro";
+
+  <SocialMedia socials={config.socials} />
+  ```
 
 ## 👀 Want to know more about Astro?
 
