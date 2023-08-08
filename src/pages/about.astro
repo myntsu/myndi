@@ -4,44 +4,46 @@ import { Image } from "@astrojs/image/components";
 
 // component imports
 import MainLayout from "../layouts/MainLayout.astro";
+import Technologies from "../components/simple/Technologies.astro";
 
+// config import
+import config from "/config.js";
+const attr = config.links.map(link => ({
+  id: link.href.slice(1),
+  "aria-label": link.label,
+}));
 ---
 
 <MainLayout title="About me" description="About me page">
-    <section id="About-Me" aria-label="About Me">
-        <Image
-            src="https://picsum.photos/id/237/600/400"
-            alt="Lorem perrito"
-            width={600}
-            height={400}
-            format="avif"
+    <section {...attr[0]}>
+        <h2>{attr[0]["aria-label"]}</h2>
+        <p>Front-end developer</p>
+        <p>Main technologies: CSS, JS, Astro</p>
+        <p>I speak</p>
+        <p>I'm from</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, unde tempora sunt officiis reprehenderit sed quibusdam, totam animi magni accusantium deserunt iure impedit laudantium saepe minima cupiditate, debitis exercitationem! Facilis?</p>
+      </section>
+      <section {...attr[1]}>
+        <h2>{attr[1]["aria-label"]}</h2>
+        <p>Text here</p>
+      </section>
+      <section {...attr[2]}>
+        <h2>{attr[2]["aria-label"]}</h2>
+        <h3>Front-end development</h3>
+        <Technologies 
+            stack={config.stack}
         />
-        <div>
-            <h1></h1>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum molestias a exercitationem id quo cum hic qui adipisci explicabo iure. Unde, exercitationem ea illo doloremque pariatur id aliquid saepe atque.
-        </div>
-    </section>
-
-    <section id="Current-Projects">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam officiis libero illum cupiditate quaerat laborum tenetur, accusamus harum sit quidem fugit qui voluptates. Consectetur corporis est ut libero, inventore accusantium!
-    Maiores distinctio nam deserunt ut repellendus ex culpa quidem dicta unde quaerat architecto repudiandae ducimus iste id, dolore natus fugiat recusandae dolores eaque aut aliquid. Unde dignissimos dolorem accusamus officiis?
-    Dolore molestiae, eum libero nesciunt dolorem voluptatem corrupti fugiat suscipit vero quo id ex! Consequatur quidem hic molestiae eveniet illum laborum officiis. Aspernatur placeat nihil harum quidem rerum earum deleniti.
-    Similique est sint at, asperiores adipisci vero dicta natus tempora ipsa, hic perferendis laborum! Minima, fugiat nam corrupti architecto similique inventore laborum impedit voluptates nemo enim, voluptatibus autem ipsa quo.
-    Soluta sunt ad placeat odio harum velit deserunt eaque aut corrupti? Molestias, aliquam obcaecati quia eligendi rem sit nihil necessitatibus voluptatum aut odit delectus nesciunt consequuntur quam! Ratione, modi adipisci!</section>
-    <section id="Technologies">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, inventore maxime ad dolor iusto itaque. Dolore inventore libero iure amet tempora eveniet molestias eius vero culpa, ipsa minima? Minus, reprehenderit?
-    Atque perspiciatis, adipisci aperiam molestiae pariatur modi laboriosam! Autem officia harum, placeat explicabo itaque animi ut, sequi incidunt odio corrupti, quaerat dolorum eum. Iusto sapiente non saepe sequi fugit neque?
-    Tenetur aspernatur ipsa distinctio dignissimos doloremque. Illo enim ipsum iste consequatur nemo dignissimos vitae dolore ipsa possimus voluptatibus quae repellendus maiores adipisci molestiae quod alias, sed commodi. Nulla, praesentium ipsam.
-    Officiis ea voluptates consequuntur, excepturi eligendi sunt autem assumenda perspiciatis atque quae magni deserunt illum reiciendis! Dolor incidunt consequatur aspernatur! Earum incidunt id, ipsam sapiente distinctio ea quisquam esse animi?
-    Deleniti non reiciendis vitae alias asperiores iste ex vel quo sed sunt consequuntur, perspiciatis omnis corporis. Pariatur dolor itaque, animi incidunt quod vero sed odio aspernatur asperiores odit rerum quaerat!</section>
-    <section id="Hobbies">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, inventore maxime ad dolor iusto itaque. Dolore inventore libero iure amet tempora eveniet molestias eius vero culpa, ipsa minima? Minus, reprehenderit?
-    Atque perspiciatis, adipisci aperiam molestiae pariatur modi laboriosam! Autem officia harum, placeat explicabo itaque animi ut, sequi incidunt odio corrupti, quaerat dolorum eum. Iusto sapiente non saepe sequi fugit neque?
-    Tenetur aspernatur ipsa distinctio dignissimos doloremque. Illo enim ipsum iste consequatur nemo dignissimos vitae dolore ipsa possimus voluptatibus quae repellendus maiores adipisci molestiae quod alias, sed commodi. Nulla, praesentium ipsam.
-    Officiis ea voluptates consequuntur, excepturi eligendi sunt autem assumenda perspiciatis atque quae magni deserunt illum reiciendis! Dolor incidunt consequatur aspernatur! Earum incidunt id, ipsam sapiente distinctio ea quisquam esse animi?
-    Deleniti non reiciendis vitae alias asperiores iste ex vel quo sed sunt consequuntur, perspiciatis omnis corporis. Pariatur dolor itaque, animi incidunt quod vero sed odio aspernatur asperiores odit rerum quaerat!</section>
+      </section>
+      <section {...attr[3]}>
+        <h2>{attr[3]["aria-label"]}</h2>
+        <p>Text here</p>
+      </section>
 </MainLayout>
 
 <style>
     section {
-        min-height: 100vh;
+        min-height: 50svh;
+        min-height: 50vh;
     }
 </style>
 

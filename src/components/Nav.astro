@@ -7,14 +7,30 @@ import SocialMedia from "./simple/SocialMedia.astro";
 import { Image } from "@astrojs/image/components";
 import { Icon } from "astro-icon";
 
+// config import
+import config from "/config.js";
+
 let showDiv = Astro.request.url.includes("/about");
 ---
 
-<button type="button" class="hamburger" aria-label="Open navigation bar" aria-controls="navbar" aria-expanded="false">
-  <Icon class="hamburger-icon arrow" name="jam:arrow-square-right-f" />
-  <Icon class="hamburger-icon cross" name="jam:close-rectangle-f" />
+<button
+  type="button"
+  class="hamburger"
+  aria-label="Open navigation bar"
+  aria-controls="navbar"
+  aria-expanded="false">
+  <Icon
+    class="hamburger-icon arrow"
+    name="jam:arrow-square-right-f"
+  />
+  <Icon
+    class="hamburger-icon cross"
+    name="jam:close-rectangle-f"
+  />
 </button>
-<nav id="navbar" aria-label="Primary">
+<nav
+  id="navbar"
+  aria-label="Primary">
   <div class="container">
     <div class="inner">
       <a href="/">
@@ -40,14 +56,15 @@ let showDiv = Astro.request.url.includes("/about");
           </a>
         </li>
         {
-          showDiv 
-          ? ( <ul class="about-me-details">
-            <li><a href="#About-Me">About me</a></li>
-            <li><a href="#Current-Projects">Current projects</a></li>
-            <li><a href="#Technologies">Technologies</a></li>
-            <li><a href="#Hobbies">Hobbies</a></li>
-          </ul> )
-          : null
+          showDiv ? (
+            <ul class="about-me-details">
+              {config.links.map((link) => (
+                <li>
+                  <a href={link.href}>{link.label}</a>
+                </li>
+              ))}
+            </ul>
+          ) : null
         }
         <li>
           <a
@@ -81,14 +98,7 @@ let showDiv = Astro.request.url.includes("/about");
     </div>
     <Footer />
   </div>
-  <SocialMedia 
-  socials={[
-    { platform: "facebook", link: "www.facebook.com", handle: "User" },
-    { platform: "instagram", link: "https://www.instagram.com/", handle: "User" },
-    { platform: "youtube", link: "https://www.youtube.com/", handle: "@User" },
-    { platform: "github", link: "https://github.com/", handle: "@User" },
-  ]}
-  />
+  <SocialMedia socials={config.socials} />
 </nav>
 
 <style lang="scss">
@@ -140,7 +150,7 @@ let showDiv = Astro.request.url.includes("/about");
   .container {
     display: flex;
     flex-direction: column;
-    height: 100%;
+    min-height: 100%;
   }
 
   .headshot-image {
@@ -149,12 +159,7 @@ let showDiv = Astro.request.url.includes("/about");
   }
 
   .inner {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-
-    width: 100%;
+    margin-block-end: 3rem;
 
     > a {
       display: flex;
@@ -196,7 +201,7 @@ let showDiv = Astro.request.url.includes("/about");
               transition: padding-inline-start 250ms ease;
             }
           }
-          
+
           &[aria-current="page"] {
             padding-inline-start: var(--rem-xl);
             color: hsl(var(--white));
@@ -246,7 +251,7 @@ let showDiv = Astro.request.url.includes("/about");
 
       a {
         font-size: 1rem;
-        width: 100%; 
+        width: 100%;
         transition: padding-inline-start 250ms ease;
       }
     }

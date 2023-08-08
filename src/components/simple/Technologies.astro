@@ -1,0 +1,191 @@
+---
+import { Icon } from "astro-icon";
+
+import type { HTMLAttributes } from "astro/types";
+
+interface Stack {
+  language?: string;
+  name?: string;
+  percentage?: number;
+  color?: string;
+}
+
+interface Props extends HTMLAttributes<"div"> {
+  stack?: Stack[];
+}
+
+const { stack } = Astro.props;
+---
+
+<div class="stack">
+  {
+    stack?.map(({ language, name, percentage, percentageTop, color }) => (
+      <div class="stack-container">
+        <Icon name={`mdi:${language}`} />
+        <div class="bar">
+          <span>{name}</span>
+          <div class={`fill ${color}`}>
+            <span>{percentage}%</span>
+          </div>
+        </div>
+      </div>
+    ))
+  }
+</div>
+
+<style lang="scss">
+  .stack {
+    --h: 0;
+    --s: 0%;
+    --l: 0%;
+    --svg-size: 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: var(--rem-lg);
+
+    .stack-container {
+      display: flex;
+      align-items: center;
+      gap: var(--rem-sm);
+
+      svg {
+        width: var(--svg-size);
+        aspect-ratio: 1;
+      }
+
+      .bar {
+        width: 100%;
+        height: calc(var(--svg-size) / 2);
+        border: 1px solid hsl(var(--main-color));
+        user-select: none;
+
+        &:has(.red) {
+          border: 1px solid hsl(0 100% 70%) !important;
+        }
+
+        &:has(.blue) {
+          border: 1px solid hsl(220 100% 70%) !important;
+        }
+
+        &:has(.yellow) {
+          border: 1px solid hsl(65 100% 70%) !important;
+        }
+
+        &:has(.orange) {
+          border: 1px solid hsl(30 100% 70%) !important;
+        }
+
+        &:has(.green) {
+          border: 1px solid hsl(120 100% 70%) !important;
+        }
+
+        &:has(.pink) {
+          border: 1px solid hsl(340 100% 70%) !important;
+        }
+
+        &:has(.purple) {
+          border: 1px solid hsl(270 100% 70%) !important;
+        }
+
+        position: relative;
+
+        &:is(:hover) {
+          opacity: 0.9;
+
+          outline: 1px solid hsl(var(--font) / .5);
+          outline-offset: 2px;
+
+          box-shadow: 3px 3px 10px hsl(var(--font) / .2);
+        }
+
+        & > span {
+          position: absolute;
+          top: calc(-1 * var(--svg-size) / 2);
+          font-size: 0.875rem;
+          text-transform: capitalize;
+        }
+
+        .fill {
+          display: flex;
+          align-items: center;
+
+          width: 0%;
+          height: 100%;
+          background-color: hsl(var(--main-color));
+
+          span {
+            display: block;
+            margin-inline-start: auto;
+            padding-inline-end: var(--rem-sm);
+            color: hsl(var(--background));
+            font-size: 12px;
+            line-height: 0;
+          }
+        }
+      }
+    }
+  }
+
+  .dark {
+    --s: 80% !important;
+    --l: 40% !important;
+  }
+
+  .light {
+    --s: 70% !important;
+    --l: 75% !important;
+  }
+
+  .red {
+    --h: 0;
+    --s: 100%;
+    --l: 70%;
+    background-color: hsl(var(--h) var(--s) var(--l)) !important;
+  }
+
+  .blue {
+    --h: 220;
+    --s: 100%;
+    --l: 70%;
+    background-color: hsl(var(--h) var(--s) var(--l)) !important;
+  }
+
+  .yellow {
+    --h: 65;
+    --s: 100%;
+    --l: 70%;
+    background-color: hsl(var(--h) var(--s) var(--l)) !important;
+  }
+
+  .orange {
+    --h: 30;
+    --s: 100%;
+    --l: 70%;
+    background-color: hsl(var(--h) var(--s) var(--l)) !important;
+  }
+
+  .green {
+    --h: 120;
+    --s: 100%;
+    --l: 70%;
+    background-color: hsl(var(--h) var(--s) var(--l)) !important;
+  }
+
+  .pink {
+    --h: 340;
+    --s: 100%;
+    --l: 70%;
+    background-color: hsl(var(--h) var(--s) var(--l)) !important;
+  }
+
+  .purple {
+    --h: 270;
+    --s: 100%;
+    --l: 70%;
+    background-color: hsl(var(--h) var(--s) var(--l)) !important;
+  }
+</style>
+
+<script>
+  import "../../scripts/technologies.js";
+</script>

@@ -2,9 +2,9 @@
 > Portfolio & blog template, sit down and order yours for free (～￣▽￣)～
 
 Hey there, my nickname is **Myndi**. I'm a **front-end** developer.  
-Passionate about designing, but most importantly, giving back to the community and those interested in learning and growing as a developer themselves.
+Passionate about designing, wanting to give back to people starting on this journey 🥰
 
-This project is a **highly costumizable** Portfolio & Blog (yes, 2 in 1)
+This project is a **highly costumizable** Portfolio & Blog.
 
 ## 🚩 Getting started
 
@@ -16,15 +16,15 @@ This project is a **highly costumizable** Portfolio & Blog (yes, 2 in 1)
 
 3. Delete this `.md` and make your own to sail 🙌
 
-| Landmarks                                 | Explanation                                       |
-| :-----------------------------------------| :------------------------------------------------ |
-| [Features](#-features)                    | What is our offer within this project             |
-| [Metrics](#-lighthouse)                   | Lighthouse statistics for most of the views       |
-| [Structure](#-project-structure)          | List of the folders you will find here            |
-| [Setup](#-setup)                          | How to get started to get your own                |
-| [Documentation](#-setup)                  | All the information you need to edit your website |
-| [Learn](#-setup)                          |                 |
-| [Credits](#-credits)                      | A special thanks to everyone who contributed      |
+| Landmarks                                 | Explanation                                         |
+| :-----------------------------------------| :-------------------------------------------------- |
+| [Features](#-features)                    | What the project has to offer                       |
+| [Metrics](#-lighthouse)                   | Lighthouse statistics for most of the views         |
+| [Structure](#-project-structure)          | List of the folders you will find here              |
+| [Setup](#-setup)                          | How to get started to get your own site             |
+| [Documentation](#-setup)                  | Where to look to start editing it                   |
+| [Learn](#-setup)                          | Want to know more? Check this curated list          |
+| [Credits](#-credits)                      | A special thanks to everyone who contributed        |
 
 ## 🏆 Features
 
@@ -40,6 +40,7 @@ This project is a **highly costumizable** Portfolio & Blog (yes, 2 in 1)
 ✅ Mostly best practices  
 ✅ Customizable  
 ❌ Fuzzy search  
+❌ Light/Dark mode  
 ❌ Boring portfolio/blog
 
 ## 🌇 Ligthouse
@@ -310,7 +311,158 @@ npm install
 
 ## 📖 Documentation
 
+The main files will be `astro.config.mjs` and `config.js` inside your `root` folder, the rest would be inside your `/src/`.
 
+🔵 **`astro.config.mjs` to edit your site's URL.**
+```js
+site: "https://yoursite.com",
+```
+
+🔵 **`config.mjs` to edit various details about the site.**
+```js
+// links
+{ label: "About me", href: "#About-Me" }
+
+// socials
+{ platform: "facebook", link: "www.facebook.com", handle: "User" }
+```
+
+🔵 **`/src/pages/blog/` to create a new blog post.**  
+*Note: each post should have the name of post-X.md*
+```js
+---
+layout: "../../layouts/BlogPostLayout.astro"
+title: A title
+date: 01January2023
+author: Author
+image: {
+    src: "https//your-image.com",
+    alt: "Your image",
+}
+description: Description.
+draft: true/false
+category: Category
+---
+
+Blog here.
+```
+
+🔵 **`/src/pages/category/[category].astro` to add a new category to your blog posts.**
+```js
+{
+    params: { category: slugify("Category") },
+    props: { name: "Category" },
+}
+```
+
+🔵 **`/src/data/siteData.json` to set the default's meta data for each post.**
+```json
+{
+  "title": "My Astro Page",
+  "description": "My musings about the Astro framework",
+  "image": {
+    "src": "/images/image-default.jpg",
+    "alt": "My Astro Page"
+  }
+}
+```
+
+🔵 **`/src/components/Seo.astro` and `/src/pages/rss.xml.js` to edit the social media embeds.**
+```jsx
+// /src/components/Seo.astro
+<meta property="og:site_name" content="My Astro Page" />
+
+// /src/pages/rss.xml.js
+title: 'My Astro Page',
+description: 'A humble Astronaut’s guide to the stars',
+```
+*Note: make sure you don't mess up with anything else in there since it's passed dynamically.*  
+
+🔵 **`/src/css/global.scss` to edit the global variables.**
+```scss
+:root {
+  // main tag
+  --container-width: 100%;
+  --container-max-width: 900px;
+  --current-font-size: 1rem;
+  --icon-font-size: calc(var(--current-font-size, 0.75rem) * 0.75);
+
+  // sizing
+  --rem-xs: 0.25rem;
+  --rem-sm: 0.5rem;
+  --rem-md: 0.75rem;
+  --rem-lg: 1rem;
+  --rem-xl: 1.5rem;
+
+  // colors
+  --main-color: 240 90% 80%;
+  --background: 0 0% 9%;
+  --background-lighter: 0 0% 11%;
+
+  // font and link styles
+  --font: 0 0% 91%;
+  --font-dark: 0 0% 9%;
+  --link: hsl(var(--main-color) / 0.2);
+
+  // button an tag styles
+  --button: 240 100% 65%;
+  --button-font: 0 0% 100%;
+  --tag: 0 60% 50%;
+  --tag-font: 0 0% 100%;
+}
+```
+
+🔵 **To use utility components do the following:**
+
+- **Links**
+  ```jsx
+  import Link from "/components/simple/Link.astro";
+
+  <Link href="www.site.com" target="blank" external>
+    Content here
+  </Link>
+  ```
+
+- **Cards container**
+  ```jsx
+  import CardsContainer from "/components/simple/CardsContainer.astro";
+
+  <CardsContainer>
+    Content here
+  </CardsContainer>
+  ```
+- **Images**
+  ```jsx
+  // width and height are required
+  import { Image } from "@astrojs/image/components";
+
+  <Image
+    src="/images/your-image.jpg"
+    alt="Image alt"
+    width={150}
+    height={150}
+    format="webp"
+    fit="cover"
+    quality={100}
+    aspectRatio="1:1"
+    class="your-class"
+  />
+  ```
+
+- **Icons**
+  ```jsx
+  // refer to for the icons in https://icones.js.org/
+  import { Icon } from "astro-icon";
+
+  <Icon class="your class" name="name:icon-name"/>
+  ```
+
+- **Social media links**
+  ```jsx
+  import SocialMedia from "/simple/SocialMedia.astro";
+
+  <SocialMedia socials={config.socials} />
+  ```
 
 ## 👀 Want to know more about Astro?
 
