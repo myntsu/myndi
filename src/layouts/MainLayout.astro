@@ -2,7 +2,6 @@
 import Nav from "../components/Nav.astro";
 import MainHead from "./MainHead.astro";
 import "../css/global.scss";
-import { Icon } from "astro-icon";
 
 const {
   title = "Myndi Portfolio and Blog",
@@ -32,13 +31,6 @@ const {
     </div>
   </body>
 </html>
-
-<div class="color-scheme-wrapper">
-  <button class="color-scheme dark">
-    <Icon class="sun-svg" name="mdi:white-balance-sunny" />
-    <Icon class="moon-svg" name="mdi:weather-night" />
-  </button>
-</div>
 
 <script>
   import '../scripts/lightmode.js';

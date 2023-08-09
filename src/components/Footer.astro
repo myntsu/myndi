@@ -7,9 +7,43 @@ import Link from "../components/simple/Link.astro";
 ---
 
 <footer>
+  <form
+    class="theme-changer"
+    action="">
+    <fieldset>
+      <legend class="visually-hidden">Pick a color scheme</legend>
+      <label
+        aria-label="Dark mode"
+        for="dark"
+        ><Icon
+          class="moon-svg"
+          name="mdi:weather-night"
+        /></label
+      >
+      <input
+        id="dark"
+        type="radio"
+        name="theme"
+        checked
+      />
+
+      <input
+        id="light"
+        type="radio"
+        name="theme"
+      />
+      <label
+        aria-label="Light mode"
+        for="light"
+        ><Icon
+          class="sun-svg"
+          name="mdi:white-balance-sunny"
+        /></label
+      >
+    </fieldset>
+  </form>
   <div class="rss-feed">
-    <Link
-      href="/rss.xml">
+    <Link href="/rss.xml">
       Subscribe to my RSS
       <Icon
         name="ic:baseline-rss-feed"
@@ -21,7 +55,10 @@ import Link from "../components/simple/Link.astro";
   <div class="copyright">
     <p>
       Made by
-      <Link href="https://github.com/Myntsu" target="blank" external >
+      <Link
+        href="https://github.com/Myntsu"
+        target="blank"
+        external>
         Myndi
       </Link>
     </p>
@@ -32,6 +69,61 @@ import Link from "../components/simple/Link.astro";
 </footer>
 
 <style lang="scss">
+  .theme-changer {
+    fieldset {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+
+      margin: 0;
+      border: 0;
+
+      label {
+        display: flex;
+        cursor: pointer;
+
+        svg {
+          width: 36px;
+          aspect-ratio: 1;
+          line-height: 0;
+
+          &.sun-svg {
+            color: hsl(0 0% 11%);
+          }
+
+          &.moon-svg {
+            color: hsl(0 0% 94%);
+          }
+        }
+      }
+
+      #dark {
+        --radio-color: #3c54ef;
+      }
+
+      #light {
+        --radio-color: #ec3a2e;
+      }
+
+      & input[type="radio"] {
+        appearance: none;
+        width: 1.5rem;
+        aspect-ratio: 1;
+
+        outline: 2px solid var(--radio-color, currentColor);
+        outline-offset: 2px;
+        border-radius: .15rem;
+
+        cursor: pointer;
+
+        &:checked {
+          background-color: var(--radio-color);
+        }
+      }
+    }
+  }
+
   footer {
     --current-font-size: var(--rem-lg);
     display: grid;
