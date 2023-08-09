@@ -30,8 +30,10 @@ function navbarAccessibility(isOpen) {
     navbarAnchors.forEach(element => {
       if (!isOpen) {
         element.setAttribute('aria-hidden', 'true');
+        element.setAttribute('tabindex', '-1')
       } else {
         element.removeAttribute('aria-hidden');
+        element.removeAttribute('tabindex');
       }
     });
   }

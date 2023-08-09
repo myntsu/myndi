@@ -57,13 +57,15 @@ let showDiv = Astro.request.url.includes("/about");
         </li>
         {
           showDiv ? (
-            <ul class="about-me-details">
-              {config.links.map((link) => (
-                <li>
-                  <a href={link.href}>{link.label}</a>
-                </li>
-              ))}
-            </ul>
+            <li class="nested-list">
+              <ul class="about-me-details">
+                {config.links.map((link) => (
+                  <li>
+                    <a href={link.href}>{link.label}</a>
+                  </li>
+                ))}
+              </ul>
+            </li>
           ) : null
         }
         <li>
@@ -170,23 +172,23 @@ let showDiv = Astro.request.url.includes("/about");
 
       width: 100%;
       aspect-ratio: 1/1;
-      color: hsl(var(--main-color));
+      color: hsl(var(--navbar-color));
       text-align: center;
       text-decoration: none;
 
       &:is(:hover, :focus-visible) {
-        color: var(--white);
+        color: hsl(var(--navbar-font));
       }
     }
 
     ul {
-      --main-color: 230 90% 80%;
+      --main-color: var(--navbar-color);
       width: 100%;
       list-style: none;
       margin: 0;
       padding: 0;
 
-      li {
+      li:not(.nested-list) {
         position: relative;
         padding-inline-start: var(--rem-lg);
 
@@ -204,7 +206,7 @@ let showDiv = Astro.request.url.includes("/about");
 
           &[aria-current="page"] {
             padding-inline-start: var(--rem-xl);
-            color: hsl(var(--white));
+            color: hsl(var(--navbar-font));
 
             &::before {
               content: "";
@@ -218,16 +220,16 @@ let showDiv = Astro.request.url.includes("/about");
         }
 
         &:is(:hover, :focus-visible) {
-          background-color: hsl(var(--main-color) / 0.1);
+          background-color: hsl(var(--navbar-color) / 0.1);
 
           a {
-            color: var(--white);
+            color: hsl(var(--navbar-font));
             padding-inline-start: var(--rem-xl);
           }
         }
 
         &:has([aria-current="page"]) {
-          background-color: hsl(var(--main-color) / 0.1);
+          background-color: hsl(var(--navbar-color) / 0.1);
         }
       }
     }
@@ -245,7 +247,7 @@ let showDiv = Astro.request.url.includes("/about");
         background-color: hsl(var(--main-color) / 0.5);
 
         a {
-          color: hsl(var(--mwhite));
+          color: hsl(var(--white));
         }
       }
 

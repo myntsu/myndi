@@ -14,14 +14,33 @@ export default {
       { platform: "github", link: "https://github.com/", handle: "@User" },
     ],
 
+    // stacks for your about
+    // reference https://icones.js.org/collection/mdi for the icon names
     stack: [
-        { language: "language-html5", name: "HTML", percentage: 70, color: "orange" },
-        { language: "language-css3", name: "CSS", percentage: 85, color: "blue" },
-        { language: "language-javascript", name: "JavaScript", percentage: 60, color: "yellow" },
-        { language: "rocket-launch", name: "Astro", percentage: 40, color: "orange" },
-        { language: "ruby", name: "Ruby", percentage: 15, color: "red" },
-        { language: "language-ruby-on-rails", name: "Ruby on Rails", percentage: 15, color: "red" },
-        { language: "database", name: "SQL", percentage: 35, color: "green" },
-      ],
-  };
-  
+      {
+        frontEnd: [
+          { language: "HTML", name: "language-html5", percentage: 60, color: "orange" },
+          { language: "CSS", name: "language-css3", percentage: 80, color: "blue" },
+          { language: "Bootstrap", name: "bootstrap", percentage: 90, color: "purple" },
+          { language: "Bulma", name: "bulma", percentage: 30, color: "green light" },
+          { language: "JavaScript", name: "language-javascript", percentage: 50, color: "yellow" },
+          { language: "jQuery", name: "jquery", percentage: 60, color: "yellow light" },
+        ],
+        backEnd: [
+          { language: "Astro", name: "rocket-launch", percentage: 30, color: "orange" },
+          { language: "Ruby", name: "ruby", percentage: 20, color: "red light" },
+          { language: "Ruby on Rails", name: "language-ruby-on-rails", percentage: 30, color: "red" },
+          { language: "SQL", name: "database", percentage: 30, color: "green" },
+        ],
+        devOps:[
+          { language: "GitHub", name: "github", percentage: 70, color: "blue light" },
+          { language: "Netlify", name: "cloud", percentage: 40, color: "green dark" },
+        ],
+        tools:[
+          { language: "Git", name: "git", percentage: 50, color: "blue light" },
+          { language: "Subsystem: WSL", name: "linux", percentage: 20, color: "blue dark" },
+          { language: "Visual Studio Code", name: "application-brackets", percentage: 70, color: "blue" },
+        ]
+      },
+    ],
+  }

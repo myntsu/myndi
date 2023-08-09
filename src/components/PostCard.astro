@@ -81,7 +81,7 @@ const { title, description, date, category, author, image } = frontmatter;
 
 <style lang="scss">
   .card {
-    background: hsl(0 0% 13%);
+    background: hsl(var(--card-background));
     border-radius: 0.25rem;
     position: relative;
 
@@ -106,7 +106,7 @@ const { title, description, date, category, author, image } = frontmatter;
       inset: 0;
       background: radial-gradient(
         circle at calc(var(--x) * 1px) calc(var(--y) * 1px),
-        hsl(0 0% 100% / 0.01),
+        hsl(var(--highlight) / .01),
         transparent 12vmin
       );
       background-attachment: fixed;
@@ -121,7 +121,7 @@ const { title, description, date, category, author, image } = frontmatter;
       inset: 0;
       background: radial-gradient(
           circle at calc(var(--x) * 1px) calc(var(--y) * 1px),
-          hsl(0 0% 100% / 0.05),
+          hsl(var(--highlight) / .05),
           transparent 12vmin
         ),
         transparent;
