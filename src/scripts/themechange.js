@@ -7,7 +7,7 @@ function applyPreferredTheme() {
 }
 
 applyPreferredTheme();
-document.addEventListener("astro:beforeload", applyPreferredTheme);
+
 
 function toggleTheme() {
   if (localStorage.theme === "dark") {
