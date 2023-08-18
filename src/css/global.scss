@@ -27,57 +27,82 @@
   --rem-lg: 1rem;
   --rem-xl: 1.5rem;
 
+  //canonical colors
   --white: 0 0% 100%;
 
-  &:has(#light:checked) {
-    // main colors
-    --main-color: 0 90% 55%;
-    --background: 0 0% 100%;
-    --background-lighter: 0 0% 94%;
+  //default theme
+  // main colors
+  --main-color: 0 90% 55%;
+  --background: 0 0% 100%;
+  --background-lighter: 0 0% 94%;
 
-    // navbar
-    --navbar-color: 0 100% 66%;
-    --navbar-font: 360 100% 50%;
+  // navbar
+  --navbar-color: 0 100% 66%;
+  --navbar-font: 360 100% 50%;
 
-    // cards
-    --card-background: 0 0% 89%;
-    --highlight: 0 0% 0%;
+  // cards
+  --card-background: 0 0% 89%;
+  --highlight: 0 0% 0%;
 
-    // font and link styles
-    --font: 0 0% 11%;
-    --font-dark: 0 0% 95%;
+  // font and link styles
+  --font: 0 0% 11%;
+  --font-dark: 0 0% 95%;
 
-    // button and tag styles
-    --button: 240 100% 65%;
-    --button-font: 0 0% 100%;
-    --tag: 0 60% 50%;
-    --tag-font: 0 0% 100%;
-  }
+  // button and tag styles
+  --button: 240 100% 65%;
+  --button-font: 0 0% 100%;
+  --tag: 0 60% 50%;
+  --tag-font: 0 0% 100%;
+}
 
-  &:has(#dark:checked) {
-    // main colors
-    --main-color: 240 90% 80%;
-    --background: 0 0% 9%;
-    --background-lighter: 0 0% 11%;
+.light {
+  // main colors
+  --main-color: 0 90% 55%;
+  --background: 0 0% 100%;
+  --background-lighter: 0 0% 94%;
 
-    // navbar
-    --navbar-color: 230 90% 80%;
-    --navbar-font: 0 0% 100%;
+  // navbar
+  --navbar-color: 0 100% 66%;
+  --navbar-font: 360 100% 50%;
 
-    // cards
-    --card-background: 0 0% 13%;
-    --highlight: 0 0% 100%;
+  // cards
+  --card-background: 0 0% 89%;
+  --highlight: 0 0% 0%;
 
-    // font and link styles
-    --font: 0 0% 91%;
-    --font-dark: 0 0% 9%;
+  // font and link styles
+  --font: 0 0% 11%;
+  --font-dark: 0 0% 95%;
 
-    // button and tag styles
-    --button: 240 100% 65%;
-    --button-font: 0 0% 100%;
-    --tag: 0 60% 50%;
-    --tag-font: 0 0% 100%;
-  }
+  // button and tag styles
+  --button: 240 100% 65%;
+  --button-font: 0 0% 100%;
+  --tag: 0 60% 50%;
+  --tag-font: 0 0% 100%;
+}
+
+.dark  {
+  // main colors
+  --main-color: 240 90% 80%;
+  --background: 0 0% 9%;
+  --background-lighter: 0 0% 11%;
+
+  // navbar
+  --navbar-color: 230 90% 80%;
+  --navbar-font: 0 0% 100%;
+
+  // cards
+  --card-background: 0 0% 13%;
+  --highlight: 0 0% 100%;
+
+  // font and link styles
+  --font: 0 0% 91%;
+  --font-dark: 0 0% 9%;
+
+  // button and tag styles
+  --button: 240 100% 65%;
+  --button-font: 0 0% 100%;
+  --tag: 0 60% 50%;
+  --tag-font: 0 0% 100%;
 }
 
 ::-webkit-scrollbar {
