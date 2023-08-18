@@ -1,4 +1,7 @@
 ---
+// astro imports
+import { ViewTransitions } from 'astro:transitions';
+
 // component imports
 import Seo from "../components/Seo.astro";
 
@@ -43,4 +46,6 @@ const { title, description, image, frontmatter, robots } = Astro.props;
     rel="sitemap"
     href="/sitemap-index.xml"
   />
+
+  <ViewTransitions />
 </head>
