@@ -2,7 +2,7 @@ paths:
   uploads: uploads
 collections_config:
   posts:
-  path: src/content/blog
+    path: src/content/blog
 _inputs: {}
 _select_data: {}
 _structures: {}
