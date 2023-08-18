@@ -27,9 +27,34 @@
   --rem-lg: 1rem;
   --rem-xl: 1.5rem;
 
+  //canonical colors
   --white: 0 0% 100%;
 
-  &:has(#light:checked) {
+  //default theme
+  // main colors
+  --main-color: 240 90% 80%;
+  --background: 0 0% 9%;
+  --background-lighter: 0 0% 11%;
+
+  // navbar
+  --navbar-color: 230 90% 80%;
+  --navbar-font: 0 0% 100%;
+
+  // cards
+  --card-background: 0 0% 13%;
+  --highlight: 0 0% 100%;
+
+  // font and link styles
+  --font: 0 0% 91%;
+  --font-dark: 0 0% 9%;
+
+  // button and tag styles
+  --button: 240 100% 65%;
+  --button-font: 0 0% 100%;
+  --tag: 0 60% 50%;
+  --tag-font: 0 0% 100%;
+
+  [data-theme="light"] {
     // main colors
     --main-color: 0 90% 55%;
     --background: 0 0% 100%;
@@ -54,7 +79,7 @@
     --tag-font: 0 0% 100%;
   }
 
-  &:has(#dark:checked) {
+  [data-theme="dark"]  {
     // main colors
     --main-color: 240 90% 80%;
     --background: 0 0% 9%;
