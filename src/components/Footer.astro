@@ -6,9 +6,16 @@ import { Icon } from "astro-icon";
 import Link from "../components/simple/Link.astro";
 ---
 
-<footer>
-  <button type="button" id="theme-toggle" aria-label="Toggle dark/light mode">Toggle</button>
+<button
+  type="button"
+  id="theme-toggle"
+  aria-label="Toggle dark/light mode">
+  <span class="sun"><Icon name="mdi:white-balance-sunny" /></span>
+  <span class="moon"><Icon name="mdi:weather-night" /></span>
+  <span class="circle"></span>
+</button>
 
+<footer>
   <div class="rss-feed">
     <Link href="/rss.xml">
       Subscribe to my RSS
@@ -36,6 +43,98 @@ import Link from "../components/simple/Link.astro";
 </footer>
 
 <style lang="scss">
+html:is(.dark) {
+  #theme-toggle {
+    .sun {
+      visibility: hidden;
+      translate: 30px;
+      opacity: 0;
+    }
+
+    .moon {
+      display: flex !important;
+    }
+
+    .circle {
+      translate: 0;
+    }
+  }
+}
+
+html:is(.light) {
+  #theme-toggle {
+    .moon {
+      visibility: hidden;
+      translate: -30px;
+      opacity: 0;
+    }
+
+    .sun {
+      display: flex;
+
+    }
+
+    .circle {
+      translate: 36px;
+    }
+  }
+}
+
+  #theme-toggle {
+    display: flex;
+    align-items: center;
+    width: min-content;
+
+    padding-block: .2rem;
+
+    background-color: hsl(var(--background-light));
+    border: 2px solid hsl(var(--main-color));
+    border-radius: 99999px;
+
+    margin-inline: auto;
+
+    position: relative;
+
+    & > *:not(.circle) {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: hsl(var(--main-color));
+
+      opacity: 1;
+
+      position: relative;
+
+      transition: 500ms cubic-bezier(0.075, 0.82, 0.165, 1);
+
+      svg {
+        display: grid;
+        align-items: center;
+        width: 32px;
+        aspect-ratio: 1;
+        line-height: 0;
+      }
+
+      .moon {
+        visibility: hidden;
+      }
+    }
+
+    .circle {
+        position: absolute;
+        width: 32px;
+        height: 32px;
+        aspect-ratio: 1;
+        background-color: hsl(var(--main-color));
+        border-radius: 50%;
+        z-index: -1;
+        left: 5px;
+        top: 50%;
+        transform: translate(0%, -50%);
+
+        transition: 500ms cubic-bezier(0.075, 0.82, 0.165, 1);
+    }
+  }
 
   footer {
     --current-font-size: var(--rem-lg);
