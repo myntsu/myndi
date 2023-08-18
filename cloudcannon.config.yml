@@ -3,9 +3,7 @@ paths:
 collections_config:
   posts:
   path: src/content/blog
-_inputs:
-  src:
-    type: image
+_inputs: {}
 _select_data: {}
 _structures: {}
 _editables: {}
