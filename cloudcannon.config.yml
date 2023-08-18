@@ -1,7 +1,11 @@
 paths:
   uploads: uploads
-collections_config: {}
-_inputs: {}
+collections_config:
+  posts:
+  path: src/content/blog
+_inputs:
+  src:
+    type: image
 _select_data: {}
 _structures: {}
 _editables: {}
