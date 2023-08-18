@@ -15,7 +15,7 @@ const {
     <div class="container">
         <h1>{title}</h1>
         <p>by <Link href={`/author/${slugify(author)}`}>{author}</Link> • {formatDate(date)}</p>
-        <small class="tag">
+        <small class="tag tag-button">
             <a href={`/category/${slugify(category)}`}>{category}</a>
         </small>
     </div>
