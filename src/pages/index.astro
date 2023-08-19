@@ -5,8 +5,8 @@ import PostCard from "../components/PostCard.astro";
 
 // utils imports
 import { formatBlogPosts } from "../scripts/utils";
-import CardsContainer from "../components/simple/CardsContainer.astro";
-import Link from "../components/simple/Link.astro";
+import CardsContainer from "../components/utility/CardsContainer.astro";
+import Link from "../components/utility/Link.astro";
 
 const allPosts = await Astro.glob("./blog/*.md");
 const formattedPosts = formatBlogPosts(allPosts, {
