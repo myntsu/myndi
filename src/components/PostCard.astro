@@ -81,6 +81,8 @@ const { title, description, date, category, author, image } = frontmatter;
 
 <style lang="scss">
   .card {
+    display: flex;
+
     background: hsl(var(--card-background));
     border-radius: 0.25rem;
     position: relative;
@@ -97,7 +99,8 @@ const { title, description, date, category, author, image } = frontmatter;
     transition: background 0.1s;
 
     &:is(:hover) {
-      outline: 1px solid hsl(var(--font) / .3);
+      outline: 2px solid oklch(var(--secondary-color) / .3);
+      background-color: oklch(var(--secondary-color) / .1);
     }
 
     &::after {

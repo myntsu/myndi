@@ -33,6 +33,7 @@
   //default theme
   // main colors
   --main-color: 0 90% 55%;
+  --secondary-color: .8 65% 40;
   --background: 0 0% 100%;
   --background-lighter: 0 0% 94%;
 
@@ -58,6 +59,7 @@
 .light {
   // main colors
   --main-color: 0 90% 55%;
+  --secondary-color: .8 65% 40;
   --background: 0 0% 100%;
   --background-lighter: 0 0% 94%;
 
@@ -83,6 +85,7 @@
 .dark  {
   // main colors
   --main-color: 240 90% 80%;
+  --secondary-color: .8 65% 340;
   --background: 0 0% 9%;
   --background-lighter: 0 0% 11%;
 
@@ -103,6 +106,7 @@
   --button-font: 0 0% 100%;
   --tag: 0 60% 50%;
   --tag-font: 0 0% 100%;
+  color: hsl(240, 90%, 80%);
 }
 
 ::-webkit-scrollbar {
@@ -252,12 +256,31 @@ picture {
 
     &:is(:hover, :focus-visible) {
       opacity: 0.95;
+      color: hsl(var(--button));
+      background-color: hsl(var(--button-font));
       outline: 1px solid hsl(var(--button));
       outline-offset: 2px;
     }
 
     &:is(:active) {
       scale: 0.95;
+    }
+  }
+}
+
+.card-header {
+  color: hsl(var(--font));
+  text-decoration: none;
+
+  &:is(:hover, :focus-visible) {
+    color: hsl(var(--main-color));
+    outline: transparent;
+
+    transition: color 300ms ease;
+
+    &:focus-visible {
+      background-color: hsl(var(--font));
+      color: hsl(var(--background));
     }
   }
 }
