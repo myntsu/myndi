@@ -10,7 +10,7 @@ import Link from "../components/utility/Link.astro";
 
 const allPosts = await Astro.glob("./blog/*.md");
 const formattedPosts = formatBlogPosts(allPosts, {
-  limit: 3,
+  limit: 2,
 });
 ---
 

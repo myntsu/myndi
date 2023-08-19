@@ -17,9 +17,6 @@ const { title, description, date, category, author, image } = frontmatter;
 ---
 
 <article class="card">
-  <small class="tag tag-button">
-    <a href={`/category/${slugify(category)}`}>{category}</a>
-  </small>
   <a
     href={url}
     aria-hidden="true"
@@ -44,6 +41,7 @@ const { title, description, date, category, author, image } = frontmatter;
           class="card-link"
           >{title}</a
         >
+
       </Tag>
       <small>
         <div class="author-date">
@@ -67,6 +65,9 @@ const { title, description, date, category, author, image } = frontmatter;
           </div>
         </div>
       </small>
+      <small class="tag tag-button">
+        <a href={`/category/${slugify(category)}`}>{category}</a>
+      </small>
     </div>
     <p class="description">{description}</p>
     <div class="button read-more">
@@ -81,26 +82,34 @@ const { title, description, date, category, author, image } = frontmatter;
 
 <style lang="scss">
   .card {
-    display: flex;
+    // display: flex;
 
-    background: hsl(var(--card-background));
+    // background: oklch(var(--card-background) / .05);
     border-radius: 0.25rem;
     position: relative;
 
-    background-image: linear-gradient(
-      145deg,
-      transparent,
-      hsl(var(--font) / 0.01) 70%,
-      hsl(var(--font) / 0.1)
-    );
     background-size: 400%;
     background-position: 60% 60%;
 
     transition: background 0.1s;
 
+    .link-image {
+      position: absolute;
+
+      width: 100%;
+      height: 100%;
+      border-radius: 0.25rem 0.25rem 0 0;
+      object-fit: cover;
+      opacity: .3;
+    }
+
+    .icon {
+      max-width: 16px;
+    }
+
     &:is(:hover) {
-      outline: 2px solid oklch(var(--secondary-color) / .3);
       background-color: oklch(var(--secondary-color) / .1);
+      box-shadow: 0px 0px 30px oklch(var(--secondary-color) / .3);
     }
 
     &::after {
@@ -140,10 +149,9 @@ const { title, description, date, category, author, image } = frontmatter;
       &.tag {
         display: flex;
         align-items: center;
+        z-index: 1;
 
-        position: absolute;
-        top: 0.25rem;
-        left: 0.25rem;
+        filter: drop-shadow(2px 2px 2px hsl(var(--background) / 0.3));
       }
     }
 
@@ -151,6 +159,7 @@ const { title, description, date, category, author, image } = frontmatter;
       display: flex;
       flex-direction: column;
       padding: var(--rem-lg);
+      z-index: 1;
 
       .author {
         margin-block-end: var(--rem-lg);
@@ -233,21 +242,6 @@ const { title, description, date, category, author, image } = frontmatter;
 
   .card:hover {
     --active: 1;
-  }
-
-  .link-image {
-    width: 100%;
-    height: 150px;
-    border-radius: 0.25rem 0.25rem 0 0;
-    object-fit: cover;
-  }
-
-  .tag {
-    filter: drop-shadow(2px 2px 2px hsl(var(--background) / 0.3));
-  }
-
-  .icon {
-    max-width: 16px;
   }
 </style>
 
