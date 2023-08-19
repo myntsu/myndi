@@ -83,3 +83,5 @@ phoneSwipe(layout, (direction) => {
     layout.classList.remove('open');
   }
 }, 30, 100);
+
+document.addEventListener("astro:beforeload", phoneSwipe);

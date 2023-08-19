@@ -1,19 +1,19 @@
 ---
 // component import
 import Footer from "../components/Footer.astro";
-import SocialMedia from "./simple/SocialMedia.astro";
+import SocialMedia from "./utility/SocialMedia.astro";
 
 //library import
 import { Image } from "@astrojs/image/components";
 import { Icon } from "astro-icon";
 
 // config import
-import config from "/config.js";
+import config from "../../config.js";
 
 let showDiv = Astro.request.url.includes("/about");
 ---
 
-<button transition:persist
+<button 
   type="button"
   class="hamburger"
   aria-label="Open navigation bar"
@@ -115,7 +115,7 @@ let showDiv = Astro.request.url.includes("/about");
 
     width: 100%;
     max-width: var(--navbar-width);
-    background-color: hsl(var(--background-lighter));
+    background-color: hsl(var(--background-lighter) / .7);
     font-size: var(--current-font-size);
   }
 
@@ -262,4 +262,5 @@ let showDiv = Astro.request.url.includes("/about");
 
 <script>
   import "../scripts/nav.js";
+  import '../scripts/themechange.js';
 </script>

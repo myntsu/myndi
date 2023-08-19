@@ -49,7 +49,7 @@
   --font-dark: 0 0% 95%;
 
   // button and tag styles
-  --button: 240 100% 65%;
+  --button: 0 90% 55%;
   --button-font: 0 0% 100%;
   --tag: 0 60% 50%;
   --tag-font: 0 0% 100%;
@@ -74,7 +74,7 @@
   --font-dark: 0 0% 95%;
 
   // button and tag styles
-  --button: 240 100% 65%;
+  --button: 0 90% 55%;
   --button-font: 0 0% 100%;
   --tag: 0 60% 50%;
   --tag-font: 0 0% 100%;
@@ -159,7 +159,7 @@ main {
   width: var(--container-width);
   max-width: var(--container-max-width);
 
-  background-color: hsl(var(--background-lighter));
+  background-color: hsl(var(--background-lighter) / .7);
 
   margin-inline: auto;
   padding: 4rem 1rem 4rem 1rem;

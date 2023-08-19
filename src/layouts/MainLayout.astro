@@ -1,6 +1,7 @@
 ---
-import Nav from "../components/Nav.astro";
 import MainHead from "./MainHead.astro";
+import BackgroundNoise from "../components/utility/BackgroundNoise.astro";
+import Nav from "../components/Nav.astro";
 import "../css/global.scss";
 
 const {
@@ -21,9 +22,11 @@ const {
     {robots}
   />
   <body>
+    <BackgroundNoise />
     <div
       id="layout"
-      class="layout">
+      class="layout"
+      >
       <Nav />
       <main>
         <slot />
@@ -31,7 +34,3 @@ const {
     </div>
   </body>
 </html>
-
-<script>
-  import '../scripts/lightmode.js';
-</script>
