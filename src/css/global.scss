@@ -159,7 +159,7 @@ main {
   width: var(--container-width);
   max-width: var(--container-max-width);
 
-  background-color: hsl(var(--background-lighter));
+  background-color: hsl(var(--background-lighter) / .7);
 
   margin-inline: auto;
   padding: 4rem 1rem 4rem 1rem;

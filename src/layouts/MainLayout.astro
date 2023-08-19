@@ -1,6 +1,7 @@
 ---
-import Nav from "../components/Nav.astro";
 import MainHead from "./MainHead.astro";
+import BackgroundNoise from "../components/utility/BackgroundNoise.astro";
+import Nav from "../components/Nav.astro";
 import "../css/global.scss";
 
 const {
@@ -21,6 +22,7 @@ const {
     {robots}
   />
   <body>
+    <BackgroundNoise />
     <div
       id="layout"
       class="layout"

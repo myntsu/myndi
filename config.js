@@ -1,5 +1,5 @@
 export default {
-    // page views to the left side in your navbar
+    // page views to the left side in your navbar inside about
     links: [
         { label: "About me", href: "#About-Me" },
         { label: "Current projects", href: "#Current-Projects" },

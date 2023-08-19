@@ -8,7 +8,7 @@ import { Image } from "@astrojs/image/components";
 import { Icon } from "astro-icon";
 
 // config import
-import config from "/config.js";
+import config from "../../config.js";
 
 let showDiv = Astro.request.url.includes("/about");
 ---
@@ -115,7 +115,7 @@ let showDiv = Astro.request.url.includes("/about");
 
     width: 100%;
     max-width: var(--navbar-width);
-    background-color: hsl(var(--background-lighter));
+    background-color: hsl(var(--background-lighter) / .7);
     font-size: var(--current-font-size);
   }
 
