@@ -107,18 +107,16 @@ import Link from "../components/utility/Link.astro";
 
     position: relative;
 
+    &:is(:hover, :focus-visible) {
+      outline: 1px solid oklch(var(--secondary-color));
+      outline-offset: 2px;
+    }
+
     & > *:not(.circle) {
       display: flex;
-      position: absolute;
       left: 55%;
-      top: 50%;
-      z-index: 2;
-      transform: translate(0%, -50%);
-      color: hsl(var(--main-color));
-
       opacity: 1;
-
-      transition: 500ms cubic-bezier(0.075, 0.82, 0.165, 1);
+      color: oklch(var(--secondary-color));
 
       svg {
         width: 30px;
@@ -131,19 +129,21 @@ import Link from "../components/utility/Link.astro";
       }
     }
 
-    .circle {
+    & > * {
       position: absolute;
-      width: 30px;
-      height: 30px;
-      aspect-ratio: 1;
-      background-color: hsl(var(--main-color));
-      border-radius: 50%;
-      z-index: -1;
-      left: 5%;
+
       top: 50%;
       transform: translate(0%, -50%);
 
       transition: 500ms cubic-bezier(0.075, 0.82, 0.165, 1);
+    }
+
+    .circle {
+      width: 30px;
+      height: 30px;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background-color: hsl(var(--main-color));
     }
   }
 

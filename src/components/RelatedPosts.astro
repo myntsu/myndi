@@ -18,7 +18,7 @@ const { relatedPosts } = Astro.props;
           tabindex="-1"
           aria-hidden="true"
         />
-        <h3 class="related-title">
+        <h3 class="related-title card-header">
           <a
             href={post.url}
             class="card-link">
@@ -69,23 +69,22 @@ const { relatedPosts } = Astro.props;
     background-image: linear-gradient(
       145deg,
       transparent,
-      hsl(var(--main-color) / 0.07) 70%,
+      hsl(var(--main-color) / 0.1) 70%,
       hsl(var(--main-color) / 0.4)
     );
     background-size: 400%;
     background-position: 60% 60%;
 
-    border: .1rem solid hsl(var(--font) / 0.05);
+    border: 2px solid hsl(var(--font) / 0.05);
     border-radius: 0.25rem;
     padding: 0.5rem;
 
     &:is(:hover, :focus-visible) {
-        border: .1rem solid hsl(var(--font) / 0.5);
+        background-position: 200% 200%;
+        background-color: oklch(var(--secondary-color) / .1);
+        border: 2px solid oklch(var(--secondary-color) / .5);
 
-        h3 a {
-            color: hsl(var(--main-color));
-            transition: color 150ms linear;
-        }
+        transition: background-color 200ms linear;
     }
 
     .related-title {
