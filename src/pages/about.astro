@@ -1,12 +1,15 @@
 ---
-//library import
+//library imports
 import { Image } from "@astrojs/image/components";
 
 // component imports
 import MainLayout from "../layouts/MainLayout.astro";
 import Technologies from "../components/utility/Technologies.astro";
 
-// config import
+// utility imports
+import Link from "../components/utility/Link.astro";
+
+// config imports
 import config from "/config.js";
 const attr = config.links.map(link => ({
   id: link.href.slice(1),
@@ -23,11 +26,12 @@ const attr = config.links.map(link => ({
         <p>I speak</p>
         <p>I'm from</p>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, unde tempora sunt officiis reprehenderit sed quibusdam, totam animi magni accusantium deserunt iure impedit laudantium saepe minima cupiditate, debitis exercitationem! Facilis?</p>
-      </section>
+    </section>
 
       <section {...attr[1]}>
         <h2>{attr[1]["aria-label"]}</h2>
         <p>Text here</p>
+        <small>You can check more on my <Link href="https://github.com/Myntsu?tab=repositories" target="blank" external>GitHub </Link></small>
       </section>
 
       <section {...attr[2]}>
@@ -47,8 +51,8 @@ const attr = config.links.map(link => ({
 
 <style>
     section {
-        min-height: 50svh;
         min-height: 50vh;
+        min-height: 50svh;
     }
 </style>
 

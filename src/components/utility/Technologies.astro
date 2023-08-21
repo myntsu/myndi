@@ -114,7 +114,6 @@ const { frontEnd, backEnd, devOps, tools } = stack[0];
     --svg-size: 40px;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(min(400px, 100%), 1fr));
-    // gap: var(--rem-xl);
 
     .sub-stack {
 
@@ -175,6 +174,16 @@ const { frontEnd, backEnd, devOps, tools } = stack[0];
 
             position: relative;
 
+            &.darker {
+              --s: 70% !important;
+              --l: 45% !important;
+            }
+
+            &.lighter {
+              --s: 65% !important;
+              --l: 75% !important;
+            }
+
             &:is(:hover) {
               opacity: 0.9;
 
@@ -217,16 +226,6 @@ const { frontEnd, backEnd, devOps, tools } = stack[0];
         }
       }
     }
-  }
-
-  .dark {
-    --s: 70% !important;
-    --l: 45% !important;
-  }
-
-  .light {
-    --s: 65% !important;
-    --l: 75% !important;
   }
 </style>
 
