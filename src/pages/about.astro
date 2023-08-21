@@ -4,6 +4,7 @@ import { Image } from "@astrojs/image/components";
 
 // component imports
 import MainLayout from "../layouts/MainLayout.astro";
+import Projects from "../components/about/Projects.astro";
 import Technologies from "../components/about/Technologies.astro";
 
 // utility imports
@@ -30,8 +31,9 @@ const attr = config.links.map(link => ({
 
       <section {...attr[1]}>
         <h2>{attr[1]["aria-label"]}</h2>
-        <p>Text here</p>
-        <small>You can check more on my <Link href="https://github.com/Myntsu?tab=repositories" target="blank" external>GitHub </Link></small>
+        <Projects
+        projects={config.projects} />
+        <small><i>You can check more in my <Link href="https://github.com/Myntsu?tab=repositories" target="blank" external>GitHub </Link></i>.</small>
       </section>
 
       <section {...attr[2]}>

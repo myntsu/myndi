@@ -1,0 +1,205 @@
+---
+// astro imports
+import { Image } from "@astrojs/image/components";
+import { Icon } from "astro-icon";
+
+import type { HTMLAttributes } from "astro/types";
+
+interface Projects {
+  title?: string;
+  shortDescription?: string;
+  src?: string;
+  alt?: string;
+  repository?: string;
+  liveDemo?: string;
+}
+
+interface Props extends HTMLAttributes<"div"> {
+  projects?: Projects[];
+}
+
+const { projects } = Astro.props;
+---
+
+<div class="img-grid">
+    {projects?.map(({ src, alt, title, repository, liveDemo, shortDescription }) => (
+    <div class="img-wrapper">
+        <h3 class="title">{title}</h3>
+        <p class="short-description">{shortDescription}</p>
+        <Image src={`${src}`} width={200} height={300} alt={`${alt}`} position="top" class="img-about" format="webp" quality={100}/>
+        <div class="project-links">
+            <a class="repo" href={repository} target="_blank"><Icon name="mdi:github" /> Repo</a>
+            <a class="demo" href={liveDemo} target="_blank"><Icon name="mdi:link-variant" /> Demo</a>
+        </div>
+    </div>
+    ))}
+</div>
+
+<dialog class="pop-up-container">
+    <img src="" alt="" class="expanded-image">
+</dialog>
+
+<style lang="scss">
+    .img-grid {
+        --width: 200px;
+        --height: 300px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(min(var(--width), 100%), 1fr));
+        justify-items: center;
+        gap: 1rem;
+
+        padding-block: var(--rem-lg);
+
+        @media (max-width: 900px) {
+            grid-template-columns: repeat(auto-fit, minmax(min(var(--width), 100%), 1fr));
+
+            .img-about {
+                width: var(--width);
+                height: var(--height);
+                object-fit: none;
+            }
+        }
+
+        .img-wrapper {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            width: var(--width);
+
+            position: relative;
+            isolation: isolate;
+
+
+            &:is(:hover, :focus-visible) {
+                .img-about {
+                    box-shadow: 0 0 20px hsl(var(--font) / .1);
+                }
+
+                .project-links {
+                    display: flex;
+                }
+            }
+
+            .short-description {
+                margin-block-end: .75em;
+                text-align: center;
+                font-size: .875rem;
+                opacity: .8;
+            }
+
+            .img-about {
+                cursor: pointer;
+                margin-block-start: auto;
+                border-radius: .25rem;
+            }
+
+            .project-links {
+                position: absolute;
+                left: 0;
+                right: 0;
+                bottom: 0;
+
+                display: none;
+
+                z-index: 2;
+
+                &:is(:focus-visible) {
+                    opacity: 1;
+                }
+
+                a {
+                    flex: 1 0 50%;
+
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    gap: .25rem;
+
+                    padding-block: var(--rem-sm);
+                    text-decoration: none;
+                    text-transform: uppercase;
+
+                    opacity: 1;
+
+                    &:is(:hover, :focus-visible) {
+                        opacity: .8;
+                    }
+
+                    &.repo {
+                        color: hsl(var(--button-font));
+                        background-color: hsl(var(--button));
+                    }
+
+                    &.demo {
+                        color: hsl(var(--button));
+                        background-color: hsl(var(--button-font));
+                    }
+
+
+                    svg {
+                        width: 1.1em;
+                    }
+                }
+            }
+        }
+    }
+
+    .pop-up-container {
+        position: fixed;
+        bottom: 0;
+        left: 25%;
+
+        width: 100%;
+        width: var(--container-max-width);
+        height: 100%;
+        margin-inline: 0;
+        padding: 0;
+
+        background-color: hsl(0 0% 8% / .3);
+        border: none;
+        border-radius: .25rem;
+
+        outline: 1px solid hsl(var(--font) / .5);
+        
+        overflow-y: scroll;
+
+            @media (min-width: 1400px) {
+                margin-inline: 1rem;
+            }
+
+            @media (max-width: 1200px) {
+                left: 50%;
+                transform: translate(-50%, 0%);
+                margin-inline: 0;
+            }
+
+        .expanded-image {
+            display: block;
+            max-width: var(--container-max-width);
+            max-height: auto;
+            margin: auto;
+        }
+    }
+</style>
+
+<script lang="js">
+const imgWrappers = document.querySelectorAll('.img-wrapper');
+const dialog = document.querySelector('.pop-up-container');
+const expandedImg = dialog.querySelector('.expanded-image');
+
+imgWrappers.forEach(wrapper => {
+  wrapper.addEventListener('click', () => {
+    const img = wrapper.querySelector('img');
+    const src = img.getAttribute('src').split('&href=')[1];
+    const decodedSrc = decodeURIComponent(src);
+    expandedImg.setAttribute('src', decodedSrc);
+    dialog.showModal();
+  });
+});
+
+dialog.addEventListener('click', () => {
+  dialog.close();
+});
+</script>

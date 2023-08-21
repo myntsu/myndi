@@ -2,7 +2,7 @@ export default {
     // page views to the left side in your navbar inside about
     links: [
         { label: "About me", href: "#About-Me" },
-        { label: "Current projects", href: "#Current-Projects" },
+        { label: "My projects", href: "#My-projects" },
         { label: "Technologies", href: "#Technologies" },
         { label: "Hobbies", href: "#Hobbies" },
     ],
@@ -12,6 +12,15 @@ export default {
       { platform: "instagram", link: "https://www.instagram.com/", handle: "User" },
       { platform: "youtube", link: "https://www.youtube.com/", handle: "@User" },
       { platform: "github", link: "https://github.com/", handle: "@User" },
+    ],
+
+    // list of yours projects
+    // titles and description can be empty
+    // Use this extension: GoFullPage - Full Page Screen Capture to capture your entire website views
+    projects: [
+      { title: "💼 Blogfolio", shortDescription: "Blogfolio template created with Astro", src: "/images/blogfolio.png", alt: "Blogfolio website", repository: "https://github.com/Myntsu/myndi", liveDemo: "https://myndi.dev/" },
+      { title: "💻 Cozynova", shortDescription: "Resources & tools for Nova Ragnarok", src: "/images/cozynova.png", alt: "Cozynova website", repository: "https://github.com/Myntsu/cozynova", liveDemo: "https://cozynova.online/" },
+      { title: "💼 Blogfolio", shortDescription: "", src: "/images/blogfolio.png", alt: "Blogfolio website", repository: "https://github.com/Myntsu/myndi", liveDemo: "https://myndi.dev/" },
     ],
 
     // stacks for your about
