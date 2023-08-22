@@ -6,6 +6,7 @@ import { Image } from "@astrojs/image/components";
 import MainLayout from "../layouts/MainLayout.astro";
 import Projects from "../components/about/Projects.astro";
 import Technologies from "../components/about/Technologies.astro";
+import Hobbies from "../components/about/Hobbies.astro";
 
 // utility imports
 import Link from "../components/utility/Link.astro";
@@ -29,7 +30,7 @@ const attr = config.links.map(link => ({
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, unde tempora sunt officiis reprehenderit sed quibusdam, totam animi magni accusantium deserunt iure impedit laudantium saepe minima cupiditate, debitis exercitationem! Facilis?</p>
     </section>
 
-      <section {...attr[1]}>
+      <section {...attr[1]} class="scroll-in">
         <h2>{attr[1]["aria-label"]}</h2>
         <Projects
         projects={config.projects} />
@@ -44,20 +45,61 @@ const attr = config.links.map(link => ({
         <small><i>Values are merely estimative and based on my own perception and experience.</i></small>
       </section>
 
-      <section {...attr[3]}>
+      <section {...attr[3]} class="scroll-in">
         <h2>{attr[3]["aria-label"]}</h2>
-        <p>Text here</p>
+        <Hobbies
+        hobbies={config.hobbies}
+        />
       </section>
 
 </MainLayout>
 
-<style>
+<style lang="scss">
     section {
         min-height: 50vh;
         min-height: 50svh;
+
+        &:not(:last-child) {
+          padding-block-end: 5rem;
+        }
+
+        @media (max-width: 700px) {
+          padding: 0s;
+
+          h2 {
+            text-align: center;
+          }
+        }
+
+        h2 {
+          font-size: clamp(1.5rem, 1.2222rem + 0.8889vw, 2rem);
+        }
+    }
+
+    .scrolled {
+      opacity: 0;
+      transition: translateY(20px);
+      animation: scroll-in 3s forwards;
+    }
+
+    @keyframes scroll-in {
+      0% {opacity: 0; transform: translateY(20px);}
+      100% {opacity: 1; transform: translateY(0);}
     }
 </style>
 
 <script>
       import "../scripts/scrollspy.js";
+
+      let observer = new IntersectionObserver((entries, observer) => {
+        entries.filter(e => e.isIntersecting).forEach(entry => {
+          entry.target.classList.add("scrolled");
+          observer.unobserve(entry.target);
+        });
+      });
+      
+      document.querySelectorAll('.scroll-in').forEach(e => {
+        observer.observe(e)
+      });
+
 </script>

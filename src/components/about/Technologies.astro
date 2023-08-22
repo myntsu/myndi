@@ -120,6 +120,10 @@ const { frontEnd, backEnd, devOps, tools } = stack[0];
       padding: var(--rem-lg);
       border-radius: var(--rem-xs);
 
+      @media (max-width: 970px) {
+        padding-inline-start: 0;
+      }
+
       &:is(:hover) {
         background-color: hsl(var(--font) / .05);
       }

@@ -27,6 +27,8 @@ const { projects } = Astro.props;
         <h3 class="title">{title}</h3>
         <p class="short-description">{shortDescription}</p>
         <Image src={`${src}`} width={200} height={300} alt={`${alt}`} position="top" class="img-about" format="webp" quality={100}/>
+        <Image src={`${src}`} width={400} height={200} alt={`${alt}`} position="top" class="img-about phone" format="webp" quality={100}/>
+        <Icon name="mdi:github" />
         <div class="project-links">
             <a class="repo" href={repository} target="_blank"><Icon name="mdi:github" /> Repo</a>
             <a class="demo" href={liveDemo} target="_blank"><Icon name="mdi:link-variant" /> Demo</a>
@@ -36,7 +38,7 @@ const { projects } = Astro.props;
 </div>
 
 <dialog class="pop-up-container">
-    <img src="" alt="" class="expanded-image">
+    <img src="/" alt="/" class="expanded-image">
 </dialog>
 
 <style lang="scss">
@@ -50,13 +52,25 @@ const { projects } = Astro.props;
 
         padding-block: var(--rem-lg);
 
-        @media (max-width: 900px) {
+        @media (max-width: 970px) {
+            --width: 400px;
+            --height: 200px;
             grid-template-columns: repeat(auto-fit, minmax(min(var(--width), 100%), 1fr));
 
             .img-about {
-                width: var(--width);
-                height: var(--height);
-                object-fit: none;
+                display: none;
+
+                &.phone {
+                    display: block !important;
+                }
+            }
+        }
+
+        @media (max-width: 970px) {
+            gap: 5rem;
+
+            .project-links {
+                    display: flex !important;
             }
         }
 
@@ -67,6 +81,7 @@ const { projects } = Astro.props;
             align-items: center;
 
             width: var(--width);
+            max-width: 100%;
 
             position: relative;
             isolation: isolate;
@@ -77,8 +92,10 @@ const { projects } = Astro.props;
                     box-shadow: 0 0 20px hsl(var(--font) / .1);
                 }
 
-                .project-links {
-                    display: flex;
+                @media (min-width: 970px) {
+                    .project-links {
+                        display: flex;
+                    }
                 }
             }
 
@@ -93,6 +110,12 @@ const { projects } = Astro.props;
                 cursor: pointer;
                 margin-block-start: auto;
                 border-radius: .25rem;
+
+                &.phone {
+                    display: none;
+                    max-width: 100%;
+                    object-fit: contain;
+                }
             }
 
             .project-links {
@@ -130,11 +153,13 @@ const { projects } = Astro.props;
                     &.repo {
                         color: hsl(var(--button-font));
                         background-color: hsl(var(--button));
+                        border-bottom-left-radius: .25rem;
                     }
 
                     &.demo {
                         color: hsl(var(--button));
                         background-color: hsl(var(--button-font));
+                        border-bottom-right-radius: .25rem;
                     }
 
 
