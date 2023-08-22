@@ -7,6 +7,7 @@ import MainLayout from "../layouts/MainLayout.astro";
 import Projects from "../components/about/Projects.astro";
 import Technologies from "../components/about/Technologies.astro";
 import Hobbies from "../components/about/Hobbies.astro";
+import AboutMe from "../components/about/AboutMe.astro";
 
 // utility imports
 import Link from "../components/utility/Link.astro";
@@ -22,7 +23,8 @@ const attr = config.links.map(link => ({
 <MainLayout title="About me" description="About me page">
 
     <section {...attr[0]}>
-        <h2>{attr[0]["aria-label"]}</h2>
+        <h2 class="highlight-text">{attr[0]["aria-label"]}</h2>
+        <AboutMe />
         <p>Front-end developer</p>
         <p>Main technologies: CSS, JS, Astro</p>
         <p>I speak</p>
@@ -31,14 +33,14 @@ const attr = config.links.map(link => ({
     </section>
 
       <section {...attr[1]} class="scroll-in">
-        <h2>{attr[1]["aria-label"]}</h2>
+        <h2 class="highlight-text">{attr[1]["aria-label"]}</h2>
         <Projects
         projects={config.projects} />
         <small><i>You can check more in my <Link href="https://github.com/Myntsu?tab=repositories" target="blank" external>GitHub </Link></i>.</small>
       </section>
 
       <section {...attr[2]}>
-        <h2>{attr[2]["aria-label"]}</h2>
+        <h2 class="highlight-text">{attr[2]["aria-label"]}</h2>
         <Technologies 
         stack={config.stack}
         />
@@ -46,7 +48,7 @@ const attr = config.links.map(link => ({
       </section>
 
       <section {...attr[3]} class="scroll-in">
-        <h2>{attr[3]["aria-label"]}</h2>
+        <h2 class="highlight-text">{attr[3]["aria-label"]}</h2>
         <Hobbies
         hobbies={config.hobbies}
         />
@@ -63,9 +65,7 @@ const attr = config.links.map(link => ({
           padding-block-end: 5rem;
         }
 
-        @media (max-width: 700px) {
-          padding: 0s;
-
+        @media (max-width: 970px) {
           h2 {
             text-align: center;
           }

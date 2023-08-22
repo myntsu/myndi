@@ -67,10 +67,24 @@ export default {
     // list of your hobbies
     // for the positions use the following: 'top' | 'right top' | 'right' | 'right bottom' | 'bottom' | 'left bottom' | 'left' | 'left top' | 'north' | 'northeast' | 'east' | 'southeast' | 'south' | 'southwest' | 'west' | 'northwest' | 'center'
     hobbies: [
-      {img: "https://cdn.discordapp.com/attachments/523849846235594753/1070023861019615313/Fnxt_RFaYAAfdl6.png", alt: "Alternative text sample", position: "right top"},
-      {img: "https://cdn.discordapp.com/attachments/523849846235594753/1070452933633769552/Fn2LWp4aEAAS752.png", alt: "Alternative text sample", position: "top"},
-      {img: "https://cdn.discordapp.com/attachments/523849846235594753/1102938439931924530/Fu5OlBqaYAAtTW9.png", alt: "Alternative text sample", position: "top"},
-      {img: "https://cdn.discordapp.com/attachments/523849846235594753/1054845435908468787/Fkb0seSaYAEWpDt.png", alt: "Alternative text sample", position: "top"},
-      {img: "https://cdn.discordapp.com/attachments/523849846235594753/1048042562230964244/unknown.png", alt: "Alternative text sample", position: "top"},
+      {title: "Watching anime girls", description: "I love watching anime girls because it's really fun", 
+      img: "https://cdn.discordapp.com/attachments/523849846235594753/1070023861019615313/Fnxt_RFaYAAfdl6.png", alt: "Alternative text sample", 
+      position: "right top"},
+
+      {title: "Watching anime girls", description: "I love watching anime girls because it's really fun", 
+      img: "https://cdn.discordapp.com/attachments/523849846235594753/1070452933633769552/Fn2LWp4aEAAS752.png", alt: "Alternative text sample", 
+      position: "top"},
+
+      {title: "Watching anime girls", description: "I love watching anime girls because it's really fun", 
+      img: "https://cdn.discordapp.com/attachments/523849846235594753/1102938439931924530/Fu5OlBqaYAAtTW9.png", alt: "Alternative text sample", 
+      position: "top"},
+
+      {title: "Watching anime girls", description: "I love watching anime girls because it's really fun", 
+      img: "https://cdn.discordapp.com/attachments/523849846235594753/1054845435908468787/Fkb0seSaYAEWpDt.png", alt: "Alternative text sample", 
+      position: "top"},
+
+      {title: "Watching anime girls", description: "I love watching anime girls because it's really fun", 
+      img: "https://cdn.discordapp.com/attachments/523849846235594753/1048042562230964244/unknown.png", alt: "Alternative text sample", 
+      position: "top"},
     ]
   }

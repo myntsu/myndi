@@ -405,3 +405,7 @@ picture {
   white-space: nowrap;
   border: 0;
 }
+
+.highlight-text {
+  text-shadow: 0 0 10px hsl(var(--font) / .5);
+}

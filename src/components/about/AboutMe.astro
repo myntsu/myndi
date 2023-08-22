@@ -1,0 +1,45 @@
+---
+// astro imports
+import { Image } from "@astrojs/image/components";
+import { Icon } from "astro-icon";
+
+// utility imports
+import config from "../../../config";
+
+// component imports
+import SocialMedia from "../utility/SocialMedia.astro";
+---
+
+<div class="about-me">
+    <div class="user">
+        <h3>Text</h3>
+        <SocialMedia socials={config.socials} />
+    </div>
+    <div class="image-wrapper">
+        <Image src="/images/smytsu_full.png" alt="test" class="about-me-img" width={400} height={500} format="webp" fit="cover" position="top" loading={"eager"}/>
+        <Image src="/images/smytsu_full.png" alt="test" class="about-me-img phone" width={400} height={500} format="webp" fit="cover" position="top" loading={"eager"}/>
+    </div>
+</div>
+
+<style lang="scss">
+    .about-me {
+        display: flex;
+
+        .user {
+            width: 50%;
+        }
+
+        .image-wrapper {
+            flex: 1 0 0;
+        }
+
+        .about-me-img {
+            max-width: 100%;
+            border-radius: .5rem;
+
+            &.phone {
+                display: none;
+            }
+        }
+    }
+</style>

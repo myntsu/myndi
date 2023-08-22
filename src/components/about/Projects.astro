@@ -27,8 +27,8 @@ const { projects } = Astro.props;
         <h3 class="title">{title}</h3>
         <p class="short-description">{shortDescription}</p>
         <Image src={`${src}`} width={200} height={300} alt={`${alt}`} position="top" class="img-about" format="webp" quality={100}/>
-        <Image src={`${src}`} width={400} height={200} alt={`${alt}`} position="top" class="img-about phone" format="webp" quality={100}/>
-        <Icon name="mdi:github" />
+        <Image src={`${src}`} width={400} height={300} alt={`${alt}`} position="top" class="img-about phone" format="webp" quality={100}/>
+        <Icon name="mdi:magnify-expand" class="hover-icon" />
         <div class="project-links">
             <a class="repo" href={repository} target="_blank"><Icon name="mdi:github" /> Repo</a>
             <a class="demo" href={liveDemo} target="_blank"><Icon name="mdi:link-variant" /> Demo</a>
@@ -54,7 +54,7 @@ const { projects } = Astro.props;
 
         @media (max-width: 970px) {
             --width: 400px;
-            --height: 200px;
+            --height: 300px;
             grid-template-columns: repeat(auto-fit, minmax(min(var(--width), 100%), 1fr));
 
             .img-about {
@@ -70,7 +70,7 @@ const { projects } = Astro.props;
             gap: 5rem;
 
             .project-links {
-                    display: flex !important;
+                    opacity: 1 !important;
             }
         }
 
@@ -94,7 +94,7 @@ const { projects } = Astro.props;
 
                 @media (min-width: 970px) {
                     .project-links {
-                        display: flex;
+                        opacity: 1;
                     }
                 }
             }
@@ -106,10 +106,30 @@ const { projects } = Astro.props;
                 opacity: .8;
             }
 
+            .hover-icon {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, 0%);
+                width: 4em;
+                color: hsl(var(--font));
+
+                opacity: 0;
+                pointer-events: none;
+
+                transition: opacity 150ms ease-in;
+            }
+
             .img-about {
                 cursor: pointer;
                 margin-block-start: auto;
                 border-radius: .25rem;
+
+                &:is(:hover) {
+                    & ~ .hover-icon {
+                        opacity: .6;
+                    }
+                }
 
                 &.phone {
                     display: none;
@@ -124,13 +144,13 @@ const { projects } = Astro.props;
                 right: 0;
                 bottom: 0;
 
-                display: none;
+                display: flex;
+
+                opacity: 0;
 
                 z-index: 2;
 
-                &:is(:focus-visible) {
-                    opacity: 1;
-                }
+                transition: opacity 150ms ease-in;
 
                 a {
                     flex: 1 0 50%;

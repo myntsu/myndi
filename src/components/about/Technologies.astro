@@ -125,7 +125,9 @@ const { frontEnd, backEnd, devOps, tools } = stack[0];
       }
 
       &:is(:hover) {
-        background-color: hsl(var(--font) / .05);
+        @media (min-width: 970px) {
+          background-color: hsl(var(--font) / .05);
+        }
       }
       .list {
         display: grid;
