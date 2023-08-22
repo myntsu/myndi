@@ -1,12 +1,18 @@
 ---
-//library import
+//library imports
 import { Image } from "@astrojs/image/components";
 
 // component imports
 import MainLayout from "../layouts/MainLayout.astro";
-import Technologies from "../components/utility/Technologies.astro";
+import Projects from "../components/about/Projects.astro";
+import Technologies from "../components/about/Technologies.astro";
+import Hobbies from "../components/about/Hobbies.astro";
+import AboutMe from "../components/about/AboutMe.astro";
 
-// config import
+// utility imports
+import Link from "../components/utility/Link.astro";
+
+// config imports
 import config from "/config.js";
 const attr = config.links.map(link => ({
   id: link.href.slice(1),
@@ -17,41 +23,83 @@ const attr = config.links.map(link => ({
 <MainLayout title="About me" description="About me page">
 
     <section {...attr[0]}>
-        <h2>{attr[0]["aria-label"]}</h2>
+        <h2 class="highlight-text">{attr[0]["aria-label"]}</h2>
+        <AboutMe />
         <p>Front-end developer</p>
         <p>Main technologies: CSS, JS, Astro</p>
         <p>I speak</p>
         <p>I'm from</p>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, unde tempora sunt officiis reprehenderit sed quibusdam, totam animi magni accusantium deserunt iure impedit laudantium saepe minima cupiditate, debitis exercitationem! Facilis?</p>
-      </section>
+    </section>
 
-      <section {...attr[1]}>
-        <h2>{attr[1]["aria-label"]}</h2>
-        <p>Text here</p>
+      <section {...attr[1]} class="scroll-in">
+        <h2 class="highlight-text">{attr[1]["aria-label"]}</h2>
+        <Projects
+        projects={config.projects} />
+        <small><i>You can check more in my <Link href="https://github.com/Myntsu?tab=repositories" target="blank" external>GitHub </Link></i>.</small>
       </section>
 
       <section {...attr[2]}>
-        <h2>{attr[2]["aria-label"]}</h2>
+        <h2 class="highlight-text">{attr[2]["aria-label"]}</h2>
         <Technologies 
         stack={config.stack}
         />
         <small><i>Values are merely estimative and based on my own perception and experience.</i></small>
       </section>
 
-      <section {...attr[3]}>
-        <h2>{attr[3]["aria-label"]}</h2>
-        <p>Text here</p>
+      <section {...attr[3]} class="scroll-in">
+        <h2 class="highlight-text">{attr[3]["aria-label"]}</h2>
+        <Hobbies
+        hobbies={config.hobbies}
+        />
       </section>
 
 </MainLayout>
 
-<style>
+<style lang="scss">
     section {
-        min-height: 50svh;
         min-height: 50vh;
+        min-height: 50svh;
+
+        &:not(:last-child) {
+          padding-block-end: 5rem;
+        }
+
+        @media (max-width: 970px) {
+          h2 {
+            text-align: center;
+          }
+        }
+
+        h2 {
+          font-size: clamp(1.5rem, 1.2222rem + 0.8889vw, 2rem);
+        }
+    }
+
+    .scrolled {
+      opacity: 0;
+      transition: translateY(20px);
+      animation: scroll-in 3s forwards;
+    }
+
+    @keyframes scroll-in {
+      0% {opacity: 0; transform: translateY(20px);}
+      100% {opacity: 1; transform: translateY(0);}
     }
 </style>
 
 <script>
       import "../scripts/scrollspy.js";
+
+      let observer = new IntersectionObserver((entries, observer) => {
+        entries.filter(e => e.isIntersecting).forEach(entry => {
+          entry.target.classList.add("scrolled");
+          observer.unobserve(entry.target);
+        });
+      });
+      
+      document.querySelectorAll('.scroll-in').forEach(e => {
+        observer.observe(e)
+      });
+
 </script>

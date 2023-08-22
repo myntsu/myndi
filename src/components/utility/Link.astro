@@ -16,11 +16,12 @@ const targetAttribute = target === "blank" ? { target: "_blank" } : {};
 
 <a href={href} {...targetAttribute} class="link">
     <slot />
-    {external && <Icon name="ic:twotone-launch" width="18" />}
+    {external && <Icon name="ic:twotone-launch"/>}
 </a>
 
 <style lang="scss">
   .link {
+    --svg-width: 1.1em;
     display: inline-flex;
 
     color: hsl(var(--navbar-color));
@@ -29,7 +30,9 @@ const targetAttribute = target === "blank" ? { target: "_blank" } : {};
 
     & svg {
         display: none;
-        background-color: hsl(var(--background) / .9);
+        width: var(--svg-width);
+        height: var(--svg-width);
+        background-color: hsl(var(--background) / .7);
         border-radius: .25rem;
     }
 
@@ -37,7 +40,7 @@ const targetAttribute = target === "blank" ? { target: "_blank" } : {};
       text-decoration: none;
       & svg {
         position: absolute;
-        right: -1.25rem;
+        right: -1.25em;
         bottom: .3rem;
         display: inline;
       }

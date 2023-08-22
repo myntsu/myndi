@@ -74,10 +74,10 @@ function phoneSwipe(element, callback, threshold = 20) {
   }, {passive: true});
 }
 
-
 // navbar popup for phone users
+const dialog = document.querySelector('.pop-up-container');
 phoneSwipe(layout, (direction) => {
-  if (direction === 'right') {
+  if (!dialog.open && direction === 'right') {
     layout.classList.add('open');
   } else {
     layout.classList.remove('open');
