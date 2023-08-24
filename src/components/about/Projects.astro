@@ -38,10 +38,33 @@ const { projects } = Astro.props;
 </div>
 
 <dialog class="pop-up-container">
+    <div class="loading-spinner"></div>
     <img src="/" alt="/" class="expanded-image">
 </dialog>
 
+
 <style lang="scss">
+    /* Add this CSS to your stylesheet */
+.loading-spinner {
+    display: flex !important;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #3498db;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
     .img-grid {
         --width: 200px;
         --height: 300px;
