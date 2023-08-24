@@ -186,7 +186,7 @@ p {
 }
 
 h1 {
-  font-size: 3rem;
+  font-size: clamp(1.5rem, 0.9681rem + 1.7021vw, 2.5rem);
 }
 
 img,
