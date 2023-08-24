@@ -39,7 +39,7 @@ let showDiv = Astro.request.url.includes("/about");
           alt="Smytsu's headshot image"
           width={150}
           height={150}
-          format="avif"
+          format="webp"
           fit="cover"
           quality={20}
           aspectRatio="1:1"
@@ -182,7 +182,7 @@ let showDiv = Astro.request.url.includes("/about");
         
         img {
           backdrop-filter: blur(10px);
-          box-shadow: 0px 0px 20px oklch(var(--secondary-color) / .5);
+          box-shadow: 0px 0px 20px hsl(var(--secondary-color) / .5);
         }
       }
     }
@@ -234,7 +234,7 @@ let showDiv = Astro.request.url.includes("/about");
 
             &:has(li) li {
               outline: none;
-              background-color: oklch(var(--secondary-color) / .1);
+              background-color: hsl(var(--secondary-color) / .1);
             }
           }
         }

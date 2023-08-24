@@ -84,7 +84,7 @@ const { title, description, date, category, author, image } = frontmatter;
   .card {
     display: flex;
 
-    // background: oklch(var(--card-background) / .05);
+    // background: hsl(var(--card-background) / .05);
     border-radius: 0.25rem;
     position: relative;
 
@@ -108,8 +108,8 @@ const { title, description, date, category, author, image } = frontmatter;
     }
 
     &:is(:hover) {
-      background-color: oklch(var(--secondary-color) / .1);
-      box-shadow: 0px 0px 30px oklch(var(--secondary-color) / .3);
+      background-color: hsl(var(--secondary-color) / .1);
+      box-shadow: 0px 0px 30px hsl(var(--secondary-color) / .3);
     }
 
     &::after {

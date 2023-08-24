@@ -24,9 +24,14 @@ import SocialMedia from "../utility/SocialMedia.astro";
 <style lang="scss">
     .about-me {
         display: flex;
+        flex-wrap: wrap;
 
         .user {
             width: 50%;
+
+            @media (max-width: 970px) {
+                width: 100%;
+            }
         }
 
         .image-wrapper {
@@ -34,7 +39,6 @@ import SocialMedia from "../utility/SocialMedia.astro";
         }
 
         .about-me-img {
-            max-width: 100%;
             border-radius: .5rem;
 
             &.phone {

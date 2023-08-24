@@ -33,7 +33,7 @@
   //default theme
   // main colors
   --main-color: 0 90% 55%;
-  --secondary-color: .8 65% 40;
+  --secondary-color: 20 100% 60%;
   --background: 0 0% 100%;
   --background-lighter: 0 0% 94%;
 
@@ -59,7 +59,7 @@
 .light {
   // main colors
   --main-color: 0 90% 55%;
-  --secondary-color: .8 65% 40;
+  --secondary-color: 20 100% 60%;
   --background: 0 0% 100%;
   --background-lighter: 0 0% 94%;
 
@@ -85,7 +85,7 @@
 .dark  {
   // main colors
   --main-color: 240 90% 80%;
-  --secondary-color: .8 65% 340;
+  --secondary-color: 300 70% 70%;
   --background: 0 0% 9%;
   --background-lighter: 0 0% 11%;
 
@@ -186,7 +186,7 @@ p {
 }
 
 h1 {
-  font-size: 3rem;
+  font-size: clamp(1.5rem, 0.9681rem + 1.7021vw, 2.5rem);
 }
 
 img,

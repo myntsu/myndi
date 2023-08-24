@@ -81,8 +81,8 @@ const { relatedPosts } = Astro.props;
 
     &:is(:hover, :focus-visible) {
         background-position: 200% 200%;
-        background-color: oklch(var(--secondary-color) / .1);
-        border: 2px solid oklch(var(--secondary-color) / .5);
+        background-color: hsl(var(--secondary-color) / .1);
+        border: 2px solid hsl(var(--secondary-color) / .5);
 
         transition: background-color 200ms linear;
     }
