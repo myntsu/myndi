@@ -77,11 +77,9 @@ function phoneSwipe(element, callback, threshold = 20) {
 // navbar popup for phone users
 const dialog = document.querySelector('.pop-up-container');
 phoneSwipe(layout, (direction) => {
-  if (!dialog.open && direction === 'right') {
+  if (direction === 'right') {
     layout.classList.add('open');
   } else {
     layout.classList.remove('open');
   }
 }, 30, 100);
-
-document.addEventListener("astro:beforeload", phoneSwipe);

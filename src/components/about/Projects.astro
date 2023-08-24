@@ -26,8 +26,8 @@ const { projects } = Astro.props;
     <div class="img-wrapper">
         <h3 class="title">{title}</h3>
         <p class="short-description">{shortDescription}</p>
-        <Image src={`${src}`} width={200} height={300} alt={`${alt}`} position="top" class="img-about" format="webp" quality={100}/>
-        <Image src={`${src}`} width={400} height={300} alt={`${alt}`} position="top" class="img-about phone" format="webp" quality={100}/>
+        <Image src={`${src}`} data-original-src={src} width={200} height={300} alt={`${alt}`} position="top" class="img-about" format="webp" quality={100}/>
+        <Image src={`${src}`} data-original-src={src} width={400} height={300} alt={`${alt}`} position="top" class="img-about phone" format="webp" quality={100}/>
         <Icon name="mdi:magnify-expand" class="hover-icon" />
         <div class="project-links">
             <a class="repo" href={repository} target="_blank"><Icon name="mdi:github" /> Repo</a>
@@ -229,22 +229,6 @@ const { projects } = Astro.props;
     }
 </style>
 
-<script lang="js">
-const imgWrappers = document.querySelectorAll('.img-wrapper');
-const dialog = document.querySelector('.pop-up-container');
-const expandedImg = dialog.querySelector('.expanded-image');
-
-imgWrappers.forEach(wrapper => {
-  wrapper.addEventListener('click', () => {
-    const img = wrapper.querySelector('img');
-    const src = img.getAttribute('src').split('&href=')[1];
-    const decodedSrc = decodeURIComponent(src);
-    expandedImg.setAttribute('src', decodedSrc);
-    dialog.showModal();
-  });
-});
-
-dialog.addEventListener('click', () => {
-  dialog.close();
-});
+<script>
+    import '../../scripts/projects.js';
 </script>
