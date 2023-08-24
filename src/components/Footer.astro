@@ -108,7 +108,7 @@ import Link from "../components/utility/Link.astro";
     position: relative;
 
     &:is(:hover, :focus-visible) {
-      outline: 1px solid oklch(var(--secondary-color));
+      outline: 1px solid hsl(var(--secondary-color));
       outline-offset: 2px;
     }
 
@@ -116,7 +116,7 @@ import Link from "../components/utility/Link.astro";
       display: flex;
       left: 55%;
       opacity: 1;
-      color: oklch(var(--secondary-color));
+      color: hsl(var(--secondary-color));
 
       svg {
         width: 30px;
