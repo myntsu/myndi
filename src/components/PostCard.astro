@@ -112,39 +112,6 @@ const { title, description, date, category, author, image } = frontmatter;
       box-shadow: 0px 0px 30px hsl(var(--secondary-color) / .3);
     }
 
-    &::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(
-        circle at calc(var(--x) * 1px) calc(var(--y) * 1px),
-        hsl(var(--highlight) / .01),
-        transparent 12vmin
-      );
-      background-attachment: fixed;
-      opacity: var(--active, 0);
-      transition: opacity 0.2s;
-      pointer-events: none;
-    }
-
-    &::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(
-          circle at calc(var(--x) * 1px) calc(var(--y) * 1px),
-          hsl(var(--highlight) / .05),
-          transparent 12vmin
-        ),
-        transparent;
-      background-attachment: fixed;
-      pointer-events: none;
-      mask: linear-gradient(white, white) 50% 0 / 100% 4px no-repeat,
-        linear-gradient(white, white) 50% 100% / 100% 4px no-repeat,
-        linear-gradient(white, white) 0 50% / 4px 100% no-repeat,
-        linear-gradient(white, white) 100% 50% / 4px 100% no-repeat;
-    }
-
     small {
       &.tag {
         display: flex;

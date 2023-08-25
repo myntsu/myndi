@@ -40,15 +40,15 @@ const relatedPosts = formattedPosts
     {author}
     {image}
   />
-  <div class="blog-post">
+  <div class="blog-section">
     <section>
-      <div>
+      <div id="blog-post">
         <slot />
       </div>
     </section>
     <div class="aside-group">
       <aside aria-label="Blog Categories">
-        <h2 class="highlight-text">Blog Categories</h2>
+        <h2>Blog Categories</h2>
         <CategoryCloud
           categoryClasses="flex-list"
           classes="tag tag-button"
@@ -57,7 +57,7 @@ const relatedPosts = formattedPosts
       {
         relatedPosts.length > 0 && (
           <aside aria-label="Related posts">
-            <h2 class="highlight-text">Related posts</h2>
+            <h2>Related posts</h2>
             <RelatedPosts {relatedPosts} />
           </aside>
         )
@@ -67,7 +67,7 @@ const relatedPosts = formattedPosts
 </MainLayout>
 
 <style lang="scss">
-  .blog-post {
+  .blog-section {
     display: flex;
     flex-wrap: wrap;
     line-height: 1.6;
@@ -84,32 +84,4 @@ const relatedPosts = formattedPosts
   aside {
     padding: var(--rem-lg);
   }
-
-  h2,
-h3 {
-  text-shadow: 0 0 10px hsl(var(--font) / 0.5);
-}
-
-a {
-  --svg-width: 1.1em;
-  display: inline-flex;
-
-  color: hsl(var(--navbar-color));
-  font-weight: 700;
-  position: relative;
-
-  &:is(:hover, :focus-visible) {
-    text-decoration: none;
-  }
-}
-
-pre {
-  padding: 1rem;
-  border-radius: 0.25rem;
-}
-
-img, video, svg {
-    display: block;
-    max-width: 100%;
-}
 </style>

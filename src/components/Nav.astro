@@ -111,6 +111,7 @@ let showDiv = Astro.request.url.includes("/about");
     top: 0;
     overflow-y: scroll;
     height: 100vh;
+    height: 100svh;
     z-index: 9999;
 
     width: 100%;
@@ -124,7 +125,7 @@ let showDiv = Astro.request.url.includes("/about");
     position: fixed;
     top: 1.25rem;
     right: 1.25rem;
-    z-index: 9999;
+    z-index: 99999;
 
     &:is(:active) {
       scale: 0.97;
@@ -138,7 +139,7 @@ let showDiv = Astro.request.url.includes("/about");
       color: hsl(var(--font));
       height: 60px;
       width: 60px;
-
+      
       transition: color 200ms linear;
     }
 
