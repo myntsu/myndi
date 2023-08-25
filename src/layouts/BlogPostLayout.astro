@@ -4,6 +4,7 @@ import MainLayout from "../layouts/MainLayout.astro";
 import PostHeader from "../components/PostHeader.astro";
 import CategoryCloud from "../components/CategoryCloud.astro";
 import RelatedPosts from "../components/RelatedPosts.astro";
+import '../css/blogpost.scss';
 
 // utils imports
 import { formatBlogPosts } from "../scripts/utils";
@@ -28,10 +29,9 @@ const relatedPosts = formattedPosts
 <MainLayout
   {title}
   {description}
-  image = {frontmatter.image}
+  image={frontmatter.image}
   {frontmatter}
-  robots = {frontmatter.robots}
-  >
+  robots={frontmatter.robots}>
   <PostHeader
     {title}
     {description}
@@ -47,18 +47,21 @@ const relatedPosts = formattedPosts
       </div>
     </section>
     <div class="aside-group">
-        <aside aria-label="Blog Categories">
-          <h2>Blog Categories</h2>
-          <CategoryCloud categoryClasses="flex-list" classes="tag tag-button" />
-        </aside>
-        {
-          relatedPosts.length > 0 && (
-            <aside aria-label="Related posts">
-              <h2>Related posts</h2>
-              <RelatedPosts {relatedPosts} />
-            </aside>
-          )
-        }
+      <aside aria-label="Blog Categories">
+        <h2 class="highlight-text">Blog Categories</h2>
+        <CategoryCloud
+          categoryClasses="flex-list"
+          classes="tag tag-button"
+        />
+      </aside>
+      {
+        relatedPosts.length > 0 && (
+          <aside aria-label="Related posts">
+            <h2 class="highlight-text">Related posts</h2>
+            <RelatedPosts {relatedPosts} />
+          </aside>
+        )
+      }
     </div>
   </div>
 </MainLayout>
@@ -81,4 +84,32 @@ const relatedPosts = formattedPosts
   aside {
     padding: var(--rem-lg);
   }
+
+  h2,
+h3 {
+  text-shadow: 0 0 10px hsl(var(--font) / 0.5);
+}
+
+a {
+  --svg-width: 1.1em;
+  display: inline-flex;
+
+  color: hsl(var(--navbar-color));
+  font-weight: 700;
+  position: relative;
+
+  &:is(:hover, :focus-visible) {
+    text-decoration: none;
+  }
+}
+
+pre {
+  padding: 1rem;
+  border-radius: 0.25rem;
+}
+
+img, video, svg {
+    display: block;
+    max-width: 100%;
+}
 </style>
