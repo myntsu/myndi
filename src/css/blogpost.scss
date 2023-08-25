@@ -1,0 +1,20 @@
+h2, h3 {
+text-shadow: 0 0 10px hsl(var(--font) / .5);
+}
+
+a {
+  --svg-width: 1.1em;
+  display: inline-flex;
+
+  color: hsl(var(--navbar-color));
+  font-weight: 700;
+  position: relative;
+
+  &:is(:hover, :focus-visible) {
+    text-decoration: none;
+  }
+}
+
+code {
+    border-radius: .25rem;
+}
