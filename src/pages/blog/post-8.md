@@ -10,6 +10,10 @@ image: {
 description: Truly CSS it the only way to go about life.
 draft: false
 category: HTML
+profile: {
+    source: "/images/smytsu_headshot.jpg",
+    altText: "Author profile picture",
+}
 ---
 
 # This is a blog post

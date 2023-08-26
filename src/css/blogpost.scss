@@ -1,27 +1,13 @@
-h2,
-h3 {
-  text-shadow: 0 0 10px hsl(var(--font) / 0.5);
-}
+#blog-post {
+  a {
+     display: inline-flex;
 
-p { & > a {
-  display: inline-flex;
+     color: hsl(var(--navbar-color));
+     font-weight: 700;
+     position: relative;
 
-  color: hsl(var(--navbar-color));
-  font-weight: 700;
-  position: relative;
-
-  &:is(:hover, :focus-visible) {
-    text-decoration: none;
-  }
-}
-}
-
-pre {
-  padding: 1rem;
-  border-radius: 0.25rem;
-}
-
-img, video, svg {
-    display: block;
-    max-width: 100%;
-}
+     &:is(:hover, :focus-visible) {
+       text-decoration: none;
+     }
+   }
+ }

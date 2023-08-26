@@ -10,6 +10,10 @@ image: {
 description: Utility links to cure your depression
 draft: false
 category: Links
+profile: {
+    source: "/images/smytsu_headshot.jpg",
+    altText: "Author profile picture",
+}
 ---
 
 ## This is a blog post title

@@ -23,7 +23,7 @@ const attr = config.links.map(link => ({
 <MainLayout title="About me" description="About me page">
 
     <section {...attr[0]}>
-        <h2 class="highlight-text">{attr[0]["aria-label"]}</h2>
+        <h2>{attr[0]["aria-label"]}</h2>
         <AboutMe />
         <p>Front-end developer</p>
         <p>Main technologies: CSS, JS, Astro</p>
@@ -33,14 +33,14 @@ const attr = config.links.map(link => ({
     </section>
 
       <section {...attr[1]} class="scroll-in">
-        <h2 class="highlight-text">{attr[1]["aria-label"]}</h2>
+        <h2>{attr[1]["aria-label"]}</h2>
         <Projects
         projects={config.projects} />
         <small><i>You can check more at my <Link href="https://github.com/Myntsu?tab=repositories" target="blank" external>GitHub </Link></i>.</small>
       </section>
 
       <section {...attr[2]}>
-        <h2 class="highlight-text">{attr[2]["aria-label"]}</h2>
+        <h2>{attr[2]["aria-label"]}</h2>
         <Technologies 
         stack={config.stack}
         />
@@ -48,7 +48,7 @@ const attr = config.links.map(link => ({
       </section>
 
       <section {...attr[3]} class="scroll-in">
-        <h2 class="highlight-text">{attr[3]["aria-label"]}</h2>
+        <h2>{attr[3]["aria-label"]}</h2>
         <Hobbies
         hobbies={config.hobbies}
         />

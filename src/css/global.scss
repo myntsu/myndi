@@ -46,8 +46,8 @@
   --highlight: 0 0% 0%;
 
   // font and link styles
-  --font: 0 0% 11%;
-  --font-dark: 0 0% 95%;
+  --font: 0 0% 13%;
+  --font-dark: 0 0% 5%;
 
   // button and tag styles
   --button: 0 90% 55%;
@@ -72,8 +72,8 @@
   --highlight: 0 0% 0%;
 
   // font and link styles
-  --font: 0 0% 11%;
-  --font-dark: 0 0% 95%;
+  --font: 0 0% 13%;
+  --font-dark: 0 0% 5%;
 
   // button and tag styles
   --button: 0 90% 55%;
@@ -189,10 +189,25 @@ h1 {
   font-size: clamp(1.5rem, 0.9681rem + 1.7021vw, 2.5rem);
 }
 
+@for $i from 1 through 6 {
+  h#{$i} {
+    text-shadow: 0 0 10px hsl(var(--font) / 0.5);
+  }
+}
+
+
 img,
 video,
 picture {
   display: block;
+  max-width: 100%;
+}
+
+pre {
+  max-width: 100%;
+  padding: 1rem;
+  border-radius: 0.25rem;
+  overflow-wrap: anywhere !important;
 }
 
 .layout {
@@ -214,8 +229,13 @@ picture {
     padding: 4rem 1rem 4rem 1rem;
   }
 
+  #navbar {
+    display: none;
+  }
+
   .layout {
-    grid-template-columns: min(var(--navbar-width), 100%) 100vw;
+    // grid-template-columns: min(var(--navbar-width), 100%) 100vw;
+    grid-template-columns: 100vw;
 
     &:is(.open) {
       .hamburger-icon {
@@ -235,12 +255,17 @@ picture {
       }
     }
 
-    &:not(.open) {
-      margin-inline-start: calc(-1 * var(--navbar-width));
+    &.open {
+      // margin-inline-start: calc(-1 * var(--navbar-width));
+      grid-template-columns: min(var(--navbar-width), 100%) 100vw;
+      #navbar {
+        display: block;
+      }
     }
   }
 }
 
+// utility classes
 .button {
   display: flex;
 

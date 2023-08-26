@@ -10,6 +10,10 @@ image: {
 description: Clearly you don't know JS if you haven't touched Reach in your life, components are everything.
 draft: false
 category: JS
+profile: {
+    source: "/images/smytsu_headshot.jpg",
+    altText: "Author profile picture",
+}
 ---
 
 # This is a blog post

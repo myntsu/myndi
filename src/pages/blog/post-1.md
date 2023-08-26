@@ -7,9 +7,13 @@ image: {
     src: "https://picsum.photos/id/47/600/300",
     alt: "Lorem picsum",
 }
-description: There's only one way, and that's with display flex.
+description: There's only one way, and that's with display flex and this is a very long description that probably wont fit and it has to be clamp.
 draft: false
 category: CSS
+profile: {
+    source: "/images/smytsu_headshot.jpg",
+    altText: "Author profile picture",
+}
 ---
 
 ## This is a blog post

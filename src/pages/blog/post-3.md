@@ -10,6 +10,10 @@ image: {
 description: Clearly JS has more than two tricks under its sleeve, but the frameworks are the issue.
 draft: false
 category: JS
+profile: {
+    source: "/images/smytsu_headshot.jpg",
+    altText: "Author profile picture",
+}
 ---
 
 # This is a blog post
