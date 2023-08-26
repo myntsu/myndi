@@ -10,6 +10,10 @@ image: {
 description: We know no answer to this very important question. So I rather kiss myself.
 draft: false
 category: CSS
+profile: {
+    source: "/images/smytsu_headshot.jpg",
+    altText: "Author profile picture",
+}
 ---
 
 ## This is a blog post from Kilty

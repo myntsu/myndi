@@ -10,6 +10,10 @@ image: {
 description: What are you waiting for, huh?
 draft: false
 category: Reference Docs
+profile: {
+    source: "/images/smytsu_headshot.jpg",
+    altText: "Author profile picture",
+}
 ---
 
 ## This is a blog post title

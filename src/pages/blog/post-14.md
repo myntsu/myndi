@@ -10,6 +10,10 @@ image: {
 description: Lorem ipsum... it was a joke, there's no lorem here, neither ipsum.
 draft: false
 category: Reference Docs
+profile: {
+    source: "/images/smytsu_headshot.jpg",
+    altText: "Author profile picture",
+}
 ---
 
 ## This is a blog post title

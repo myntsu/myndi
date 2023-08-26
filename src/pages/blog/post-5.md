@@ -10,6 +10,10 @@ image: {
 description: The journey of using ChatGPT to increase your website views in the long run.
 draft: false
 category: HTML
+profile: {
+    source: "/images/smytsu_headshot.jpg",
+    altText: "Author profile picture",
+}
 ---
 
 # This is a blog post

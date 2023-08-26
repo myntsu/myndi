@@ -10,6 +10,10 @@ image: {
 description: Starting with a div and ending with an onclick, what a journey.
 draft: false
 category: HTML
+profile: {
+    source: "/images/smytsu_headshot.jpg",
+    altText: "Author profile picture",
+}
 ---
 
 # This is a blog post

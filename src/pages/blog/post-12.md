@@ -10,6 +10,10 @@ image: {
 description: Lmao elmao roflcopter Maokai.
 draft: false
 category: Reference Docs
+profile: {
+    source: "/images/smytsu_headshot.jpg",
+    altText: "Author profile picture",
+}
 ---
 
 ## This is a blog post title
