@@ -14,7 +14,6 @@ const { title, description, date, category, author, image, profile } = frontmatt
 ---
 
 <article class="card">
-  <a href={url} aria-hidden="true" tabindex="-1" class="expanded-link"></a>
   <div class="inner-card">
     <a href={url} aria-hidden="true" tabindex="-1" class="card-image">
       <Image src={image.src} alt={image.alt} width={200} height={200} format="webp" fit="cover" quality={100} class="link-image" />
@@ -37,10 +36,8 @@ const { title, description, date, category, author, image, profile } = frontmatt
           </div>
         </small>
         <p class="description">{description}</p>
+        
       </div>
-      <!-- <div class="button read-post">
-        <a href={url} aria-labelledby=`Read more about ${title}`>Read post</a>
-      </div> -->
     </div>
   </div>
   <div class="card-footer">
@@ -49,7 +46,10 @@ const { title, description, date, category, author, image, profile } = frontmatt
       <Image src={profile.source} alt="alt" width={40} height={40} format="webp" fit="cover" quality={100} class="author-pic" />
       <div>
         <span>Posted by</span>
-        <a href={`/author/${slugify(author)}`}>{author}</a>
+        <a href={`/author/${slugify(author)}`} class="author-link">{author}</a>
+      </div>
+      <div class="button read-more">
+        <a href={url} aria-labelledby=`Read more about ${title}`>Read post</a>
       </div>
     </div>
   </div>
@@ -70,7 +70,6 @@ const { title, description, date, category, author, image, profile } = frontmatt
       }
     }
   }
-
 
 .card {
   container-type: inline-size;
@@ -129,21 +128,25 @@ const { title, description, date, category, author, image, profile } = frontmatt
       height: calc(.75rem + 6.5ch);
       margin-block-end: 1rem;
       padding: .5rem;
+      font-size: .9rem;
     }
 
     .card-description {
       margin-block-start: auto;
       padding-inline: .5rem;
 
-      .date {
-        display: flex;
-        align-items: flex-start;
-        gap: .25rem;
-        opacity: .5;
 
-        svg {
-          max-width: 16px;
-          aspect-ratio: 1;
+      small {
+        .date {
+          display: flex;
+          align-items: flex-start;
+          gap: .25rem;
+          opacity: .5;
+  
+          svg {
+            max-width: 16px;
+            aspect-ratio: 1;
+          }
         }
       }
 
@@ -155,12 +158,7 @@ const { title, description, date, category, author, image, profile } = frontmatt
         height: 4.5ch;
         opacity: .7;
         margin: 0;
-      }
-    }
-
-    .read-post {
-      a {
-        margin-inline: auto;
+        font-size: .9rem;
       }
     }
   }
@@ -171,21 +169,33 @@ const { title, description, date, category, author, image, profile } = frontmatt
       gap: .5rem;
       width: 100%;
       margin-block-start: auto;
+      padding-inline: 1rem;
 
       hr {
         width: 75%;
         opacity: .3;
+      
+        @media (max-width: 400px) {
+          display: none;
+        }
       }
 
       .author {
         display: flex;
         justify-content: center;
         align-items: center;
+        flex-wrap: wrap;
         gap: .5rem;
         
         width: 100%;
         
         font-size: medium;
+
+        @media (max-width: 400px) {
+          & > *:not(:last-child) {
+              display: none;
+          }
+        }
 
         .author-pic {
           border-radius: 50%;
@@ -196,7 +206,7 @@ const { title, description, date, category, author, image, profile } = frontmatt
           aspect-ratio: 1;
         }
 
-        a {
+        .author-link {
           display: inline-flex;
           color: hsl(var(--navbar-color));
           font-weight: 700;
@@ -210,6 +220,10 @@ const { title, description, date, category, author, image, profile } = frontmatt
 
             transition: color 300ms ease;
           }
+        }
+
+        .read-more {
+          margin-inline-start: auto;
         }
       }
   }
