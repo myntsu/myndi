@@ -14,14 +14,14 @@ interface Props extends HTMLAttributes<"aside"> {
   socials?: Socials[];
 }
 
-const { socials } = Astro.props;
+const { socials, class: backgroundColor } = Astro.props;
 ---
 
-<aside class="social-media">
+<aside class=`social-media ${backgroundColor}`>
   <div>
     {
       socials?.map(({ platform, link, handle }) => (
-        <a
+        <a 
           href={link}
           target="_blank">
           <Icon pack="fa-brands" name={`${platform}-square`} width="32" height="32"/>
@@ -36,7 +36,10 @@ const { socials } = Astro.props;
   .social-media {
     position: sticky;
     inset: 0;
-    background-color: hsl(var(--background-lighter));
+
+    &.filled {
+      background-color: hsl(var(--background-lighter));
+    }
 
     > div {
       display: grid;
