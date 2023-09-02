@@ -15,10 +15,11 @@ const { title, description, date, category, author, image, profile } = frontmatt
 
 <article class="card">
   <div class="inner-card">
-    <a href={url} aria-hidden="true" tabindex="-1" class="card-image">
-      <Image src={image.src} alt={image.alt} width={200} height={200} format="webp" fit="cover" quality={100} class="link-image" />
-      <Image src={image.src} alt={image.alt} width={400} height={200} format="webp" fit="cover" quality={100} class="link-image double" />
-    </a>
+    <!-- If you want to use images, go ahead with these -->
+    <!-- <a href={url} aria-hidden="true" tabindex="-1" class="card-image"> -->
+      <!-- <Image src={image.src} alt={image.alt} width={200} height={200} format="webp" fit="cover" quality={100} class="link-image" /> -->
+      <!-- <Image src={image.src} alt={image.alt} width={400} height={200} format="webp" fit="cover" quality={100} class="link-image double" /> -->
+    <!-- </a> -->
     <div class="content">
       <small class="tag tag-button">
         <a href={`/category/${slugify(category)}`}>{category}</a>
@@ -69,6 +70,10 @@ const { title, description, date, category, author, image, profile } = frontmatt
         display: block !important;
       }
     }
+  }
+
+  h2, h3 {
+    font-size: 1.5em;
   }
 
 .card {

@@ -27,8 +27,12 @@ const { page } = Astro.props;
 <MainLayout
   title="Blog"
   description="Main blog posts">
-  <section aria-label="New blog posts">
-    <h1>Newest blog posts</h1>
+  <section aria-label="All blog posts">
+    <h1>All blog posts</h1>
+    <aside aria-label="Blog Categories">
+      <h2>Categories</h2>
+      <CategoryCloud classes="tag tag-button" showCount={true} />
+    </aside>
     <Pagination
       prevUrl={page.url.prev}
       nextUrl={page.url.next}
@@ -49,10 +53,6 @@ const { page } = Astro.props;
       nextUrl={page.url.next}
     />
   </section>
-  <aside aria-label="Blog Categories">
-    <h2>Blog Categories</h2>
-    <CategoryCloud classes="tag tag-button" showCount={true} />
-  </aside>
 </MainLayout>
 
 <style lang="scss">
@@ -66,6 +66,12 @@ const { page } = Astro.props;
   }
 
   aside {
-    padding: var(--rem-lg);
+    align-self: flex-start;
+
+    h2 {
+      font-size: 1.25rem;
+      margin: 0;
+      margin-block-end: .25rem;
+    }
   }
 </style>
