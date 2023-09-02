@@ -39,8 +39,8 @@ This project is a **highly costumizable** Portfolio & Blog.
 ✅ Sitemap & RSS  
 ✅ Mostly best practices  
 ✅ Customizable  
+✅ Light/Dark mode  
 ❌ Fuzzy search  
-❌ Light/Dark mode  
 ❌ Boring portfolio/blog
 
 ## 🌇 Ligthouse
@@ -63,16 +63,30 @@ This project has the following folder structure:
 │   └── robots.txt
 ├── src/
 │   ├── components/
-|   |   ├── simple/
+|   |   ├── about/
+|   |   |   ├── AboutMe.astro
+|   |   |   ├── Hobbies.astro
+|   |   |   ├── Projects.astro
+|   |   |   └── Technologies.astro
+|   |   ├── utility/
 |   |   |   ├── AuthorLinkAndDate.astro
+|   |   |   ├── BackgroundNoise.astro
 |   |   |   ├── CardsContainer.astro
+|   |   |   ├── Link.astro
 |   |   |   └── SocialMedia.astro
+|   |   ├── CategoryCloud.astro
 |   |   ├── Footer.astro
 |   |   ├── Nav.astro
 |   |   ├── Pagination.astro
 |   |   ├── PostCard.astro
 |   |   ├── PostHeader.astro
-|   |   └── RelatedPosts.astro
+|   |   ├── RelatedPosts.astro
+|   |   └── SEO.astro
+│   ├── css/
+|   |   ├── blogpost.scss
+|   |   └── global.scss
+│   ├── data/
+|   |   └── siteData.json
 │   ├── layouts/
 |   |   ├── BlogPostLayout.astro
 |   |   ├── MainHead.astro
@@ -87,16 +101,22 @@ This project has the following folder structure:
 |   |   └── rss.xml.js
 │   ├── scripts/
 |   |   ├── copyright.js
+|   |   ├── jsonLD.js
 |   |   ├── nava.js
 |   |   ├── postcard.js
+|   |   ├── projects.js
 |   |   ├── scrollspy.js
+|   |   ├── technologies.js
+|   |   ├── themechange.js
 |   |   └── utils.js
-│   ├── env.d.ts
-│   ├── .gitignore
-│   ├── astro.config.mjs
-│   ├── package-lock.json
-│   ├── package.json
-│   └── READ.ME
+|   └── env.d.ts
+├── .gitignore
+├── astro.config.mjs
+├── config.js
+├── LICENSE
+├── package-lock.json
+├── package.json
+└── READ.ME
 └── ts.config.json
 ```
 
@@ -120,16 +140,16 @@ Pick your poison 😎
 
 ```bash
 # npm 6.x
-npm create astro@latest --template Myntsu/astro-blog
+npm create astro@latest --template Myntsu/myndi
 
 # npm 7+
-npm create astro@latest -- --template Myntsu/astro-blog
+npm create astro@latest -- --template Myntsu/myndi
 
 #pnpm
-pnpm create astro@latest --template Myntsu/astro-blog
+pnpm create astro@latest --template Myntsu/myndi
 
 # yarn
-yarn create astro --template Myntsu/astro-blog
+yarn create astro --template Myntsu/myndi
 ```
 
 ## 2️⃣ Clone or fork the repository
@@ -137,7 +157,7 @@ yarn create astro --template Myntsu/astro-blog
 **Clone or fork the repository**
 
 ```bash
-git clone https://github.com/Myntsu/astro-blog
+git clone https://github.com/Myntsu/myndi
 ```
 
 **Change the directory**

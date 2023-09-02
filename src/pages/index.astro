@@ -17,25 +17,50 @@ const formattedPosts = formatBlogPosts(allPosts, {
 <MainLayout
   title="Home"
   description="Landing page of Myndi's page">
-  <section id="home" aria-label="About Me">
+  <section
+    id="home"
+    aria-label="About Me">
     <div>
-        <h1>Welcome <span class="pick-name" data-pick-name> <span>_</span><span>_</span><span>_</span><span>_</span><span>_</span> </span>👋</h1>
+      <h1>
+        Welcome <span
+          class="pick-name"
+          data-pick-name>
+          <span data-underscore>_</span>
+          <span data-underscore>_</span>
+          <span data-underscore>_</span>
+          <span data-underscore>_</span>
+          <span data-underscore>_</span>
+        </span>
+        <span>👋</span>
+      </h1>
 
-        <p>I'm known as <span class="highlight-text">Myndi</span>, a Front-end Developer that focuses on UX/UI, aesthetics and "clean code" 😊</p>
-        <p>I have built this blogfolio to present myself to the world, and to help people <span class="highlight-text">build their own</span>, if you're interested, please check <Link href="https://github.com/Myntsu/myndi" target="blank" external>Repository</Link> or simply start with:</p>
-        <pre>
+      <p>
+        I'm known as <span class="highlight-text">Myndi</span>, a Front-end
+        Developer that focuses on UX/UI, aesthetics and "clean code" 😊
+      </p>
+      <p>
+        I have built this blogfolio to present myself to the world, and to help
+        people <span class="highlight-text">build their own</span>, if you're
+        interested, please check the <Link
+          href="https://github.com/Myntsu/myndi"
+          target="blank"
+          external>
+          Repository
+        </Link> or simply start your own copy with:
+      </p>
+      <pre>
           <code>
 # npm 6.x
-npm create astro@latest --template Myntsu/astro-blog
+npm create astro@latest --template Myntsu/myndi
 
 # npm 7+
-npm create astro@latest -- --template Myntsu/astro-blog
+npm create astro@latest -- --template Myntsu/myndi
 
 #pnpm
-pnpm create astro@latest --template Myntsu/astro-blog
+pnpm create astro@latest --template Myntsu/myndi
 
 # yarn
-yarn create astro --template Myntsu/astro-blog</code>
+yarn create astro --template Myntsu/myndi</code>
         </pre>
     </div>
   </section>
@@ -62,16 +87,17 @@ yarn create astro --template Myntsu/astro-blog</code>
   }
 
   pre {
-    padding: 0;
-    padding-inline: 1.5rem;
+    padding: 0 !important;
+    padding-inline: 1.5rem !important;
     color: hsl(0 0% 91%);
     background-color: hsl(0 0% 7%);
+    overflow-x: auto;
   }
 
   .pick-name {
     display: inline-flex;
-    gap: .5rem;
-    cursor: text;
+    gap: 0.5rem;
+    cursor: pointer;
 
     &:is(:hover, :focus-visible) {
       & > * {
@@ -81,6 +107,12 @@ yarn create astro --template Myntsu/astro-blog</code>
 
     &:is(.active) {
       min-width: 10ch;
+      line-height: 1;
+      box-shadow: 0 0 20px hsl(var(--highlight) / .6);
+      border-radius: .5rem;
+      font-size: 1.5rem;
+      padding: .5rem;
+      cursor: text;
     }
   }
 
@@ -94,52 +126,51 @@ yarn create astro --template Myntsu/astro-blog</code>
 
   @for $i from 1 through 5 {
     .pick-name > :nth-child(#{$i}) {
-        position: relative;
-        animation: jump $animation infinite;
-        animation-delay: calc(#{$i} * #{$delay});
-      }
+      position: relative;
+      animation: jump $animation infinite;
+      animation-delay: calc(#{$i} * #{$delay});
     }
+  }
 
   @keyframes jump {
-        50% {
-          translate: 0px -10px;
-        } 
-      }
+    50% {
+      translate: 0px -10px;
+    }
+  }
 </style>
 
 <script lang="js">
-const pickName = document.querySelector('.pick-name');
-const pickNameSpans = pickName.querySelectorAll('span');
+const pickName = document.querySelector(".pick-name");
+const pickNameSpans = pickName.querySelectorAll("[data-underscore]");
 
-pickName.addEventListener('click', () => {
-  pickNameSpans.forEach(span => span.style.display = 'none');
-  pickName.classList.add('active');
+pickName.addEventListener("click", () => {
+  pickNameSpans.forEach((span) => (span.style.display = "none"));
+  pickName.classList.add("active");
   pickName.contentEditable = true;
-  pickName.focus();
 });
 
-pickName.addEventListener('input', () => {
-  const name = pickName.textContent.replace(/_/g, '').trim();
+pickName.addEventListener("input", () => {
+  const name = pickName.textContent.replace(/_/g, "").trim();
   if (name.length > 20) {
-    pickName.textContent = name.slice(0, 20);
+      pickName.textContent = name.slice(0, 20);
+    }
+    localStorage.setItem("pickName", name);
+  });
+
+  pickName.addEventListener("blur", () => {
+    pickName.classList.remove("active");
+    pickName.contentEditable = false;
+  });
+
+  pickName.addEventListener("keydown", (event) => {
+    if (event.keyCode === 13 || event.keyCode === 32) {
+      event.preventDefault();
+    }
+  });
+
+  const savedName = localStorage.getItem("pickName");
+  if (savedName) {
+    pickNameSpans.forEach((span) => span.remove());
+    pickName.textContent = savedName;
   }
-  localStorage.setItem('pickName', name);
-});
-
-pickName.addEventListener('blur', () => {
-  pickName.classList.remove('active');
-  pickName.contentEditable = false;
-});
-
-pickName.addEventListener('keydown', (event) => {
-  if (event.keyCode === 13 || event.keyCode === 32) {
-    event.preventDefault();
-  }
-});
-
-const savedName = localStorage.getItem('pickName');
-if (savedName) {
-  pickNameSpans.forEach(span => span.remove());
-  pickName.textContent = savedName;
-}
 </script>
