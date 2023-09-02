@@ -54,6 +54,9 @@
   --button-font: 0 0% 100%;
   --tag: 0 60% 50%;
   --tag-font: 0 0% 100%;
+
+  //highlight
+  --highlight: 0 100% 40%;
 }
 
 .light {
@@ -80,6 +83,9 @@
   --button-font: 0 0% 100%;
   --tag: 0 60% 50%;
   --tag-font: 0 0% 100%;
+
+  //highlight
+  --highlight: 0 100% 40%;
 }
 
 .dark  {
@@ -106,7 +112,9 @@
   --button-font: 0 0% 100%;
   --tag: 0 60% 50%;
   --tag-font: 0 0% 100%;
-  color: hsl(240, 90%, 80%);
+
+  //highlight
+  --highlight: 0 0% 91%;
 }
 
 ::-webkit-scrollbar {
@@ -191,7 +199,7 @@ h1 {
 
 @for $i from 1 through 6 {
   h#{$i} {
-    text-shadow: 0 0 10px hsl(var(--font) / 0.5);
+    text-shadow: 0 0 10px hsl(var(--highlight) / 0.6);
   }
 }
 
@@ -337,6 +345,7 @@ pre {
     a {
       color: hsl(var(--button-font));
       background-color: hsl(var(--button));
+      border-radius: .15rem;
 
       &:is(:hover, :focus-visible) {
         color: hsl(var(--button));
@@ -432,5 +441,5 @@ pre {
 }
 
 .highlight-text {
-  text-shadow: 0 0 10px hsl(var(--font) / .5);
+  text-shadow: 0 0 10px hsl(var(--highlight) / .6);
 }

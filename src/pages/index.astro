@@ -19,8 +19,24 @@ const formattedPosts = formatBlogPosts(allPosts, {
   description="Landing page of Myndi's page">
   <section id="home" aria-label="About Me">
     <div>
-        <h1>Welcome to my personal Portafolio & Blog!</h1>
-        <p>Hello there, and welcome to my site. This is a portfolio/blog built with <Link href="https://astro.build/" target="blank" external>Astro</Link> </p>
+        <h1>Welcome <span class="pick-name" data-pick-name> <span>_</span><span>_</span><span>_</span><span>_</span><span>_</span> </span>👋</h1>
+
+        <p>I'm known as <span class="highlight-text">Myndi</span>, a Front-end Developer that focuses on UX/UI, aesthetics and "clean code" 😊</p>
+        <p>I have built this blogfolio to present myself to the world, and to help people <span class="highlight-text">build their own</span>, if you're interested, please check <Link href="https://github.com/Myntsu/myndi" target="blank" external>Repository</Link> or simply start with:</p>
+        <pre>
+          <code>
+# npm 6.x
+npm create astro@latest --template Myntsu/astro-blog
+
+# npm 7+
+npm create astro@latest -- --template Myntsu/astro-blog
+
+#pnpm
+pnpm create astro@latest --template Myntsu/astro-blog
+
+# yarn
+yarn create astro --template Myntsu/astro-blog</code>
+        </pre>
     </div>
   </section>
   <section aria-label="Newest blog posts">
@@ -39,9 +55,91 @@ const formattedPosts = formatBlogPosts(allPosts, {
   </section>
 </MainLayout>
 
-<style>
+<style lang="scss">
   #home {
     min-height: 50vh;
     min-height: 50svh;
   }
+
+  pre {
+    padding: 0;
+    padding-inline: 1.5rem;
+    color: hsl(0 0% 91%);
+    background-color: hsl(0 0% 7%);
+  }
+
+  .pick-name {
+    display: inline-flex;
+    gap: .5rem;
+    cursor: text;
+
+    &:is(:hover, :focus-visible) {
+      & > * {
+        animation: none !important;
+      }
+    }
+
+    &:is(.active) {
+      min-width: 10ch;
+    }
+  }
+
+  [contenteditable="true"] {
+    line-height: 1;
+  }
+
+  $animation: 3000ms;
+  $totalChilds: 5;
+  $delay: calc($animation / $totalChilds);
+
+  @for $i from 1 through 5 {
+    .pick-name > :nth-child(#{$i}) {
+        position: relative;
+        animation: jump $animation infinite;
+        animation-delay: calc(#{$i} * #{$delay});
+      }
+    }
+
+  @keyframes jump {
+        50% {
+          translate: 0px -10px;
+        } 
+      }
 </style>
+
+<script lang="js">
+const pickName = document.querySelector('.pick-name');
+const pickNameSpans = pickName.querySelectorAll('span');
+
+pickName.addEventListener('click', () => {
+  pickNameSpans.forEach(span => span.style.display = 'none');
+  pickName.classList.add('active');
+  pickName.contentEditable = true;
+  pickName.focus();
+});
+
+pickName.addEventListener('input', () => {
+  const name = pickName.textContent.replace(/_/g, '').trim();
+  if (name.length > 20) {
+    pickName.textContent = name.slice(0, 20);
+  }
+  localStorage.setItem('pickName', name);
+});
+
+pickName.addEventListener('blur', () => {
+  pickName.classList.remove('active');
+  pickName.contentEditable = false;
+});
+
+pickName.addEventListener('keydown', (event) => {
+  if (event.keyCode === 13 || event.keyCode === 32) {
+    event.preventDefault();
+  }
+});
+
+const savedName = localStorage.getItem('pickName');
+if (savedName) {
+  pickNameSpans.forEach(span => span.remove());
+  pickName.textContent = savedName;
+}
+</script>
