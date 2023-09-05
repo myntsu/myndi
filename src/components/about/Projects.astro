@@ -1,6 +1,6 @@
 ---
 // astro imports
-import { Image } from "@astrojs/image/components";
+import { Image } from 'astro:assets'
 import { Icon } from "astro-icon";
 
 import type { HTMLAttributes } from "astro/types";
@@ -26,8 +26,8 @@ const { projects } = Astro.props;
     <div class="img-wrapper">
         <h3 class="title">{title}</h3>
         <p class="short-description">{shortDescription}</p>
-        <Image src={`${src}`} data-original-src={src} width={200} height={300} alt={`${alt}`} position="top" class="img-about" format="webp" quality={100}/>
-        <Image src={`${src}`} data-original-src={src} width={400} height={300} alt={`${alt}`} position="top" class="img-about phone" format="webp" quality={100}/>
+        <Image src={`${src}`} data-original-src={src} width={200} height={300} alt={`${alt}`} class="img-about" format="webp" quality={100}/>
+        <Image src={`${src}`} data-original-src={src} width={400} height={300} alt={`${alt}`} class="img-about phone" format="webp" quality={100}/>
         <Icon name="mdi:magnify-expand" class="hover-icon" />
         <div class="project-links">
             <a class="repo" href={repository} target="_blank"><Icon name="mdi:github" /> Repo</a>

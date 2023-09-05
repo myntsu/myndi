@@ -454,7 +454,7 @@ description: 'A humble Astronaut’s guide to the stars',
 - **Images**
   ```jsx
   // width and height are required
-  import { Image } from "@astrojs/image/components";
+  import { Image } from 'astro:assets'
 
   <Image
     src="/images/your-image.jpg"
