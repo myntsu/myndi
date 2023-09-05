@@ -11,7 +11,7 @@ description: Truly CSS it the only way to go about life.
 draft: false
 category: CSS
 profile: {
-    source: "/images/smytsu_headshot.jpg",
+    source: "../../assets/user/avatar.jpg",
     altText: "Author profile picture",
 }
 ---

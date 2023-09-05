@@ -17,9 +17,9 @@ const { title, description, date, category, author, image, profile } = frontmatt
   <div class="inner-card">
     <!-- If you want to use images, go ahead with these -->
     <!-- <a href={url} aria-hidden="true" tabindex="-1" class="card-image"> -->
-      <!-- <Image src={image.src} alt={image.alt} width={200} height={200} format="webp" fit="cover" quality={100} class="link-image" /> -->
-      <!-- <Image src={image.src} alt={image.alt} width={400} height={200} format="webp" fit="cover" quality={100} class="link-image double" /> -->
-    <!-- </a> -->
+      <!-- <Image src={image.src} alt={image.alt} width={200} height={200} format="webp" quality={100} class="link-image" />
+      <Image src={image.src} alt={image.alt} width={400} height={200} format="webp" quality={100} class="link-image double" /> -->
+    </a>
     <div class="content">
       <small class="tag tag-button">
         <a href={`/category/${slugify(category)}`}>{category}</a>
@@ -44,7 +44,7 @@ const { title, description, date, category, author, image, profile } = frontmatt
   <div class="card-footer">
     <hr>
     <div class="author">
-      <Image src={profile.source} alt="alt" width={40} height={40} format="webp" quality={100} class="author-pic" />
+      <Image src={profile.source} alt={profile.altText} width={40} height={40} format="webp" quality={100} class="author-pic" />
       <div>
         <span>Posted by</span>
         <a href={`/author/${slugify(author)}`} class="author-link">{author}</a>

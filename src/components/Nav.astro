@@ -7,6 +7,9 @@ import SocialMedia from "./utility/SocialMedia.astro";
 import { Image } from 'astro:assets'
 import { Icon } from "astro-icon";
 
+// images
+import mainImage from '../assets/main-image/main.jpg';
+
 // config import
 import config from "../../config.js";
 
@@ -35,12 +38,12 @@ let showDiv = Astro.request.url.includes("/about");
     <div class="inner">
       <a href="/">
         <Image
-          src="/images/smytsu_headshot.jpg"
+          src={mainImage}
           alt="Smytsu's headshot image"
           width={150}
           height={150}
           format="webp"
-          quality={20}
+          quality={50}
           class="headshot-image"
         />
         Home
