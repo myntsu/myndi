@@ -4,7 +4,7 @@ import Footer from "../components/Footer.astro";
 import SocialMedia from "./utility/SocialMedia.astro";
 
 //library import
-import { Image } from "@astrojs/image/components";
+import { Image } from 'astro:assets'
 import { Icon } from "astro-icon";
 
 // config import
@@ -40,9 +40,7 @@ let showDiv = Astro.request.url.includes("/about");
           width={150}
           height={150}
           format="webp"
-          fit="cover"
           quality={20}
-          aspectRatio="1:1"
           class="headshot-image"
         />
         Home

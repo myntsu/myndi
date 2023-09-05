@@ -1,6 +1,6 @@
 ---
 // astro imports
-import { Image } from "@astrojs/image/components";
+import { Image } from 'astro:assets'
 import { Icon } from "astro-icon";
 
 import type { HTMLAttributes } from "astro/types";
@@ -56,8 +56,6 @@ const { hobbies } = Astro.props;
             alt={`${alt}`}
             width={800}
             height={800}
-            fit="cover"
-            position={`${position}`}
             format="webp"
             quality={100}
             class="slide-img"

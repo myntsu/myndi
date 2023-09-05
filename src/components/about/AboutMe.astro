@@ -1,6 +1,6 @@
 ---
 // astro imports
-import { Image } from "@astrojs/image/components";
+import { Image } from 'astro:assets'
 import { Icon } from "astro-icon";
 
 // utility imports
@@ -16,8 +16,8 @@ import SocialMedia from "../utility/SocialMedia.astro";
         <SocialMedia socials={config.socials} />
     </div>
     <div class="image-wrapper">
-        <Image src="/images/smytsu_full.png" alt="test" class="about-me-img" width={400} height={500} format="webp" fit="cover" position="top" loading={"eager"}/>
-        <Image src="/images/smytsu_full.png" alt="test" class="about-me-img phone" width={400} height={500} format="webp" fit="cover" position="top" loading={"eager"}/>
+        <Image src="/images/smytsu_full.png" alt="test" class="about-me-img" width={400} height={500} format="webp" position="top" loading={"eager"}/>
+        <Image src="/images/smytsu_full.png" alt="test" class="about-me-img phone" width={400} height={500} format="webp" position="top" loading={"eager"}/>
     </div>
 </div>
 
