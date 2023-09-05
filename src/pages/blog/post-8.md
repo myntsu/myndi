@@ -11,7 +11,7 @@ description: Truly CSS it the only way to go about life.
 draft: false
 category: HTML
 profile: {
-    source: "../../assets/user/avatar.jpg",
+    source: "/images/avatar/avatar.jpg",
     altText: "Author profile picture",
 }
 ---

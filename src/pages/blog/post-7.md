@@ -11,7 +11,7 @@ description: Astro ships faster than Elon's Twitter account, and here is why.
 draft: false
 category: Astro
 profile: {
-    source: "../../assets/user/avatar.jpg",
+    source: "/images/avatar/avatar.jpg",
     altText: "Author profile picture",
 }
 ---
