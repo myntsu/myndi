@@ -11,7 +11,7 @@ description: Lmao elmao roflcopter Maokai.
 draft: false
 category: Reference Docs
 profile: {
-    source: "../../assets/user/avatar.jpg",
+    source: "/images/avatar/avatar.jpg",
     altText: "Author profile picture",
 }
 ---

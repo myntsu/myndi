@@ -1,7 +1,10 @@
 ---
-// astro imports
+// library imports
 import { Image } from 'astro:assets'
 import { Icon } from "astro-icon";
+
+// images
+import user from '../../assets/about-me/smytsu.png';
 
 // utility imports
 import config from "../../../config";
@@ -16,8 +19,8 @@ import SocialMedia from "../utility/SocialMedia.astro";
         <SocialMedia socials={config.socials} />
     </div>
     <div class="image-wrapper">
-        <Image src="/images/smytsu_full.png" alt="test" class="about-me-img" width={400} height={500} format="webp" position="top" loading={"eager"}/>
-        <Image src="/images/smytsu_full.png" alt="test" class="about-me-img phone" width={400} height={500} format="webp" position="top" loading={"eager"}/>
+        <Image src={user} alt="test" class="about-me-img" width={400} height={500} format="webp" loading={"eager"}/>
+        <Image src={user} alt="test" class="about-me-img phone" width={400} height={500} format="webp" loading={"eager"}/>
     </div>
 </div>
 
@@ -40,7 +43,7 @@ import SocialMedia from "../utility/SocialMedia.astro";
 
         .about-me-img {
             border-radius: .5rem;
-            object-fit: contain;
+            object-fit: cover;
 
             &.phone {
                 display: none;
