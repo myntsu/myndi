@@ -2,7 +2,7 @@
     "title": "Myndi Portfolio and Blog",
     "description": "Myndi personal Portfolio and blog, to share everything about me and my blog posts.",
     "image": {
-      "src": "/images/smytsu_headshot.jpg",
+      "src": "../main-image/main.jpg",
       "alt": "Smytsu Original Character headshot image"
     }
   }

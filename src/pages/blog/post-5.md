@@ -11,7 +11,7 @@ description: The journey of using ChatGPT to increase your website views in the 
 draft: false
 category: HTML
 profile: {
-    source: "/images/smytsu_headshot.jpg",
+    source: "../../assets/user/avatar.jpg",
     altText: "Author profile picture",
 }
 ---

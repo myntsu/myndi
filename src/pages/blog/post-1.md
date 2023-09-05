@@ -11,7 +11,7 @@ description: There's only one way, and that's with display flex and this is a ve
 draft: false
 category: CSS
 profile: {
-    source: "/images/smytsu_headshot.jpg",
+    source: "./user/avatar.jpg",
     altText: "Author profile picture",
 }
 ---

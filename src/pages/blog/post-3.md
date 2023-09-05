@@ -11,7 +11,7 @@ description: Clearly JS has more than two tricks under its sleeve, but the frame
 draft: false
 category: JS
 profile: {
-    source: "/images/smytsu_headshot.jpg",
+    source: "../../assets/user/avatar.jpg",
     altText: "Author profile picture",
 }
 ---

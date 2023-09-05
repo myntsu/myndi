@@ -11,7 +11,7 @@ description: Starting with a div and ending with an onclick, what a journey.
 draft: false
 category: HTML
 profile: {
-    source: "/images/smytsu_headshot.jpg",
+    source: "../../assets/user/avatar.jpg",
     altText: "Author profile picture",
 }
 ---

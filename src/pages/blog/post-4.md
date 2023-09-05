@@ -11,7 +11,7 @@ description: Clearly you don't know JS if you haven't touched Reach in your life
 draft: false
 category: JS
 profile: {
-    source: "/images/smytsu_headshot.jpg",
+    source: "../../assets/user/avatar.jpg",
     altText: "Author profile picture",
 }
 ---

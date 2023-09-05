@@ -11,7 +11,7 @@ description: Doctor, Doctor Love 💙 She push me to the limit.
 draft: false
 category: Reference Docs
 profile: {
-    source: "/images/smytsu_headshot.jpg",
+    source: "../../assets/user/avatar.jpg",
     altText: "Author profile picture",
 }
 ---

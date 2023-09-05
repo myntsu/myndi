@@ -11,7 +11,7 @@ description: Utility links to cure your depression
 draft: false
 category: Links
 profile: {
-    source: "/images/smytsu_headshot.jpg",
+    source: "../../assets/user/avatar.jpg",
     altText: "Author profile picture",
 }
 ---
