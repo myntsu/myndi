@@ -4,12 +4,13 @@ import MainLayout from "../layouts/MainLayout.astro";
 import PostHeader from "../components/PostHeader.astro";
 import CategoryCloud from "../components/CategoryCloud.astro";
 import RelatedPosts from "../components/RelatedPosts.astro";
+import TableOfContents from '../components/table-of-content/TableOfContents.astro';
 import '../css/blogpost.scss';
 
 // utils imports
 import { formatBlogPosts } from "../scripts/utils";
 
-const { frontmatter } = Astro.props;
+const { frontmatter, headings } = Astro.props;
 const { title, description, date, category, author, image } = frontmatter;
 
 const allPosts = await Astro.glob("../pages/blog/*.md");
@@ -47,6 +48,8 @@ const relatedPosts = formattedPosts
       </div>
     </section>
     <div class="aside-group">
+      <TableOfContents headings={headings} />
+
       <aside aria-label="Blog Categories">
         <h2>Blog Categories</h2>
         <CategoryCloud
@@ -67,6 +70,11 @@ const relatedPosts = formattedPosts
 </MainLayout>
 
 <style lang="scss">
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-block-start: 1rem;
+  }
+
   .blog-section {
     display: flex;
     flex-wrap: wrap;
@@ -78,6 +86,9 @@ const relatedPosts = formattedPosts
 
     & > .aside-group {
       flex: 1 0 200px;
+
+      position: sticky;
+      height: 100%;
     }
   }
 
@@ -85,3 +96,19 @@ const relatedPosts = formattedPosts
     padding: var(--rem-lg);
   }
 </style>
+
+<script>
+  function highlightLinks() {
+    const h2s = document.getElementsByTagName('h2');
+    for (let i = 0; i < h2s.length; i++) {
+        const links = h2s[i].getElementsByTagName('a');
+        for (let j = 0; j < links.length; j++) {
+            if (links[j].getAttribute('href') === h2s[i].textContent) {
+                links[j].classList.add('text-highlight');
+            }
+        }
+    }
+}
+highlightLinks();
+
+</script>

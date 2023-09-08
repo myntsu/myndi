@@ -1,0 +1,50 @@
+---
+// component thanks to:
+// https://kld.dev/building-table-of-contents/
+
+// component imports
+import Link from "../utility/Link.astro";
+
+const { heading } = Astro.props;
+---
+
+<li>
+  <a href={'#' + heading.slug} class="header-link">
+    {heading.text}
+  </a>
+  {
+    heading.subheadings.length > 0 && (
+      <ul>
+        {heading.subheadings.map((subheading) => (
+          <Astro.self heading={subheading} />
+        ))}
+      </ul>
+    )
+  }
+</li>
+
+<style lang="scss">
+  
+  .header-link {
+    --svg-width: 1.1em;
+    display: inline-flex;
+
+    color: hsl(var(--navbar-color));
+    font-weight: 700;
+    position: relative;
+    text-decoration: none;
+
+    &:is(:hover, :focus-visible) {
+      color: hsl(var(--font));
+      opacity: .9;
+    }
+  }
+
+  li {
+    list-style: none;
+
+    ul {
+      list-style: none;
+    }
+  }
+</style>
