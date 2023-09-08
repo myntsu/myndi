@@ -46,7 +46,7 @@ const { title, description, date, category, author, image, profile } = frontmatt
     <div class="author">
       <Image src={profile.source} alt={profile.altText} width={40} height={40} format="webp" quality={100} class="author-pic" />
       <div>
-        <span>Posted by</span>
+        <span>Posted by </span>
         <a href={`/author/${slugify(author)}`} class="author-link">{author}</a>
       </div>
       <div class="button read-more">
