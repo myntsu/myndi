@@ -4,12 +4,13 @@ import MainLayout from "../layouts/MainLayout.astro";
 import PostHeader from "../components/PostHeader.astro";
 import CategoryCloud from "../components/CategoryCloud.astro";
 import RelatedPosts from "../components/RelatedPosts.astro";
+import TableOfContents from '../components/table-of-content/TableOfContents.astro';
 import '../css/blogpost.scss';
 
 // utils imports
 import { formatBlogPosts } from "../scripts/utils";
 
-const { frontmatter } = Astro.props;
+const { frontmatter, headings } = Astro.props;
 const { title, description, date, category, author, image } = frontmatter;
 
 const allPosts = await Astro.glob("../pages/blog/*.md");
@@ -47,26 +48,36 @@ const relatedPosts = formattedPosts
       </div>
     </section>
     <div class="aside-group">
-      <aside aria-label="Blog Categories">
-        <h2>Blog Categories</h2>
-        <CategoryCloud
-          categoryClasses="flex-list"
-          classes="tag tag-button"
-        />
-      </aside>
-      {
-        relatedPosts.length > 0 && (
-          <aside aria-label="Related posts">
-            <h2>Related posts</h2>
-            <RelatedPosts {relatedPosts} />
+      <div class="sticky">
+        <div>
+          <TableOfContents headings={headings} />
+          <aside aria-label="Blog Categories">
+            <h2>Blog Categories</h2>
+            <CategoryCloud
+              categoryClasses="flex-list"
+              classes="tag tag-button"
+            />
           </aside>
-        )
-      }
+          {
+            relatedPosts.length > 0 && (
+              <aside aria-label="Related posts">
+                <h2>Related posts</h2>
+                <RelatedPosts {relatedPosts} />
+              </aside>
+            )
+          }
+        </div>
+      </div>
     </div>
   </div>
 </MainLayout>
 
 <style lang="scss">
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-block-start: 1rem;
+  }
+
   .blog-section {
     display: flex;
     flex-wrap: wrap;
@@ -78,6 +89,16 @@ const relatedPosts = formattedPosts
 
     & > .aside-group {
       flex: 1 0 200px;
+
+      .sticky {
+        overflow: auto;
+        height: 100%;
+        & > div {
+          position: sticky;
+          top: 0;
+          left: 0;
+        }
+      }
     }
   }
 

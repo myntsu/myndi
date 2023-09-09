@@ -33,10 +33,11 @@ const { page } = Astro.props;
       <h2>Categories</h2>
       <CategoryCloud classes="tag tag-button" showCount={true} />
     </aside>
-    <Pagination
+    <!-- Uncomment to have 2 pagination buttons -->
+    <!-- <Pagination
       prevUrl={page.url.prev}
       nextUrl={page.url.next}
-    />
+    /> -->
     <CardsContainer size="200px">
       {
         page.data.map((post) => (
