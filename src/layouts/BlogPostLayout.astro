@@ -48,23 +48,26 @@ const relatedPosts = formattedPosts
       </div>
     </section>
     <div class="aside-group">
-      <TableOfContents headings={headings} />
-
-      <aside aria-label="Blog Categories">
-        <h2>Blog Categories</h2>
-        <CategoryCloud
-          categoryClasses="flex-list"
-          classes="tag tag-button"
-        />
-      </aside>
-      {
-        relatedPosts.length > 0 && (
-          <aside aria-label="Related posts">
-            <h2>Related posts</h2>
-            <RelatedPosts {relatedPosts} />
+      <div class="sticky">
+        <div>
+          <TableOfContents headings={headings} />
+          <aside aria-label="Blog Categories">
+            <h2>Blog Categories</h2>
+            <CategoryCloud
+              categoryClasses="flex-list"
+              classes="tag tag-button"
+            />
           </aside>
-        )
-      }
+          {
+            relatedPosts.length > 0 && (
+              <aside aria-label="Related posts">
+                <h2>Related posts</h2>
+                <RelatedPosts {relatedPosts} />
+              </aside>
+            )
+          }
+        </div>
+      </div>
     </div>
   </div>
 </MainLayout>
@@ -87,8 +90,15 @@ const relatedPosts = formattedPosts
     & > .aside-group {
       flex: 1 0 200px;
 
-      position: sticky;
-      height: 100%;
+      .sticky {
+        overflow: auto;
+        height: 100%;
+        & > div {
+          position: sticky;
+          top: 0;
+          left: 0;
+        }
+      }
     }
   }
 
@@ -96,19 +106,3 @@ const relatedPosts = formattedPosts
     padding: var(--rem-lg);
   }
 </style>
-
-<script>
-  function highlightLinks() {
-    const h2s = document.getElementsByTagName('h2');
-    for (let i = 0; i < h2s.length; i++) {
-        const links = h2s[i].getElementsByTagName('a');
-        for (let j = 0; j < links.length; j++) {
-            if (links[j].getAttribute('href') === h2s[i].textContent) {
-                links[j].classList.add('text-highlight');
-            }
-        }
-    }
-}
-highlightLinks();
-
-</script>
