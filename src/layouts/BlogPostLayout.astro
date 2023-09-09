@@ -48,26 +48,22 @@ const relatedPosts = formattedPosts
       </div>
     </section>
     <div class="aside-group">
-      <div class="sticky">
-        <div>
-          <TableOfContents headings={headings} />
-          <aside aria-label="Blog Categories">
-            <h2>Blog Categories</h2>
-            <CategoryCloud
-              categoryClasses="flex-list"
-              classes="tag tag-button"
-            />
+      <TableOfContents headings={headings} />
+      <aside aria-label="Blog Categories">
+        <h2>Blog Categories</h2>
+        <CategoryCloud
+          categoryClasses="flex-list"
+          classes="tag tag-button"
+        />
+      </aside>
+      {
+        relatedPosts.length > 0 && (
+          <aside aria-label="Related posts">
+            <h2>Related posts</h2>
+            <RelatedPosts {relatedPosts} />
           </aside>
-          {
-            relatedPosts.length > 0 && (
-              <aside aria-label="Related posts">
-                <h2>Related posts</h2>
-                <RelatedPosts {relatedPosts} />
-              </aside>
-            )
-          }
-        </div>
-      </div>
+        )
+      }
     </div>
   </div>
 </MainLayout>
@@ -88,17 +84,10 @@ const relatedPosts = formattedPosts
     }
 
     & > .aside-group {
+      position: sticky;
+      top: 0;
       flex: 1 0 200px;
-
-      .sticky {
-        overflow: auto;
-        height: 100%;
-        & > div {
-          position: sticky;
-          top: 0;
-          left: 0;
-        }
-      }
+      align-self: flex-start;
     }
   }
 
