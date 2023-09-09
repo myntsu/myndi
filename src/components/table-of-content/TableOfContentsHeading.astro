@@ -2,9 +2,6 @@
 // component thanks to:
 // https://kld.dev/building-table-of-contents/
 
-// component imports
-import Link from "../utility/Link.astro";
-
 const { heading } = Astro.props;
 ---
 
@@ -26,7 +23,6 @@ const { heading } = Astro.props;
 <style lang="scss">
   
   .header-link {
-    --svg-width: 1.1em;
     display: inline-flex;
 
     color: hsl(var(--navbar-color));
