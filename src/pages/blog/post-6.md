@@ -16,7 +16,7 @@ profile: {
 }
 ---
 
-# This is a blog post
+## This is a blog post
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur arcu enim, pulvinar nec nibh eu, suscipit consectetur mauris. Maecenas sagittis elit vel tortor viverra dignissim. Sed sagittis urna sem, nec dapibus tellus tincidunt at. Donec rutrum tristique ipsum, pellentesque consequat urna sollicitudin auctor. Sed congue purus in pretium tristique. Donec id nisl nec metus laoreet vestibulum quis id eros. Vivamus tempor sagittis facilisis.
 
