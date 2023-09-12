@@ -19,17 +19,17 @@ export default {
     // Use this extension: GoFullPage - Full Page Screen Capture to capture your entire website views
     projects: [
       { title: "💼 Blogfolio", shortDescription: "Blogfolio template created with Astro", 
-        src: "/src/assets/about-me/blogfolio.png", alt: "Blogfolio website", 
+        src: import("/src/assets/about-me/blogfolio.png"), preview: "/src/assets/about-me/blogfolio.png", alt: "Blogfolio website", 
         repository: "https://github.com/Myntsu/myndi", 
         liveDemo: "https://myndi.dev/" },
 
       { title: "💻 Cozynova", shortDescription: "Resources & tools for Nova Ragnarok", 
-      src: "/src/assets/about-me/cozynova.png", alt: "Cozynova website", 
+      src: import("/src/assets/about-me/cozynova.png"), preview: "/src/assets/about-me/blogfolio.png", alt: "Cozynova website", 
       repository: "https://github.com/Myntsu/cozynova", 
       liveDemo: "https://cozynova.online/" },
 
       { title: "💼 Blogfolio", shortDescription: "",
-      src: "/src/assets/about-me/cozynova.png", alt: "Blogfolio website", 
+      src: import("/src/assets/about-me/cozynova.png"), preview: "/src/assets/about-me/blogfolio.png", alt: "Blogfolio website", 
       repository: "https://github.com/Myntsu/myndi", 
       liveDemo: "https://myndi.dev/" },
     ],

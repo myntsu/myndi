@@ -1,4 +1,4 @@
-import { defineConfig, squooshImageService } from "astro/config";
+import { defineConfig } from "astro/config";
 import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
@@ -7,7 +7,8 @@ export default defineConfig({
   site: "https://myndi.dev",
 
   image: {
-    service: squooshImageService(),
+    domains: ["astro.build"],
+    remotePatterns: [{ protocol: "https" }],
   },
 
   integrations: [
