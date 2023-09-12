@@ -5,22 +5,21 @@ import sitemap from "@astrojs/sitemap";
 export default defineConfig({
   // sitemap
   site: "https://myndi.dev",
-
   image: {
     domains: ["astro.build"],
-    remotePatterns: [{ protocol: "https" }],
+    remotePatterns: [{
+      protocol: "https"
+    }]
   },
-
   integrations: [
     // sitemap
     sitemap(),
   ],
-
   markdown: {
     shikiConfig: {
       theme: 'dracula',
       langs: [],
-      wrap: true,
-    },
-  },
+      wrap: true
+    }
+  }
 });
