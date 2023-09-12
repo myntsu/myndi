@@ -8,7 +8,7 @@ import type { HTMLAttributes } from "astro/types";
 interface Hobbies {
   title?: string;
   description?: string;
-  img?: string;
+  img?: any;
   alt?: string;
   position?: string;
 }
@@ -43,7 +43,7 @@ const { hobbies } = Astro.props;
   </div>
   <ul data-slides>
     {
-      hobbies?.map(({ title, description, img, alt, position }, index) => (
+      hobbies?.map(({ title, description, img, alt }, index) => (
         <li
           class="slide"
           data-active={index === 0 ? true : undefined}>
@@ -52,7 +52,7 @@ const { hobbies } = Astro.props;
               <p class="description">{description}</p>
           </div>
           <Image
-            src={`${img}`}
+            src={img}
             alt={`${alt}`}
             width={800}
             height={800}
