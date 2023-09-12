@@ -27,7 +27,7 @@ const { projects } = Astro.props;
     <div class="img-wrapper">
         <h3 class="title">{title}</h3>
         <p class="short-description">{shortDescription}</p>
-        <Image src={src} data-original-src={`${preview}`} width={200} height={300} alt={`${alt}`} class="img-about" format="webp" quality={100}/>
+        <Image src={src} data-original-src={preview} width={200} height={300} alt={`${alt}`} class="img-about" format="webp" quality={100}/>
         <Image src={src} data-original-src={preview} width={400} height={300} alt={`${alt}`} class="img-about phone" format="webp" quality={100}/>
         <Icon name="mdi:magnify-expand" class="hover-icon" />
         <div class="project-links">
@@ -39,7 +39,7 @@ const { projects } = Astro.props;
 </div>
 
 <dialog class="pop-up-container">
-    <img src="/" alt="/" class="expanded-image">
+    <img src="" alt="" class="expanded-image">
 </dialog>
 
 
