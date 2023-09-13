@@ -19,17 +19,17 @@ export default {
     // Use this extension: GoFullPage - Full Page Screen Capture to capture your entire website views
     projects: [
       { title: "💼 Blogfolio", shortDescription: "Blogfolio template created with Astro", 
-        src: import("/src/assets/about-me/blogfolio.png"), preview: "/src/assets/about-me/blogfolio.png", alt: "Blogfolio website", 
+        src: import("/src/assets/about-me/blogfolio.png"), preview: "/images/about-me/blogfolio.png", alt: "Blogfolio website", 
         repository: "https://github.com/Myntsu/myndi", 
         liveDemo: "https://myndi.dev/" },
 
       { title: "💻 Cozynova", shortDescription: "Resources & tools for Nova Ragnarok", 
-      src: import("/src/assets/about-me/cozynova.png"), preview: "/src/assets/about-me/cozynova.png", alt: "Cozynova website", 
+      src: import("/src/assets/about-me/cozynova.png"), preview: "/images/about-me/cozynova.png", alt: "Cozynova website", 
       repository: "https://github.com/Myntsu/cozynova", 
       liveDemo: "https://cozynova.online/" },
 
       { title: "💼 Blogfolio", shortDescription: "",
-      src: import("/src/assets/about-me/cozynova.png"), preview: "/src/assets/about-me/cozynova.png", alt: "Blogfolio website", 
+      src: import("/src/assets/about-me/cozynova.png"), preview: "/images/about-me/cozynova.png", alt: "Blogfolio website", 
       repository: "https://github.com/Myntsu/myndi", 
       liveDemo: "https://myndi.dev/" },
     ],
@@ -68,23 +68,23 @@ export default {
     // for the positions use the following: 'top' | 'right top' | 'right' | 'right bottom' | 'bottom' | 'left bottom' | 'left' | 'left top' | 'north' | 'northeast' | 'east' | 'southeast' | 'south' | 'southwest' | 'west' | 'northwest' | 'center'
     hobbies: [
       {title: "Watching anime girls", description: "I love watching anime girls because it's really fun", 
-      img: "https://cdn.discordapp.com/attachments/523849846235594753/1070023861019615313/Fnxt_RFaYAAfdl6.png", alt: "Alternative text sample", 
+      img: import("/src/assets/about-me/hobbie-1.webp"), alt: "Alternative text sample", 
       position: "right top"},
 
       {title: "Watching anime girls", description: "I love watching anime girls because it's really fun", 
-      img: "https://cdn.discordapp.com/attachments/523849846235594753/1070452933633769552/Fn2LWp4aEAAS752.png", alt: "Alternative text sample", 
+      img: import("/src/assets/about-me/hobbie-2.webp"), alt: "Alternative text sample", 
       position: "top"},
 
       {title: "Watching anime girls", description: "I love watching anime girls because it's really fun", 
-      img: "https://cdn.discordapp.com/attachments/523849846235594753/1102938439931924530/Fu5OlBqaYAAtTW9.png", alt: "Alternative text sample", 
+      img: import("/src/assets/about-me/hobbie-3.webp"), alt: "Alternative text sample", 
       position: "top"},
 
       {title: "Watching anime girls", description: "I love watching anime girls because it's really fun", 
-      img: "https://cdn.discordapp.com/attachments/523849846235594753/1054845435908468787/Fkb0seSaYAEWpDt.png", alt: "Alternative text sample", 
+      img: import("/src/assets/about-me/hobbie-4.webp"), alt: "Alternative text sample", 
       position: "top"},
 
       {title: "Watching anime girls", description: "I love watching anime girls because it's really fun", 
-      img: "https://cdn.discordapp.com/attachments/523849846235594753/1048042562230964244/unknown.png", alt: "Alternative text sample", 
+      img: import("/src/assets/about-me/hobbie-5.webp"), alt: "Alternative text sample", 
       position: "top"},
     ]
   }
