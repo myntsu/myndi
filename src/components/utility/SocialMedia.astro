@@ -14,11 +14,11 @@ interface Props extends HTMLAttributes<"aside"> {
   socials?: Socials[];
 }
 
-const { socials, class: backgroundColor } = Astro.props;
+const { socials, class: backgroundColor, class: flex } = Astro.props;
 ---
 
 <aside class=`social-media ${backgroundColor}`>
-  <div>
+  <div class=`${flex}`>
     {
       socials?.map(({ platform, link, handle }) => (
         <a 
@@ -50,6 +50,11 @@ const { socials, class: backgroundColor } = Astro.props;
 
       padding-inline: .5rem;
       padding-block: var(--footer-distance);
+
+      &.flex {
+        display: flex;
+        gap: 1rem;
+      }
       
       a {
         display: flex;
