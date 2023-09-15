@@ -1,10 +1,10 @@
 ---
 // library imports
-import { Image } from 'astro:assets'
+import { Image } from "astro:assets";
 import { Icon } from "astro-icon";
 
 // images
-import user from '../../assets/about-me/smytsu.png';
+import user from "../../assets/about-me/smytsu.png";
 
 // utility imports
 import config from "../../../config";
@@ -14,45 +14,158 @@ import SocialMedia from "../utility/SocialMedia.astro";
 ---
 
 <div class="about-me">
-    <div class="user">
-        <h3>Text</h3>
-        <SocialMedia socials={config.socials} />
-        <p>Front-end developer</p>
-        <p>Main technologies: CSS, JS, Astro</p>
-        <p>I speak</p>
-        <p>I'm from</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, unde tempora sunt officiis reprehenderit sed quibusdam, totam animi magni accusantium deserunt iure impedit laudantium saepe minima cupiditate, debitis exercitationem! Facilis?</p>
+  <div class="user">
+
+    <h3>Profile</h3>
+    <div>
+        <h4>Name:</h4>
+        <p>Myndi</p>
     </div>
-    <div class="image-wrapper">
-        <Image src={user} alt="test" class="about-me-img" width={400} height={500} format="webp" loading={"eager"}/>
-        <Image src={user} alt="test" class="about-me-img phone" width={400} height={500} format="webp" loading={"eager"}/>
+    <!-- Input birthday and uncomment to display automatically -->
+    <div>
+        <h4>Age:</h4>
+        <p data-age></p>
     </div>
+    <div>
+        <h4>Birthday:</h4>
+        <p data-birthday>1/January/1890</p>
+    </div>
+    <div>
+        <h4>Country:</h4>
+        <p class="flag-holder"><Icon name="cif:cl" class="flag"/> Chile</p>
+    </div>
+    <div>
+        <h4>Languages:</h4>
+        <p>EN, ES, RU</p>
+    </div>
+    <div>
+        <h4>Technologies:</h4>
+        <p>HTML, CSS, JS, Astro</p>
+    </div>
+    <div>
+        <h4></h4>
+        <p></p>
+    </div>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur,
+      unde tempora sunt officiis reprehenderit sed quibusdam, totam animi magni
+      accusantium deserunt iure impedit laudantium saepe minima cupiditate,
+      debitis exercitationem! Facilis?
+    </p>
+  </div>
+  <div class="image-wrapper">
+    <Image
+      src={user}
+      alt="test"
+      class="about-me-img"
+      width={400}
+      height={500}
+      format="webp"
+      loading={"eager"}
+    />
+    <Image
+      src={user}
+      alt="test"
+      class="about-me-img phone"
+      width={200}
+      height={200}
+      format="webp"
+      loading={"eager"}
+    />
+    <SocialMedia socials={config.socials} class="flex" />
+  </div>
 </div>
 
 <style lang="scss">
-    .about-me {
-        display: flex;
-        flex-wrap: wrap;
+  .about-me {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--rem-lg);
 
-        .user {
-            width: 50%;
+    @media (max-width: 970px) {
+      .user {
+        flex: 3 0 0 !important;
+      }
 
-            @media (max-width: 970px) {
-                width: 100%;
-            }
-        }
-
-        .image-wrapper {
-            flex: 1 0 0;
-        }
-
+      .image-wrapper {
         .about-me-img {
-            border-radius: .5rem;
-            object-fit: cover;
+            display: none;
+        }
 
-            &.phone {
-                display: none;
+        .phone {
+            display: block;
+            object-position: top;
+            border-radius: 50%;
+        }
+      }
+    }
+
+    .user {
+      flex: 1;
+
+      & > div {
+        display: flex;
+
+        &:last-of-type {
+            margin-block-end: 1rem;
+        }
+
+        h4, p {
+            margin: 0;
+        }
+
+        & > :first-child {
+            min-width: 10ch;
+        }
+
+        .flag-holder {
+            display: flex;
+            gap: .25rem;
+
+            .flag {
+                width: 40px;
+                // height: 20px;
+                aspect-ratio: 2 / 1;
             }
         }
+      }
     }
+
+    .image-wrapper {
+      flex: 1 0 0;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      gap: var(--rem-lg);
+    }
+
+    .about-me-img {
+      border-radius: 0.5rem;
+      object-fit: cover;
+
+      &.phone {
+        display: none;
+      }
+    }
+  }
 </style>
+
+<script lang="js">
+    const birthdayElement = document.querySelector('[data-birthday]');
+    const ageElement = document.querySelector('[data-age]');
+
+    let birthdayString = birthdayElement.innerText;
+    let birthday = new Date(birthdayString);
+    let today = new Date();
+
+    let age = today.getFullYear() - birthday.getFullYear();
+    let m = today.getMonth() - birthday.getMonth();
+
+    if (m < 0 || (m === 0 && today.getDate() < birthday.getDate())) {
+        age--;
+    }
+
+    ageElement.innerText = `${age} years old`;
+</script>
