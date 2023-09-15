@@ -62,6 +62,8 @@ This project has the following folder structure:
 │   ├── favicon.svg
 │   └── robots.txt
 ├── src/
+│   ├── assets/
+|   |   └── 404.jpg
 │   ├── components/
 |   |   ├── about/
 |   |   |   ├── AboutMe.astro
@@ -201,6 +203,8 @@ npm install
 
 ### Astro Image & Sharp quick setup
 
+> *Note: Astro 3.0 comes with this dependency built-in by default, no need to install again.*
+
   **Install**
   ```bash
   npm install @astrojs/image
@@ -338,7 +342,7 @@ The main files will be `astro.config.mjs` and `config.js` inside your `root` fol
 site: "https://yoursite.com",
 ```
 
-🔵 **`config.mjs` to edit various details about the site.**
+🔵 **`config.mjs` to edit main key points of the site.**
 ```js
 // links
 { label: "About me", href: "#About-Me" }
@@ -362,6 +366,10 @@ image: {
 description: Description.
 draft: true/false
 category: Category
+profile: {
+    source: "/images/avatar/avatar.jpg",
+    altText: "Author profile picture",
+}
 ---
 
 Blog here.
@@ -381,7 +389,7 @@ Blog here.
   "title": "My Astro Page",
   "description": "My musings about the Astro framework",
   "image": {
-    "src": "/images/image-default.jpg",
+    "src": "/images/avatar/avatar.jpg",
     "alt": "My Astro Page"
   }
 }
@@ -462,16 +470,14 @@ description: 'A humble Astronaut’s guide to the stars',
     width={150}
     height={150}
     format="webp"
-    fit="cover"
     quality={100}
-    aspectRatio="1:1"
     class="your-class"
   />
   ```
 
 - **Icons**
   ```jsx
-  // refer to for the icons in https://icones.js.org/
+  // refer https://icones.js.org/ for icon names
   import { Icon } from "astro-icon";
 
   <Icon class="your class" name="name:icon-name"/>
@@ -481,7 +487,7 @@ description: 'A humble Astronaut’s guide to the stars',
   ```jsx
   import SocialMedia from "/simple/SocialMedia.astro";
 
-  <SocialMedia socials={config.socials} />
+  <SocialMedia class="filled" socials={config.socials} />
   ```
 
 ## 👀 Want to know more about Astro?
@@ -494,10 +500,10 @@ Check these amazing people (or articles)!
   
 ## 👑 Credits 
 
- - **CodingInPublic** [Youtube Channel] - for the amazing tutorial to create an Astro Blog
- - **Brayan Diaz C** - for his help reviewing this READ.ME and for some of the templates
- - **Kevin Powell** - for helping me realize it wasn't using the default responsive mode from browsers
- - **Zakum** - for helping me fixing the navbar layout not sticking properly
+ - **CodingInPublic** [YouTube] - for the amazing tutorial to create an Astro Blog and further more
+ - **Brayan Diaz C** [Github] - for his help reviewing the READ.ME, templates and release on GitHub
+ - **Kevin Powell** [Discord/YouTube] - for helping me realize the <head> tag wasn't using the proper initial-scale
+ - **Zakum** [Discord] - for helping me fixing the navbar layout not sticking properly
  - **ChatGPT** - for the really good insights on parts of my code (it really helped me here and there)
 
 ## 📄 License
