@@ -37,6 +37,10 @@ function buildToc(headings) {
   nav {
     margin-block-start: 1rem;
     padding-inline-start: 1rem;
+
+    @media (max-width: 970px) {
+      display: none;
+    }
     
     span {
       font-size: 1.25rem;

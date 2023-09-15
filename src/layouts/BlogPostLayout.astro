@@ -95,3 +95,32 @@ const relatedPosts = formattedPosts
     padding: var(--rem-lg);
   }
 </style>
+
+<script lang="js">
+const headers = document.querySelectorAll('h2, h3, h4, h5, h6');
+const tocAnchors = document.querySelectorAll('.toc a');
+let currentInView = null;
+
+const observer = new IntersectionObserver((entries) => {
+  const entry = entries.filter(e => e.isIntersecting).pop();
+
+  if (entry) {
+    const id = entry.target.getAttribute('id');
+    const anchor = Array.from(tocAnchors).find(a => a.getAttribute('href') === `#${id}`);
+
+    if (anchor) {
+      if (currentInView) {
+        currentInView.classList.remove('in-view');
+      }
+      anchor.classList.add('in-view');
+      currentInView = anchor;
+    }
+  }
+}, { 
+  threshold: 0.1,
+  rootMargin: '-50px 0px -50px 0px' // Adjust as needed
+});
+
+headers.forEach(header => observer.observe(header));
+
+</script>
