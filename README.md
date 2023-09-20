@@ -10,7 +10,7 @@ This project is a **highly costumizable** Portfolio & Blog.
 
 **Are you lost or don't know where to start? Take a look at this simple guide!**
 
-1. [Deploy](#-setup) your project 😎
+1. [Deploy](#-how-to-get-started?) your project 😎
 
 2. [Update](#-documentation) the website to your fit 😤
 
@@ -352,7 +352,7 @@ site: "https://yoursite.com",
 ```
 
 🔵 **`/src/pages/blog/` to create a new blog post.**  
-*Note: each post should have the name of post-X.md*
+*Note: each post should have the .md as file extension.*
 ```js
 ---
 layout: "../../layouts/BlogPostLayout.astro"
@@ -505,6 +505,7 @@ Check these amazing people (or articles)!
  - **Kevin Powell** [Discord/YouTube] - for helping me realize the <head> tag wasn't using the proper initial-scale
  - **Zakum** [Discord] - for helping me fixing the navbar layout not sticking properly
  - **ChatGPT** - for the really good insights on parts of my code (it really helped me here and there)
+ - **Mannix** [Discord] - for helping me fixing the sidebar inside blog posts not sticking 
 
 ## 📄 License
 
