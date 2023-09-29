@@ -8,10 +8,10 @@ export default {
     ],
     // social links at the bottom of your navbar
     socials: [
-      { platform: "facebook", link: "www.facebook.com", handle: "User" },
-      { platform: "instagram", link: "https://www.instagram.com/", handle: "User" },
-      { platform: "youtube", link: "https://www.youtube.com/", handle: "@User" },
-      { platform: "github", link: "https://github.com/", handle: "@User" },
+      { platform: "fa-brands:facebook-square", link: "www.facebook.com", handle: "User" },
+      { platform: "fa-brands:instagram-square", link: "https://www.instagram.com/", handle: "User" },
+      { platform: "fa-brands:youtube-square", link: "https://www.youtube.com/", handle: "@User" },
+      { platform: "fa-brands:github-square", link: "https://github.com/", handle: "@User" },
     ],
 
     // list of yours projects
