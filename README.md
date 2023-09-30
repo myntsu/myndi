@@ -10,7 +10,7 @@ This project is a **highly costumizable** Portfolio & Blog.
 
 **Are you lost or don't know where to start? Take a look at this simple guide!**
 
-1. [Deploy](#-how-to-get-started?) your project 😎
+1. [Deploy](#-how-to-get-started) your project 😎
 
 2. [Update](#-documentation) the website to your fit 😤
 
