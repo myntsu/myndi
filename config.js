@@ -8,10 +8,9 @@ export default {
     ],
     // social links at the bottom of your navbar
     socials: [
-      { platform: "fa-brands:facebook-square", link: "www.facebook.com", handle: "User" },
-      { platform: "fa-brands:instagram-square", link: "https://www.instagram.com/", handle: "User" },
-      { platform: "fa-brands:youtube-square", link: "https://www.youtube.com/", handle: "@User" },
-      { platform: "fa-brands:github-square", link: "https://github.com/", handle: "@User" },
+      { platform: "mdi:discord", link: "https://discord.com/users/124421052569878528/", handle: "@myntsu" },
+      { platform: "fa-brands:twitter-square", link: "https://twitter.com/myntsu", handle: "myntsu" },
+      { platform: "fa-brands:github-square", link: "https://github.com/Myntsu", handle: "myntsu" },
     ],
 
     // list of yours projects
