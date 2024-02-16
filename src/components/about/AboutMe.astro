@@ -4,7 +4,7 @@ import { Image } from "astro:assets";
 import { Icon } from "astro-icon";
 
 // images
-import user from "../../assets/about-me/smytsu.png";
+import user from "../../assets/about-me/about-me.jpg";
 
 // utility imports
 import config from "../../../config";
@@ -17,7 +17,7 @@ import SocialMedia from "../utility/SocialMedia.astro";
   <div class="image-wrapper">
     <Image
       src={user}
-      alt="test"
+      alt="About me image"
       class="about-me-img"
       width={800}
       height={400}
@@ -26,7 +26,7 @@ import SocialMedia from "../utility/SocialMedia.astro";
     />
     <Image
       src={user}
-      alt="test"
+      alt="About me image"
       class="about-me-img phone"
       width={200}
       height={200}
@@ -34,15 +34,15 @@ import SocialMedia from "../utility/SocialMedia.astro";
       loading={"eager"}
     />
     <SocialMedia
-      socials={config.socials}
-      class="flex"
-    />
+    socials={config.socials}
+    class="flex"
+  />
   </div>
   <div class="user">
     <h3>Profile</h3>
     <div>
       <h4>Name:</h4>
-      <p>Myndi</p>
+      <p>Piero Buccioni / Myndi</p>
     </div>
     <div>
       <h4>Age:</h4>
@@ -51,7 +51,7 @@ import SocialMedia from "../utility/SocialMedia.astro";
     <div>
       <h4>Birthday:</h4>
       <!-- inputing the birthday displays the age automatically -->
-      <p data-birthday>1/January/1890</p>
+      <p data-birthday>28/May/1993</p>
     </div>
     <div>
       <h4>Country:</h4>
@@ -75,12 +75,9 @@ import SocialMedia from "../utility/SocialMedia.astro";
         <Icon class="technology" name="simple-icons:astro"/>
       </p>
     </div>
-    <p class="long-about">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur,
-      unde tempora sunt officiis reprehenderit sed quibusdam, totam animi magni
-      accusantium deserunt iure impedit laudantium saepe minima cupiditate,
-      debitis exercitationem! Facilis?
-    </p>
+    <p class="long-about">I consider myself a small developer passionate about front-end, UX/UI with full stack aspirations.</p>
+    <p class="long-about">Meeting my client needs are top priority, or focusing on what the user wants. There's nothing more satisfying than seeing a smile on their face after a well delivered product.</p>
+    <p class="long-about">As for my nickname "Myndi", it comes from an old nickname I got attached to, and I still prefer to use it to this day. I simple love it 💞</p>
   </div>
 </div>
 
