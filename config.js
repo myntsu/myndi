@@ -17,20 +17,19 @@ export default {
     // titles and description can be empty
     // Use this extension: GoFullPage - Full Page Screen Capture to capture your entire website views
     projects: [
-      { title: "💼 Blogfolio", shortDescription: "Blogfolio template created with Astro", 
-        src: import("/src/assets/about-me/blogfolio.png"), preview: "/images/about-me/blogfolio.png", alt: "Blogfolio website", 
-        repository: "https://github.com/Myntsu/myndi", 
-        liveDemo: "https://myndi.dev/" },
-
-      { title: "💻 Cozynova", shortDescription: "Resources & tools for Nova Ragnarok", 
+      { title: "💻 Cozynova", shortDescription: "Resources & tools for Nova Ragnarok (now closed)", 
       src: import("/src/assets/about-me/cozynova.png"), preview: "/images/about-me/cozynova.png", alt: "Cozynova website", 
       repository: "https://github.com/Myntsu/cozynova", 
-      liveDemo: "https://cozynova.online/" },
+      liveDemo: "https://cozynova.netlify.app/" },
 
-      { title: "💼 Blogfolio", shortDescription: "",
-      src: import("/src/assets/about-me/cozynova.png"), preview: "/images/about-me/cozynova.png", alt: "Blogfolio website", 
-      repository: "https://github.com/Myntsu/myndi", 
-      liveDemo: "https://myndi.dev/" },
+      { title: "💼 Lawyer firm", shortDescription: "Personal website for a Laywer's firm",
+      src: import("/src/assets/about-me/lawyer-firm.png"), preview: "/images/about-me/lawyer-firm.png", alt: "Blogfolio website", 
+      repository: "https://github.com/myntsu/michel-campillay-abogado", 
+      liveDemo: "https://michelcampillay.cl/" },
+      { title: "📈 Spreadsheet CMS", shortDescription: "Crece Simple Landing Page", 
+        src: import("/src/assets/about-me/crece-simple.png"), preview: "/images/about-me/crece-simple.png", alt: "Blogfolio website", 
+        repository: "https://github.com/myntsu/crece-simple", 
+        liveDemo: "https://deft-tulumba-dee734.netlify.app/" },
     ],
 
     // stacks for your about
