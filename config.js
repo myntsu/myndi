@@ -65,24 +65,24 @@ export default {
     // list of your hobbies
     // for the positions use the following: 'top' | 'right top' | 'right' | 'right bottom' | 'bottom' | 'left bottom' | 'left' | 'left top' | 'north' | 'northeast' | 'east' | 'southeast' | 'south' | 'southwest' | 'west' | 'northwest' | 'center'
     hobbies: [
-      {title: "Watching anime girls", description: "I love watching anime girls because it's really fun", 
-      img: import("/src/assets/about-me/hobbie-1.webp"), alt: "Alternative text sample", 
+      {title: "Playing video games", description: "As you might appreciate, I love videogames. From RTS, to MOBAs, from RPG to Puzzle games. My favorite saga is Command & Conquer, and childhood IP The Legend of Zelda.", 
+      img: import("/src/assets/about-me/games.jpg"), alt: "Command & Conquer Logo", 
       position: "right top"},
 
-      {title: "Watching anime girls", description: "I love watching anime girls because it's really fun", 
-      img: import("/src/assets/about-me/hobbie-2.webp"), alt: "Alternative text sample", 
+      {title: "Programming", description: "Let's not get too ahead of ourselves. I'm not the best at programming, but my passion advocates for front-end and UX/UI. I guess this website is testimony of that.", 
+      img: import("/src/assets/about-me/programming.webp"), alt: "Alternative text sample", 
       position: "top"},
 
-      {title: "Watching anime girls", description: "I love watching anime girls because it's really fun", 
-      img: import("/src/assets/about-me/hobbie-3.webp"), alt: "Alternative text sample", 
+      {title: "Doing workouts", description: "Yup, as weird as it sounds, I love working out. There's a trifecta in life that I can't interchange anymore: eating, sleeping and working out.", 
+      img: import("/src/assets/about-me/workout.webp"), alt: "Alternative text sample", 
       position: "top"},
 
-      {title: "Watching anime girls", description: "I love watching anime girls because it's really fun", 
-      img: import("/src/assets/about-me/hobbie-4.webp"), alt: "Alternative text sample", 
+      {title: "Watching anime", description: "Although I don't do it reguarly, surely a good anime could enlight my mood, such as Psycho-Pass, one of my favorites out there!", 
+      img: import("/src/assets/about-me/psycho-pass.jpg"), alt: "Psycho-Pass anime", 
       position: "top"},
 
-      {title: "Watching anime girls", description: "I love watching anime girls because it's really fun", 
-      img: import("/src/assets/about-me/hobbie-5.webp"), alt: "Alternative text sample", 
+      {title: "Commissioning art and creating stories", description: "I simply love commissioning art and creating new stories. As you can see my character Myndi on the display, she's part of a commission, and a long tale created just for herself and my other characters.", 
+      img: import("/src/assets/about-me/commissions.png"), alt: "Fictional character Myndi", 
       position: "top"},
     ]
   }
