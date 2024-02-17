@@ -70,7 +70,7 @@ export default {
       position: "right top"},
 
       {title: "Programming", description: "Let's not get too ahead of ourselves. I'm not the best at programming, but my passion advocates for front-end and UX/UI. I guess this website is testimony of that.", 
-      img: import("/src/assets/about-me/programming.webp"), alt: "Alternative text sample", 
+      img: import("/src/assets/about-me/programming.png"), alt: "Alternative text sample", 
       position: "top"},
 
       {title: "Doing workouts", description: "Yup, as weird as it sounds, I love working out. There's a trifecta in life that I can't interchange anymore: eating, sleeping and working out.", 
