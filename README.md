@@ -367,7 +367,7 @@ description: Description.
 draft: true/false
 category: Category
 profile: {
-    source: "/images/avatar/avatar.jpg",
+    source: "/images/avatar/avatar.png",
     altText: "Author profile picture",
 }
 ---
@@ -389,7 +389,7 @@ Blog here.
   "title": "My Astro Page",
   "description": "My musings about the Astro framework",
   "image": {
-    "src": "/images/avatar/avatar.jpg",
+    "src": "/images/avatar/avatar.png",
     "alt": "My Astro Page"
   }
 }
