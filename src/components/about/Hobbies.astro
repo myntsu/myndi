@@ -1,6 +1,6 @@
 ---
 // astro imports
-import { Image } from 'astro:assets'
+import { Image } from "astro:assets";
 import { Icon } from "astro-icon";
 
 import type { HTMLAttributes } from "astro/types";
@@ -27,7 +27,7 @@ const { hobbies } = Astro.props;
     <button
       type="button"
       class="carousel-button prev"
-      data-carousel-button
+      data-carousel-button="prev"
       aria-label="Previous image">
       <Icon name="mdi:arrow-left-bold" />
     </button>
@@ -36,7 +36,7 @@ const { hobbies } = Astro.props;
     <button
       type="button"
       class="carousel-button next"
-      data-carousel-button
+      data-carousel-button="next"
       aria-label="Next image">
       <Icon name="mdi:arrow-right-bold" />
     </button>
@@ -48,8 +48,8 @@ const { hobbies } = Astro.props;
           class="slide"
           data-active={index === 0 ? true : undefined}>
           <div class="title-and-description">
-              <h3 class="title">{title}</h3>
-              <p class="description">{description}</p>
+            <h3 class="title">{title}</h3>
+            <p class="description">{description}</p>
           </div>
           <Image
             src={img}
@@ -130,20 +130,20 @@ const { hobbies } = Astro.props;
         padding: 1rem;
 
         color: hsl(0 0% 91%);
-        background-color: hsl(0 0% 8% / .5);
+        background-color: hsl(0 0% 8% / 0.5);
 
         z-index: 3;
 
         & > * {
-            margin: 0;
+          margin: 0;
         }
 
         h3 {
-            font-size: 1.5rem;
+          font-size: 1.5rem;
         }
 
         p {
-            opacity: .9;
+          opacity: 0.9;
         }
       }
 
@@ -159,22 +159,31 @@ const { hobbies } = Astro.props;
 </style>
 
 <script lang="js">
-const buttons = document.querySelectorAll("[data-carousel-button]");
+  const buttons = document.querySelectorAll("[data-carousel-button]");
+  const slides = document.querySelectorAll("[data-slides] .slide");
 
-buttons.forEach((button) => {
-    button.addEventListener("click", () => {
-        const offset = button.dataset.carouselbutton === "next" ? 1 : -1;
-        const slides = button
-            .closest("[data-carousel]")
-            .querySelector("[data-slides]");
+  let currentIndex = 0;
 
-        const activeSlide = slides.querySelector("[data-active]");
-        let newIndex = [...slides.children].indexOf(activeSlide) + offset;
-        if (newIndex < 0) newIndex = slides.children.length - 1;
-        if (newIndex >= slides.children.length) newIndex = 0;
-
-        slides.children[newIndex].dataset.active = true;
-        delete activeSlide.dataset.active;
+  const updateSlide = (index) => {
+    slides.forEach((slide, i) => {
+      if (i === index) {
+        slide.dataset.active = "true";
+      } else {
+        slide.removeAttribute("data-active");
+      }
     });
-});
+  };
+
+  updateSlide(currentIndex);
+
+  buttons.forEach((button) => {
+    button.addEventListener("click", () => {
+      if (button.dataset.carouselButton === "next") {
+        currentIndex = (currentIndex + 1) % slides.length;
+      } else {
+        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+      }
+      updateSlide(currentIndex);
+    });
+  });
 </script>
