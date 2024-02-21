@@ -84,7 +84,7 @@ const { title, description, date, category, author, image, profile } = frontmatt
   gap: 1rem;
   padding: 1rem;
 
-  background-color: hsl(var(--main-color) / .1);
+  background-color: hsl(var(--card-background));
   border-radius: .25rem;
 
   position: relative;
@@ -93,7 +93,7 @@ const { title, description, date, category, author, image, profile } = frontmatt
 
   &:is(:hover) {
     translate: 0 2px;
-    box-shadow: 0 0 20px hsl(var(--secondary-color) / .5);
+    box-shadow: 0 0 20px hsl(var(--card-highlight));
   }
 
   .inner-card {

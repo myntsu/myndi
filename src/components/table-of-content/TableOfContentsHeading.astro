@@ -29,7 +29,7 @@ const { heading } = Astro.props;
     height: 100%;
 
     padding-block: .1rem;
-    padding-inline: .25rem;
+    padding-inline: 1rem;
 
     color: hsl(var(--navbar-color));
     border-radius: .25rem;
@@ -38,14 +38,14 @@ const { heading } = Astro.props;
     text-decoration: none;
 
     &:is(:hover, :focus-visible) {
-      color: hsl(var(--font));
+      color: hsl(var(--white));
       background-color: hsl(var(--button));
       opacity: .9;
       outline: none;
     }
 
     &:is(.in-view) {
-      color: hsl(var(--font));
+      color: hsl(var(--white));
       background-color: hsl(var(--button));
       opacity: .9;
     }
