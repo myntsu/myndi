@@ -42,8 +42,8 @@
   --navbar-font: 360 100% 50%;
 
   // cards
-  --card-background: 0 0% 89%;
-  --highlight: 0 0% 0%;
+  --card-background: 0 0% 88% / .9;
+  --card-highlight: var(--main-color) / .5;
 
   // font and link styles
   --font: 0 0% 13%;
@@ -74,8 +74,8 @@
   --navbar-font: 360 100% 50%;
 
   // cards
-  --card-background: 0 0% 89%;
-  --highlight: 0 0% 0%;
+  --card-background: 0 0% 88% / .9;
+  --card-highlight: var(--main-color) / .5;
 
   // font and link styles
   --font: 0 0% 13%;
@@ -106,8 +106,8 @@
   --navbar-font: 0 0% 100%;
 
   // cards
-  --card-background: var(--secondary-color);
-  --highlight: 0 0% 100%;
+  --card-background: var(--main-color) / .1;
+  --card-highlight: var(--secondary-color) / .5;
 
   // font and link styles
   --font: 0 0% 91%;
