@@ -56,7 +56,10 @@
   --tag-font: 0 0% 100%;
 
   //highlight
-  --highlight: 0 100% 40%;
+  --highlight: 0 100% 80%;
+
+  //background-blur-color
+  --background-blur-color: 0 90% 80%;
 }
 
 .light {
@@ -85,7 +88,10 @@
   --tag-font: 0 0% 100%;
 
   //highlight
-  --highlight: 0 100% 40%;
+  --highlight: 0 100% 80%;
+
+  //background-blur-color
+  --background-blur-color: 0 90% 80%;
 }
 
 .dark  {
@@ -115,6 +121,9 @@
 
   //highlight
   --highlight: 0 0% 91%;
+
+  // background-blur-color
+  --background-blur-color: 240 90% 80%;
 }
 
 ::-webkit-scrollbar {
