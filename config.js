@@ -26,10 +26,10 @@ export default {
       src: import("/src/assets/about-me/lawyer-firm.png"), preview: "/images/about-me/lawyer-firm.png", alt: "Blogfolio website", 
       repository: "https://github.com/myntsu/michel-campillay-abogado", 
       liveDemo: "https://michelcampillay.cl/" },
-      { title: "📈 Spreadsheet CMS", shortDescription: "Crece Simple Landing Page", 
-        src: import("/src/assets/about-me/crece-simple.png"), preview: "/images/about-me/crece-simple.png", alt: "Blogfolio website", 
-        repository: "https://github.com/myntsu/crece-simple", 
-        liveDemo: "https://deft-tulumba-dee734.netlify.app/" },
+      { title: "📈 Action Value Calculator", shortDescription: "Action Value calculator for Honkai Star Rail", 
+        src: import("/src/assets/about-me/action-value.png"), preview: "/images/about-me/action-value.png", alt: "Action Value Calculator", 
+        repository: "https://github.com/myntsu/HSR-Simple-Action-Value-Calculator", 
+        liveDemo: "https://hsr-av-calc.vercel.app/" },
     ],
 
     // stacks for your about
@@ -37,27 +37,30 @@ export default {
     stack: [
       {
         frontEnd: [
-          { language: "HTML", name: "language-html5", percentage: 60, color: "orange" },
-          { language: "CSS", name: "language-css3", percentage: 80, color: "blue" },
-          { language: "Bootstrap", name: "bootstrap", percentage: 90, color: "purple" },
-          { language: "Bulma", name: "bulma", percentage: 30, color: "green lighter" },
-          { language: "JavaScript", name: "language-javascript", percentage: 50, color: "yellow" },
+          { language: "HTML", name: "language-html5", percentage: 80, color: "orange" },
+          { language: "CSS", name: "language-css3", percentage: 100, color: "blue" },
+          { language: "Bootstrap", name: "bootstrap", percentage: 100, color: "purple" },
+          { language: "Bulma", name: "bulma", percentage: 50, color: "green lighter" },
+          { language: "JavaScript", name: "language-javascript", percentage: 60, color: "yellow" },
           { language: "jQuery", name: "jquery", percentage: 60, color: "yellow lighter" },
+          { language: "Vue.js", name: "vuejs", percentage: 10, color: "green lighter" },
         ],
         backEnd: [
-          { language: "Astro", name: "rocket-launch", percentage: 30, color: "orange" },
+          { language: "Astro", name: "rocket-launch", percentage: 40, color: "orange" },
+          { language: "Node", name: "nodejs", percentage: 30, color: "green" },
           { language: "Ruby", name: "ruby", percentage: 20, color: "red lighter" },
           { language: "Ruby on Rails", name: "language-ruby-on-rails", percentage: 30, color: "red" },
-          { language: "SQL", name: "database", percentage: 30, color: "green" },
+          { language: "SQL", name: "database", percentage: 35, color: "green lighter" },
         ],
         devOps:[
           { language: "GitHub", name: "github", percentage: 70, color: "blue lighter" },
-          { language: "Netlify", name: "cloud", percentage: 40, color: "green darker" },
+          { language: "Netlify", name: "cloud", percentage: 30, color: "green darker" },
+          { language: "Vercel", name: "cloud", percentage: 40, color: "blue" },
         ],
         tools:[
-          { language: "Git", name: "git", percentage: 50, color: "blue lighter" },
+          { language: "Git", name: "git", percentage: 55, color: "blue lighter" },
           { language: "Subsystem: WSL", name: "linux", percentage: 20, color: "blue darker" },
-          { language: "Visual Studio Code", name: "application-brackets", percentage: 70, color: "blue" },
+          { language: "Visual Studio Code", name: "application-brackets", percentage: 75, color: "blue" },
         ]
       },
     ],
