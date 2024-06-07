@@ -37,27 +37,30 @@ export default {
     stack: [
       {
         frontEnd: [
-          { language: "HTML", name: "language-html5", percentage: 60, color: "orange" },
-          { language: "CSS", name: "language-css3", percentage: 80, color: "blue" },
-          { language: "Bootstrap", name: "bootstrap", percentage: 90, color: "purple" },
-          { language: "Bulma", name: "bulma", percentage: 30, color: "green lighter" },
-          { language: "JavaScript", name: "language-javascript", percentage: 50, color: "yellow" },
+          { language: "HTML", name: "language-html5", percentage: 80, color: "orange" },
+          { language: "CSS", name: "language-css3", percentage: 100, color: "blue" },
+          { language: "Bootstrap", name: "bootstrap", percentage: 100, color: "purple" },
+          { language: "Bulma", name: "bulma", percentage: 50, color: "green lighter" },
+          { language: "JavaScript", name: "language-javascript", percentage: 60, color: "yellow" },
           { language: "jQuery", name: "jquery", percentage: 60, color: "yellow lighter" },
+          { language: "Vue.js", name: "vuejs", percentage: 10, color: "green lighter" },
         ],
         backEnd: [
-          { language: "Astro", name: "rocket-launch", percentage: 30, color: "orange" },
+          { language: "Astro", name: "rocket-launch", percentage: 40, color: "orange" },
+          { language: "Node", name: "nodejs", percentage: 30, color: "green" },
           { language: "Ruby", name: "ruby", percentage: 20, color: "red lighter" },
           { language: "Ruby on Rails", name: "language-ruby-on-rails", percentage: 30, color: "red" },
-          { language: "SQL", name: "database", percentage: 30, color: "green" },
+          { language: "SQL", name: "database", percentage: 35, color: "green lighter" },
         ],
         devOps:[
           { language: "GitHub", name: "github", percentage: 70, color: "blue lighter" },
-          { language: "Netlify", name: "cloud", percentage: 40, color: "green darker" },
+          { language: "Netlify", name: "cloud", percentage: 30, color: "green darker" },
+          { language: "Vercel", name: "cloud", percentage: 40, color: "blue" },
         ],
         tools:[
-          { language: "Git", name: "git", percentage: 50, color: "blue lighter" },
+          { language: "Git", name: "git", percentage: 55, color: "blue lighter" },
           { language: "Subsystem: WSL", name: "linux", percentage: 20, color: "blue darker" },
-          { language: "Visual Studio Code", name: "application-brackets", percentage: 70, color: "blue" },
+          { language: "Visual Studio Code", name: "application-brackets", percentage: 75, color: "blue" },
         ]
       },
     ],
