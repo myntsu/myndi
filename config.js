@@ -26,10 +26,10 @@ export default {
       src: import("/src/assets/about-me/lawyer-firm.png"), preview: "/images/about-me/lawyer-firm.png", alt: "Blogfolio website", 
       repository: "https://github.com/myntsu/michel-campillay-abogado", 
       liveDemo: "https://michelcampillay.cl/" },
-      { title: "📈 Spreadsheet CMS", shortDescription: "Crece Simple Landing Page", 
-        src: import("/src/assets/about-me/crece-simple.png"), preview: "/images/about-me/crece-simple.png", alt: "Blogfolio website", 
-        repository: "https://github.com/myntsu/crece-simple", 
-        liveDemo: "https://deft-tulumba-dee734.netlify.app/" },
+      { title: "📈 Action Value Calculator", shortDescription: "Action Value calculator for Honkai Star Rail", 
+        src: import("/src/assets/about-me/action-value.png"), preview: "/images/about-me/action-value.png", alt: "Action Value Calculator", 
+        repository: "https://github.com/myntsu/HSR-Simple-Action-Value-Calculator", 
+        liveDemo: "https://hsr-av-calc.vercel.app/" },
     ],
 
     // stacks for your about
